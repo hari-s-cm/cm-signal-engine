@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Signal Engine — Brand & LLM Visibility</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#1f2937; --muted:#6b7280; --faint:#9ca3af;
+    --line:#e5e7eb; --green:#1a8a4a; --red:#c0392b; --amber:#b45309; --chip:#f1f3f5;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5;}
+  .wrap{max-width:760px;margin:0 auto;padding:28px 18px 48px;}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:18px;}
+  .top h1{font-size:18px;font-weight:600;margin:0;}
+  .pill{font-size:12px;color:var(--muted);background:var(--chip);padding:4px 10px;border-radius:999px;white-space:nowrap;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:20px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
+  .card .h{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--muted);}
+  .tag{font-size:12px;font-weight:600;color:var(--amber);}
+  .card .big{font-size:20px;font-weight:600;margin:6px 0 3px;}
+  .card .sub{font-size:12px;color:var(--faint);}
+  .stack{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 16px 14px;}
+  .lyr{font-size:12px;color:var(--faint);margin:14px 0 2px;letter-spacing:.02em;}
+  .row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);}
+  .row:last-child{border-bottom:none;}
+  .dot{width:9px;height:9px;border-radius:50%;flex:none;}
+  .nm{flex:1;font-size:14px;}
+  .chip{font-size:11px;color:var(--muted);background:var(--chip);padding:1px 7px;border-radius:6px;margin-left:4px;}
+  .val{font-size:14px;font-weight:600;text-align:right;min-width:64px;}
+  .delta{font-size:12px;text-align:right;min-width:96px;}
+  .g{color:var(--green)} .r{color:var(--red)} .m{color:var(--muted)} .f{color:var(--faint)}
+  .bg-g{background:var(--green)} .bg-r{background:var(--red)} .bg-m{background:var(--faint)} .bg-i{background:#2563eb}
+  .note{display:flex;gap:8px;font-size:12px;color:var(--faint);margin-top:12px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1>Signal Engine — brand &amp; LLM visibility</h1>
+    <span class="pill">Week of Jun 8–12 vs Jun 1–5 · updated 2026-06-15</span>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="h"><span>Story A · AI is working</span><span class="tag">Watch</span></div>
+      <div class="big g">16.1% web presence</div>
+      <div class="sub">Real baseline set (sonar). Crawl −11%; AI leads flat</div>
+    </div>
+    <div class="card">
+      <div class="h"><span>Story B · Brand is growing</span><span class="tag">Watch</span></div>
+      <div class="big" style="color:var(--amber)">interest rising</div>
+      <div class="sub">Branded search +47%, position improving; leads −33%</div>
+    </div>
+  </div>
+
+  <div class="stack">
+    <div class="lyr">Layer 1 · ingestion (server logs) — vs last week</div>
+    <div class="row"><span class="dot bg-r"></span><span class="nm">Answer-engine hits <span class="chip">logs</span></span><span class="val">4,198</span><span class="delta r">▼ 11%</span></div>
+    <div class="row"><span class="dot bg-g"></span><span class="nm">Training hits <span class="chip">logs</span></span><span class="val">561</span><span class="delta g">▲ 3%</span></div>
+    <div class="row"><span class="dot bg-r"></span><span class="nm">Unique pages crawled <span class="chip">logs</span></span><span class="val">1,052</span><span class="delta r">▼ 6%</span></div>
+    <div class="row"><span class="dot bg-g"></span><span class="nm">Bot 404s <span class="chip">logs</span></span><span class="val">77</span><span class="delta g">▼ 37%</span></div>
+
+    <div class="lyr">Layer 2 · LLM visibility (Perplexity sonar, web-grounded)</div>
+    <div class="row"><span class="dot bg-g"></span><span class="nm">Presence rate — sonar <span class="chip">poll</span></span><span class="val">16.1%</span><span class="delta f">baseline (40/249)</span></div>
+
+    <div class="lyr">Layer 3 · branded demand — vs last week</div>
+    <div class="row"><span class="dot bg-g"></span><span class="nm">Branded clicks <span class="chip">GSC</span></span><span class="val">56</span><span class="delta g">▲ 47%</span></div>
+    <div class="row"><span class="dot bg-g"></span><span class="nm">Branded impressions <span class="chip">GSC</span></span><span class="val">209</span><span class="delta g">▲ 7%</span></div>
+    <div class="row"><span class="dot bg-g"></span><span class="nm">Branded avg position <span class="chip">GSC</span></span><span class="val">2.3</span><span class="delta g">▲ from 4.2</span></div>
+    <div class="row"><span class="dot bg-m"></span><span class="nm">Homepage sessions <span class="chip">GA4</span></span><span class="val">407</span><span class="delta m">▬ flat</span></div>
+    <div class="row"><span class="dot bg-g"></span><span class="nm">Homepage engagement <span class="chip">GA4</span></span><span class="val">63.6%</span><span class="delta g">▲ 6.9pts</span></div>
+
+    <div class="lyr">Layer 4 · traffic — vs last week</div>
+    <div class="row"><span class="dot bg-g"></span><span class="nm">LLM referral sessions <span class="chip">GA4</span></span><span class="val">33</span><span class="delta g">▲ 6%</span></div>
+
+    <div class="lyr">Layer 5 · leads (HubSpot, excl. internal + gmail) — vs last week</div>
+    <div class="row"><span class="dot bg-r"></span><span class="nm">New leads <span class="chip">HubSpot</span></span><span class="val">26</span><span class="delta r">▼ 33%</span></div>
+    <div class="row"><span class="dot bg-m"></span><span class="nm">AI-sourced leads <span class="chip">HubSpot</span></span><span class="val">2</span><span class="delta m">▬ flat</span></div>
+    <div class="row"><span class="dot bg-m"></span><span class="nm f">Self-reported via AI <span class="chip">HubSpot</span></span><span class="val f">0</span><span class="delta f">−100% · low-n</span></div>
+  </div>
+
+  <div class="note">Layer 2 is web-grounded (Perplexity sonar) — 16.1% is the first baseline; the trend starts next week. HubSpot leads exclude gmail/culturemonkey/effy. Guardrails: matched windows · assets excluded from crawl · low-n flagged.</div>
+</div>
+</body>
+</html>
