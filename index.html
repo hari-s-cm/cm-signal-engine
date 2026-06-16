@@ -8,7 +8,7 @@
 <style>
   :root{
     --bg:#f6f7f9; --card:#ffffff; --ink:#1f2937; --muted:#6b7280; --faint:#9ca3af;
-    --line:#e5e7eb; --green:#1a8a4a; --red:#c0392b; --amber:#b45309; --chip:#f1f3f5;
+    --line:#e5e7eb; --green:#1a8a4a; --red:#c0392b; --amber:#b45309; --chip:#f1f3f5; --track:#eceef1;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5;}
@@ -32,7 +32,13 @@
   .val{font-size:14px;font-weight:600;text-align:right;min-width:64px;}
   .delta{font-size:12px;text-align:right;min-width:96px;}
   .g{color:var(--green)} .r{color:var(--red)} .m{color:var(--muted)} .f{color:var(--faint)}
-  .bg-g{background:var(--green)} .bg-r{background:var(--red)} .bg-m{background:var(--faint)} .bg-i{background:#2563eb}
+  .bg-g{background:var(--green)} .bg-r{background:var(--red)} .bg-m{background:var(--faint)} .bg-a{background:var(--amber)}
+  .ov{font-size:13px;color:var(--muted);margin:4px 0 8px;}
+  .crow{display:flex;align-items:center;gap:10px;padding:5px 0;}
+  .cn{flex:0 0 240px;font-size:13px;}
+  .cbar{flex:1;height:8px;background:var(--track);border-radius:4px;overflow:hidden;}
+  .cf{height:8px;border-radius:4px;}
+  .cp{flex:0 0 56px;text-align:right;font-size:13px;font-weight:600;}
   .note{display:flex;gap:8px;font-size:12px;color:var(--faint);margin-top:12px;}
 </style>
 </head>
@@ -40,14 +46,14 @@
 <div class="wrap">
   <div class="top">
     <h1>Signal Engine — brand &amp; LLM visibility</h1>
-    <span class="pill">Week of Jun 8–12 vs Jun 1–5 · updated 2026-06-15</span>
+    <span class="pill">Presence as of Jun 16 · other layers wk of Jun 8–12</span>
   </div>
 
   <div class="cards">
     <div class="card">
       <div class="h"><span>Story A · AI is working</span><span class="tag">Watch</span></div>
-      <div class="big g">16.1% web presence</div>
-      <div class="sub">Real baseline set (sonar). Crawl −11%; AI leads flat</div>
+      <div class="big g">15.7% web presence</div>
+      <div class="sub">Strong on eNPS, third-party, alternatives. Blind spots: engagement software &amp; EX platforms (0%)</div>
     </div>
     <div class="card">
       <div class="h"><span>Story B · Brand is growing</span><span class="tag">Watch</span></div>
@@ -63,8 +69,18 @@
     <div class="row"><span class="dot bg-r"></span><span class="nm">Unique pages crawled <span class="chip">logs</span></span><span class="val">1,052</span><span class="delta r">▼ 6%</span></div>
     <div class="row"><span class="dot bg-g"></span><span class="nm">Bot 404s <span class="chip">logs</span></span><span class="val">77</span><span class="delta g">▼ 37%</span></div>
 
-    <div class="lyr">Layer 2 · LLM visibility (Perplexity sonar, web-grounded)</div>
-    <div class="row"><span class="dot bg-g"></span><span class="nm">Presence rate — sonar <span class="chip">poll</span></span><span class="val">16.1%</span><span class="delta f">baseline (40/249)</span></div>
+    <div class="lyr">Layer 2 · LLM visibility — share of voice by cluster (Perplexity sonar, Jun 16)</div>
+    <div class="ov">Overall 15.7% (39 of 249 answers). Rising/falling per cluster starts next week (first baseline).</div>
+    <div class="crow"><span class="cn">eNPS software</span><div class="cbar"><div class="cf bg-g" style="width:33%"></div></div><span class="cp g">33%</span></div>
+    <div class="crow"><span class="cn">Third-party survey companies</span><div class="cbar"><div class="cf bg-g" style="width:27%"></div></div><span class="cp g">27%</span></div>
+    <div class="crow"><span class="cn">Competitor alternatives</span><div class="cbar"><div class="cf bg-g" style="width:26%"></div></div><span class="cp g">26%</span></div>
+    <div class="crow"><span class="cn">Employee feedback tools / software</span><div class="cbar"><div class="cf bg-g" style="width:22%"></div></div><span class="cp g">22%</span></div>
+    <div class="crow"><span class="cn">Pulse surveys</span><div class="cbar"><div class="cf bg-a" style="width:17%"></div></div><span class="cp" style="color:var(--amber)">17%</span></div>
+    <div class="crow"><span class="cn">Anonymous feedback</span><div class="cbar"><div class="cf bg-a" style="width:13%"></div></div><span class="cp" style="color:var(--amber)">13%</span></div>
+    <div class="crow"><span class="cn">Engagement survey tools/software/vendors</span><div class="cbar"><div class="cf bg-a" style="width:11%"></div></div><span class="cp" style="color:var(--amber)">11%</span></div>
+    <div class="crow"><span class="cn">Employee retention software</span><div class="cbar"><div class="cf bg-a" style="width:11%"></div></div><span class="cp" style="color:var(--amber)">11%</span></div>
+    <div class="crow"><span class="cn f">Employee engagement software (general)</span><div class="cbar"></div><span class="cp r">0%</span></div>
+    <div class="crow"><span class="cn f">Employee experience platforms</span><div class="cbar"></div><span class="cp r">0%</span></div>
 
     <div class="lyr">Layer 3 · branded demand — vs last week</div>
     <div class="row"><span class="dot bg-g"></span><span class="nm">Branded clicks <span class="chip">GSC</span></span><span class="val">56</span><span class="delta g">▲ 47%</span></div>
@@ -82,7 +98,7 @@
     <div class="row"><span class="dot bg-m"></span><span class="nm f">Self-reported via AI <span class="chip">HubSpot</span></span><span class="val f">0</span><span class="delta f">−100% · low-n</span></div>
   </div>
 
-  <div class="note">Layer 2 is web-grounded (Perplexity sonar) — 16.1% is the first baseline; the trend starts next week. HubSpot leads exclude gmail/culturemonkey/effy. Guardrails: matched windows · assets excluded from crawl · low-n flagged.</div>
+  <div class="note">Layer 2 is web-grounded share of voice (Perplexity sonar), 83 queries across 10 clusters; rising/falling per cluster begins next week. Layers 1, 3, 4, 5 reflect the Jun 8–12 pull. HubSpot leads exclude gmail/culturemonkey/effy.</div>
 </div>
 </body>
 </html>
