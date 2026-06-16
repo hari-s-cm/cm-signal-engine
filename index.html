@@ -22,7 +22,7 @@
   .tag{font-size:12px;font-weight:600;color:var(--amber);}
   .card .big{font-size:20px;font-weight:600;margin:6px 0 3px;}
   .card .sub{font-size:12px;color:var(--faint);}
-  .stack{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 16px 14px;}
+  .stack{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 16px 14px;margin-bottom:16px;}
   .lyr{font-size:12px;color:var(--faint);margin:14px 0 2px;letter-spacing:.02em;}
   .row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);}
   .row:last-child{border-bottom:none;}
@@ -33,27 +33,57 @@
   .delta{font-size:12px;text-align:right;min-width:96px;}
   .g{color:var(--green)} .r{color:var(--red)} .m{color:var(--muted)} .f{color:var(--faint)}
   .bg-g{background:var(--green)} .bg-r{background:var(--red)} .bg-m{background:var(--faint)} .bg-a{background:var(--amber)}
-  .ov{font-size:13px;color:var(--muted);margin:4px 0 8px;}
-  .crow{display:flex;align-items:center;gap:10px;padding:5px 0;}
-  .cn{flex:0 0 240px;font-size:13px;}
+  .ov{font-size:13px;color:var(--muted);margin:4px 0 10px;}
+
+  .clu{cursor:pointer;display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);}
+  .clu:hover{background:#fafbfc;}
+  .cae{flex:0 0 12px;color:var(--faint);font-size:10px;transition:transform .15s;}
+  .clu.open .cae{transform:rotate(90deg);}
+  .cn{flex:0 0 250px;font-size:13px;}
   .cbar{flex:1;height:8px;background:var(--track);border-radius:4px;overflow:hidden;}
   .cf{height:8px;border-radius:4px;}
-  .cp{flex:0 0 56px;text-align:right;font-size:13px;font-weight:600;}
+  .cp{flex:0 0 50px;text-align:right;font-size:13px;font-weight:600;}
+  .exp{display:none;padding:8px 0 14px 22px;border-bottom:1px solid var(--line);background:#fcfcfd;}
+  .exp.open{display:block;}
+  .exph{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.01em;margin:8px 0 6px;}
+  .lr{display:flex;align-items:center;gap:10px;padding:3px 0;}
+  .ln{flex:0 0 150px;font-size:12px;}
+  .lbar{flex:1;height:7px;background:var(--track);border-radius:4px;overflow:hidden;}
+  .lf{height:7px;border-radius:4px;}
+  .lp{flex:0 0 46px;text-align:right;font-size:12px;font-weight:600;}
+  .src{display:flex;align-items:center;gap:8px;padding:4px 0;font-size:12px;}
+  .src .sd{flex:1;}
+  .src .sct{color:var(--faint);min-width:54px;text-align:right;}
+  .src .sfl{min-width:120px;text-align:right;font-weight:600;}
+
+  .arow{padding:9px 0;border-bottom:1px solid var(--line);}
+  .arow:last-child{border-bottom:none;}
+  .ahead{display:flex;align-items:center;gap:8px;}
+  .ahead .ad{flex:1;font-size:14px;}
+  .ahead .act{color:var(--faint);font-size:12px;min-width:54px;text-align:right;}
+  .ahead .afl{min-width:150px;text-align:right;font-size:12px;font-weight:600;}
+  .aurls{margin:4px 0 0 0;}
+  .aurls a{display:block;font-size:12px;color:var(--muted);text-decoration:none;padding:1px 0;}
+  .aurls a:hover{color:var(--ink);text-decoration:underline;}
+  .acl{font-size:11px;color:var(--faint);margin-top:2px;}
+  .gap{background:#fdeeee;border:1px solid #f3c0c0;border-radius:8px;padding:8px 12px;font-size:12px;color:var(--red);margin-top:10px;}
   .note{display:flex;gap:8px;font-size:12px;color:var(--faint);margin-top:12px;}
+  .seo{font-size:13px;color:var(--muted);margin:2px 0 12px;}
 </style>
 </head>
 <body>
 <div class="wrap">
+
   <div class="top">
     <h1>Signal Engine — brand &amp; LLM visibility</h1>
-    <span class="pill">Presence as of Jun 16 · other layers wk of Jun 8–12</span>
+    <span class="pill">Presence as of Jun 16 (latest run) · other layers wk of Jun 8–12</span>
   </div>
 
   <div class="cards">
     <div class="card">
       <div class="h"><span>Story A · AI is working</span><span class="tag">Watch</span></div>
-      <div class="big g">15.7% web presence</div>
-      <div class="sub">Strong on eNPS, third-party, alternatives. Blind spots: engagement software &amp; EX platforms (0%)</div>
+      <div class="big g">14.9% web presence</div>
+      <div class="sub">Wins: feedback &amp; anonymous (33%), eNPS (27%), alternatives (21%). Blind spots: engagement software, pulse &amp; retention (0%)</div>
     </div>
     <div class="card">
       <div class="h"><span>Story B · Brand is growing</span><span class="tag">Watch</span></div>
@@ -68,20 +98,27 @@
     <div class="row"><span class="dot bg-g"></span><span class="nm">Training hits <span class="chip">logs</span></span><span class="val">561</span><span class="delta g">▲ 3%</span></div>
     <div class="row"><span class="dot bg-r"></span><span class="nm">Unique pages crawled <span class="chip">logs</span></span><span class="val">1,052</span><span class="delta r">▼ 6%</span></div>
     <div class="row"><span class="dot bg-g"></span><span class="nm">Bot 404s <span class="chip">logs</span></span><span class="val">77</span><span class="delta g">▼ 37%</span></div>
+  </div>
 
+  <div class="stack">
     <div class="lyr">Layer 2 · LLM visibility — share of voice by cluster (Perplexity sonar, Jun 16)</div>
-    <div class="ov">Overall 15.7% (39 of 249 answers). Rising/falling per cluster starts next week (first baseline).</div>
-    <div class="crow"><span class="cn">eNPS software</span><div class="cbar"><div class="cf bg-g" style="width:33%"></div></div><span class="cp g">33%</span></div>
-    <div class="crow"><span class="cn">Third-party survey companies</span><div class="cbar"><div class="cf bg-g" style="width:27%"></div></div><span class="cp g">27%</span></div>
-    <div class="crow"><span class="cn">Competitor alternatives</span><div class="cbar"><div class="cf bg-g" style="width:26%"></div></div><span class="cp g">26%</span></div>
-    <div class="crow"><span class="cn">Employee feedback tools / software</span><div class="cbar"><div class="cf bg-g" style="width:22%"></div></div><span class="cp g">22%</span></div>
-    <div class="crow"><span class="cn">Pulse surveys</span><div class="cbar"><div class="cf bg-a" style="width:17%"></div></div><span class="cp" style="color:var(--amber)">17%</span></div>
-    <div class="crow"><span class="cn">Anonymous feedback</span><div class="cbar"><div class="cf bg-a" style="width:13%"></div></div><span class="cp" style="color:var(--amber)">13%</span></div>
-    <div class="crow"><span class="cn">Engagement survey tools/software/vendors</span><div class="cbar"><div class="cf bg-a" style="width:11%"></div></div><span class="cp" style="color:var(--amber)">11%</span></div>
-    <div class="crow"><span class="cn">Employee retention software</span><div class="cbar"><div class="cf bg-a" style="width:11%"></div></div><span class="cp" style="color:var(--amber)">11%</span></div>
-    <div class="crow"><span class="cn f">Employee engagement software (general)</span><div class="cbar"></div><span class="cp r">0%</span></div>
-    <div class="crow"><span class="cn f">Employee experience platforms</span><div class="cbar"></div><span class="cp r">0%</span></div>
+    <div class="ov">Overall 14.9% (37 of 249 answers). <strong>Click any cluster</strong> for who shows up instead + the sources feeding it. Small samples (3 runs) — trust direction over weeks.</div>
+    <div id="clusters"></div>
+  </div>
 
+  <div class="stack">
+    <div class="lyr">Citation action · A — off-page targets <span class="chip">third-party</span></div>
+    <div class="seo">Sources the answers come from, ranked by frequency. Co-cite % = how often we ride along (baseline ≈15%). <span class="r">◆ target</span> = influential but we rarely surface · <span style="color:var(--amber)">watch</span> · <span class="g">✓ working</span>. Competitor &amp; own domains excluded here.</div>
+    <div id="sectionA"></div>
+  </div>
+
+  <div class="stack">
+    <div class="lyr">Citation action · B — our pages working <span class="chip">culturemonkey.io</span></div>
+    <div class="seo">Our own pages the LLM is citing, ranked. These are cite-worthy — make more like them.</div>
+    <div id="sectionB"></div>
+  </div>
+
+  <div class="stack">
     <div class="lyr">Layer 3 · branded demand — vs last week</div>
     <div class="row"><span class="dot bg-g"></span><span class="nm">Branded clicks <span class="chip">GSC</span></span><span class="val">56</span><span class="delta g">▲ 47%</span></div>
     <div class="row"><span class="dot bg-g"></span><span class="nm">Branded impressions <span class="chip">GSC</span></span><span class="val">209</span><span class="delta g">▲ 7%</span></div>
@@ -98,7 +135,65 @@
     <div class="row"><span class="dot bg-m"></span><span class="nm f">Self-reported via AI <span class="chip">HubSpot</span></span><span class="val f">0</span><span class="delta f">−100% · low-n</span></div>
   </div>
 
-  <div class="note">Layer 2 is web-grounded share of voice (Perplexity sonar), 83 queries across 10 clusters; rising/falling per cluster begins next week. Layers 1, 3, 4, 5 reflect the Jun 8–12 pull. HubSpot leads exclude gmail/culturemonkey/effy.</div>
+  <div class="note">Layer 2 = web-grounded share of voice (Perplexity sonar), 83 queries across 10 clusters, latest of two Jun-16 runs. Competitors: Culture Amp, Lattice, Officevibe, 15Five, Qualtrics, Glint, Leapsome, Vantage Circle. "Working/target" is derived from co-citation rate, not a page check. Layers 1, 3, 4, 5 reflect the Jun 8–12 pull. HubSpot leads exclude gmail/culturemonkey/effy.</div>
 </div>
+
+<script>
+const DATA = {"overall":14.9,"mentions":37,"clusters":[{"name":"Engagement survey tools / software / vendors","cm":12.5,"comp":[["Culture Amp",81.9],["Lattice",65.3],["Officevibe",41.7],["15Five",12.5],["Qualtrics",72.2],["Glint",22.2],["Leapsome",25.0],["Vantage Circle",1.4]],"src":[["vendordirectory.shrm.org",64,"watch"],["reddit.com",63,"watch"],["bestcompaniesgroup.com",58,"watch"],["rippling.com",43,"target"],["selectsoftwarereviews.com",40,"watch"]],"hole":false},{"name":"Employee engagement software (general)","cm":0.0,"comp":[["Culture Amp",61.9],["Lattice",52.4],["Officevibe",33.3],["15Five",23.8],["Qualtrics",52.4],["Glint",9.5],["Leapsome",28.6],["Vantage Circle",9.5]],"src":[["selectsoftwarereviews.com",20,"target"],["reddit.com",15,"target"],["quantumworkplace.com",15,"target"],["achievers.com",12,"target"],["vendordirectory.shrm.org",10,"target"]],"hole":false,"pageButLosing":true},{"name":"Employee feedback tools / software","cm":33.3,"comp":[["Culture Amp",81.5],["Lattice",85.2],["Officevibe",85.2],["15Five",70.4],["Qualtrics",81.5],["Glint",22.2],["Leapsome",51.9],["Vantage Circle",14.8]],"src":[["reddit.com",29,"working"],["eletive.com",24,"working"],["achievers.com",22,"working"],["featurebase.app",21,"working"],["contactmonkey.com",20,"working"]],"hole":false},{"name":"Anonymous feedback","cm":33.3,"comp":[["Culture Amp",26.7],["Lattice",13.3],["Officevibe",46.7],["15Five",20.0],["Qualtrics",0.0],["Glint",0.0],["Leapsome",26.7],["Vantage Circle",0.0]],"src":[["reddit.com",15,"working"],["proprofssurvey.com",15,"working"],["surveymonkey.com",14,"working"],["suggestionox.com",13,"watch"],["mentimeter.com",11,"working"]],"hole":false},{"name":"Pulse surveys","cm":0.0,"comp":[["Culture Amp",75.0],["Lattice",75.0],["Officevibe",25.0],["15Five",25.0],["Qualtrics",75.0],["Glint",75.0],["Leapsome",0.0],["Vantage Circle",0.0]],"src":[["contactmonkey.com",12,"target"],["quantumworkplace.com",11,"target"],["vendordirectory.shrm.org",9,"target"],["peoplemanagingpeople.com",7,"target"],["reddit.com",4,"target"]],"hole":false,"pageButLosing":true},{"name":"Employee experience platforms","cm":6.7,"comp":[["Culture Amp",100.0],["Lattice",93.3],["Officevibe",40.0],["15Five",0.0],["Qualtrics",60.0],["Glint",20.0],["Leapsome",66.7],["Vantage Circle",0.0]],"src":[["reddit.com",15,"watch"],["moveworks.com",14,"target"],["mentorcliq.com",11,"target"],["peoplemanagingpeople.com",10,"working"],["simpplr.com",10,"target"]],"hole":false},{"name":"Employee retention software","cm":0.0,"comp":[["Culture Amp",55.6],["Lattice",72.2],["Officevibe",0.0],["15Five",44.4],["Qualtrics",22.2],["Glint",0.0],["Leapsome",55.6],["Vantage Circle",0.0]],"src":[["imocha.io",15,"target"],["bucketlistrewards.com",15,"target"],["reclaim.ai",13,"target"],["betterworks.com",10,"target"],["achievers.com",9,"target"]],"hole":true},{"name":"eNPS software","cm":26.7,"comp":[["Culture Amp",40.0],["Lattice",26.7],["Officevibe",33.3],["15Five",33.3],["Qualtrics",53.3],["Glint",6.7],["Leapsome",0.0],["Vantage Circle",6.7]],"src":[["peoplelytics.co",15,"working"],["questionpro.com",13,"working"],["delighted.com",13,"working"],["surveymonkey.com",12,"working"],["smartsurvey.com",9,"working"]],"hole":false},{"name":"Third-party survey companies","cm":6.7,"comp":[["Culture Amp",60.0],["Lattice",40.0],["Officevibe",20.0],["15Five",26.7],["Qualtrics",60.0],["Glint",0.0],["Leapsome",26.7],["Vantage Circle",0.0]],"src":[["driveresearch.com",16,"target"],["vendordirectory.shrm.org",15,"watch"],["rippling.com",12,"working"],["quantumworkplace.com",12,"working"],["reddit.com",12,"working"]],"hole":false},{"name":"Competitor alternatives","cm":20.5,"comp":[["Culture Amp",87.2],["Lattice",79.5],["Officevibe",76.9],["15Five",79.5],["Qualtrics",56.4],["Glint",12.8],["Leapsome",64.1],["Vantage Circle",0.0]],"src":[["reddit.com",30,"working"],["culturemonkey.io",17,"own"],["qualee.com",15,"watch"],["g2.com",15,"watch"],["feedbackpulse.com",15,"target"]],"hole":false}],"secA":[{"d":"reddit.com","n":186,"rate":24,"flag":"watch","urls":["https://www.reddit.com/r/IOPsychology/comments/1egyncv/which_employee_experience_platform_would_you/","https://www.reddit.com/r/internalcomms/comments/1qsi0fy/best_employee_engagement_tools/"]},{"d":"vendordirectory.shrm.org","n":103,"rate":17,"flag":"watch","urls":["https://vendordirectory.shrm.org/category/employee-engagement/employee-engagement-surveys","https://vendordirectory.shrm.org/category/employee-engagement/employee-engagement-software"]},{"d":"quantumworkplace.com","n":73,"rate":11,"flag":"target","urls":["https://www.quantumworkplace.com/top-employee-engagement-survey-vendors","https://www.quantumworkplace.com/future-of-work/what-is-employee-engagement-software"]},{"d":"bestcompaniesgroup.com","n":68,"rate":22,"flag":"watch","urls":["https://bestcompaniesgroup.com/blog/5-best-employee-engagement-survey-providers/"]},{"d":"peoplemanagingpeople.com","n":66,"rate":20,"flag":"watch","urls":["https://peoplemanagingpeople.com/tools/best-employee-survey-tools/","https://peoplemanagingpeople.com/tools/best-employee-feedback-software/"]},{"d":"selectsoftwarereviews.com","n":64,"rate":14,"flag":"target","urls":["https://www.selectsoftwarereviews.com/buyer-guide/best-employee-engagement-software"]},{"d":"rippling.com","n":58,"rate":16,"flag":"watch","urls":["https://www.rippling.com/blog/employee-engagement-survey-providers","https://www.rippling.com/products/hr/surveys"]},{"d":"achievers.com","n":55,"rate":31,"flag":"working","urls":["https://www.achievers.com/blog/employee-engagement-software-platforms/","https://www.achievers.com/blog/employee-feedback-tools/"]},{"d":"eletive.com","n":52,"rate":27,"flag":"working","urls":["https://eletive.com/blog/employee-feedback-software/","https://eletive.com/blog/employee-survey-tools/"]},{"d":"surveymonkey.com","n":49,"rate":33,"flag":"working","urls":["https://www.surveymonkey.com/learn/employee-feedback/employee-surveys/","https://www.surveymonkey.com/learn/employee-feedback/anonymous-employee-surveys/"]},{"d":"gallup.com","n":48,"rate":6,"flag":"target","urls":["https://www.gallup.com/access/239201/employee-surveys.aspx","https://www.gallup.com/workplace/692474/workplace-employee-surveys.aspx"]},{"d":"proprofssurvey.com","n":48,"rate":21,"flag":"watch","urls":["https://www.proprofssurvey.com/blog/employee-survey-tools/","https://www.proprofssurvey.com/blog/best-anonymous-feedback-tools/"]}],"secB":[{"u":"culturemonkey.io/employee-engagement/employee-engagement-survey-tools/","n":26,"cl":["Competitor alternatives","Engagement survey","Third-party"]},{"u":"culturemonkey.io/guides/employee-engagement-survey-questions/employee-engagement-survey-vendors/top-employee-engagement-survey-vendors-to-choose-from/","n":14,"cl":["Engagement survey"]},{"u":"culturemonkey.io/employee-engagement/third-party-survey-companies/","n":9,"cl":["Third-party"]},{"u":"culturemonkey.io/employee-engagement/culture-amp-alternatives/","n":8,"cl":["Competitor alternatives"]},{"u":"culturemonkey.io/enps-survey-software/","n":7,"cl":["eNPS"]},{"u":"culturemonkey.io/employee-engagement/officevibe-alternatives/","n":6,"cl":["Competitor alternatives"]},{"u":"culturemonkey.io/employee-engagement/employee-engagement-survey-vendors-pricing/","n":3,"cl":["Engagement software"]},{"u":"culturemonkey.io/employee-engagement/employee-feedback-tools/","n":3,"cl":["Feedback"]}]};
+
+const barFill = p => p>=20 ? 'var(--green)' : (p>0 ? 'var(--amber)' : 'var(--red)');
+const cpClass = p => p>=20 ? 'g' : (p>0 ? 'a' : 'r');
+const flLabel = f => f==="own" ? '<span class="m">our page</span>'
+  : f==="working" ? '<span class="g">✓ working</span>'
+  : f==="watch" ? '<span style="color:var(--amber)">watch</span>'
+  : '<span class="r">◆ target</span>';
+const chipType = d => /culturemonkey/.test(d)?"owned":/reddit/.test(d)?"community":/gartner|forrester/.test(d)?"analyst":/shrm|gallup|quantumworkplace/.test(d)?"authority":"listicle";
+
+function renderClusters(){
+  const root = document.getElementById("clusters");
+  DATA.clusters.forEach((c,i)=>{
+    const sorted = [...c.comp].sort((a,b)=>b[1]-a[1]);
+    const leaderRows = sorted.map(([n,p])=>`<div class="lr"><span class="ln">${n}</span><div class="lbar"><div class="lf" style="width:${p}%;background:var(--faint)"></div></div><span class="lp">${Math.round(p)}%</span></div>`).join("");
+    const cmCol = c.cm>0?'var(--green)':'var(--red)';
+    const cmRow = `<div class="lr" style="border-top:1px solid var(--line);margin-top:4px;padding-top:6px;"><span class="ln" style="font-weight:600;color:${cmCol}">CultureMonkey</span><div class="lbar"><div class="lf" style="width:${c.cm}%;background:${c.cm>0?'var(--green)':'transparent'}"></div></div><span class="lp" style="color:${cmCol}">${c.cm}%</span></div>`;
+    const srcRows = c.src.map(([d,n,f])=>`<div class="src"><span class="sd">${d} <span class="chip">${chipType(d)}</span></span><span class="sct">${n}×</span><span class="sfl">${flLabel(f)}</span></div>`).join("");
+    let gapMsg = "";
+    if(c.hole) gapMsg = `<div class="gap">No own-page cited here — content hole. The LLM has nothing of ours to pull from in this cluster.</div>`;
+    else if(c.pageButLosing) gapMsg = `<div class="gap">We have a page in this cluster but it isn't getting cited — 0% presence. Page exists; it's losing, not missing.</div>`;
+    root.insertAdjacentHTML("beforeend",
+      `<div class="clu" data-i="${i}"><span class="cae">▶</span><span class="cn">${c.name}</span><div class="cbar"><div class="cf" style="width:${c.cm}%;background:${barFill(c.cm)}"></div></div><span class="cp ${cpClass(c.cm)}">${c.cm}%</span></div>
+       <div class="exp" id="exp${i}">
+         <div class="exph">Who shows up here (share of voice across this cluster)</div>
+         ${leaderRows}${cmRow}
+         <div class="exph" style="margin-top:14px;">Sources feeding this cluster</div>
+         ${srcRows}${gapMsg}
+       </div>`);
+  });
+  root.querySelectorAll(".clu").forEach(el=>{
+    el.addEventListener("click",()=>{ const i=el.dataset.i; el.classList.toggle("open"); document.getElementById("exp"+i).classList.toggle("open"); });
+  });
+}
+
+function renderSectionA(){
+  const root = document.getElementById("sectionA");
+  DATA.secA.forEach(s=>{
+    const urls = s.urls.map(u=>`<a href="https://${u.replace(/^https?:\/\//,'')}" target="_blank" rel="noopener">↗ ${u.replace(/^https?:\/\//,'')}</a>`).join("");
+    root.insertAdjacentHTML("beforeend",
+      `<div class="arow"><div class="ahead"><span class="ad">${s.d} <span class="chip">${chipType(s.d)}</span></span><span class="act">${s.n}×</span><span class="afl">${flLabel(s.flag)} · ${s.rate}%</span></div><div class="aurls">${urls}</div></div>`);
+  });
+}
+
+function renderSectionB(){
+  const root = document.getElementById("sectionB");
+  DATA.secB.forEach(s=>{
+    root.insertAdjacentHTML("beforeend",
+      `<div class="arow"><div class="ahead"><span class="ad"><a href="https://${s.u}" target="_blank" rel="noopener" style="color:var(--ink);text-decoration:none">${s.u}</a></span><span class="act">${s.n}×</span><span class="afl g">✓ cite-worthy</span></div><div class="acl">surfaces in: ${s.cl.join(", ")}</div></div>`);
+  });
+  root.insertAdjacentHTML("beforeend",
+    `<div class="gap"><strong>Content hole</strong> — no own page cited for <strong>Employee retention software</strong> (build one). And <strong>Employee engagement software (general)</strong> + <strong>Pulse surveys</strong> have pages but they're not getting cited (0%) — strengthen, don't create.</div>`);
+}
+
+renderClusters(); renderSectionA(); renderSectionB();
+</script>
 </body>
 </html>
