@@ -27,6 +27,16 @@
   .card .big{font-size:22px;font-weight:600;margin:8px 0 4px;}
   .card .sub{font-size:13px;color:var(--muted);}
 
+  .takeaways{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px 10px;margin-bottom:16px;}
+  .tkh{font-size:13px;font-weight:600;margin-bottom:8px;}
+  .tklist{margin:0;padding-left:20px;}
+  .tklist li{font-size:13px;margin-bottom:9px;line-height:1.55;}
+  .tklist li::marker{color:var(--faint);font-weight:600;}
+  .tkn{color:var(--muted);}
+  .tkn b{color:var(--green);font-weight:600;}
+  .divider{display:flex;align-items:center;gap:10px;margin:4px 0 16px;color:var(--faint);font-size:11px;letter-spacing:.04em;text-transform:uppercase;}
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line);}
+
   .grp{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;}
   .ghead{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;user-select:none;}
   .ghead:hover{background:#fafbfc;}
@@ -121,6 +131,19 @@
       <div class="sub">Branded clicks +32%, position →1.4, homepage sessions +15%; leads ~flat.</div>
     </div>
   </div>
+
+  <div class="takeaways">
+    <div class="tkh">Key takeaways · week of Jun 15–19</div>
+    <ol class="tklist">
+      <li>AI presence jumped to 20.1% (from ~15%), and on-message: the LLM frames CM as frontline, multilingual, enterprise, affordable. <span class="tkn"><b>Next:</b> log which off-page actions shipped this week so the lift is attributable.</span></li>
+      <li>Absent on the biggest categories: 0% on EX platforms, retention, and anonymous feedback. <span class="tkn"><b>Next:</b> build a retention and an EX-platforms page; strengthen the anonymous-feedback page that exists but isn't cited.</span></li>
+      <li>80% of AI crawl was untracked (Bytespider, Meta, Apple drive 25k of 31k hits). <span class="tkn"><b>Next:</b> set a robots.txt policy for them and trend them weekly.</span></li>
+      <li>Bots feed on blog, only 4% hit commercial pages. <span class="tkn"><b>Next:</b> interlink blog posts to comparison/feature pages and keep those crawlable.</span></li>
+      <li>Visibility is up but conversion is flat (LLM referrals 29, down 12%; AI-sourced leads 1). <span class="tkn"><b>Next:</b> watch 2 to 3 weeks; if the gap holds, the bottleneck is the click and the landing page, not visibility.</span></li>
+    </ol>
+  </div>
+
+  <div class="divider">explore the layers</div>
 
   <!-- GROUP 1 -->
   <section class="grp" id="g1">
