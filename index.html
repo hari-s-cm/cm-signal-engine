@@ -40,6 +40,16 @@
   .divider{display:flex;align-items:center;gap:10px;margin:4px 0 16px;color:var(--faint);font-size:11px;letter-spacing:.04em;text-transform:uppercase;}
   .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line);}
 
+  .attrcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px 12px;margin-bottom:16px;}
+  .attrh{font-size:16px;font-weight:600;margin-bottom:2px;}
+  .attrsub{font-size:12px;color:var(--faint);margin-bottom:6px;}
+  .attrhd{font-size:11px;color:var(--muted);font-weight:600;margin:12px 0 4px;letter-spacing:.02em;}
+  .attrrow{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);}
+  .attrrow:last-child{border-bottom:none;}
+  .attrm{flex:0 0 178px;font-size:13px;font-weight:600;}
+  .attrc{flex:1;font-size:12px;color:var(--muted);}
+  .attrt{flex:0 0 66px;text-align:right;font-size:11px;font-weight:600;}
+
   .grp{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;}
   .ghead{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;user-select:none;}
   .ghead:hover{background:#fafbfc;}
@@ -179,6 +189,24 @@
       <li>Bots feed on blog, only 4% hit commercial pages. <span class="tkn"><b>Next:</b> interlink blog posts to comparison/feature pages and keep those crawlable.</span></li>
       <li>Visibility is up but conversion is flat (LLM referrals 29, down 12%; AI-sourced leads 1). <span class="tkn"><b>Next:</b> watch 2 to 3 weeks; if the gap holds, the bottleneck is the click and the landing page, not visibility.</span></li>
     </ol>
+  </div>
+
+  <div class="attrcard">
+    <div class="attrh">What moved → why (likely)</div>
+    <div class="attrsub">Cause layer = merged PRs (cm-v4) + #mktg-shipped, trailing 2 weeks, lag-aware. Hypotheses, not proof.</div>
+
+    <div class="attrhd">Moved this week — likely cause</div>
+    <div class="attrrow"><span class="attrm g">▲ Pulse 0→42%</span><span class="attrc">Rewrote the pulse-survey-tool page + refreshed pulse content <span class="f">(#426, #391, #403)</span></span><span class="attrt g">likely</span></div>
+    <div class="attrrow"><span class="attrm g">▲ eNPS 27→47%</span><span class="attrc">Reworked the eNPS survey-questions page <span class="f">(#405)</span></span><span class="attrt g">likely</span></div>
+    <div class="attrrow"><span class="attrm g">▲ Alternatives 21→31%</span><span class="attrc">Fixed the Officevibe / Culture Amp / Glint alternatives pages + added FAQ schema <span class="f">(#386, #387, #389)</span></span><span class="attrt g">likely</span></div>
+    <div class="attrrow"><span class="attrm g">▲ Third-party 7→20%</span><span class="attrc">Updated the third-party survey companies page <span class="f">(#395)</span></span><span class="attrt" style="color:var(--amber)">possible</span></div>
+    <div class="attrrow"><span class="attrm g">▲ Eng. survey 13→21%</span><span class="attrc">Redesigned the engagement-survey comparison page + new climate-survey listicle <span class="f">(#412, #388)</span></span><span class="attrt" style="color:var(--amber)">possible</span></div>
+
+    <div class="attrhd">Shipped, effect pending — watch next week</div>
+    <div class="attrrow"><span class="attrm" style="color:var(--amber)">◆ Anonymous 0%</span><span class="attrc">Rebuilt &amp; SEO-upgraded the anonymous-feedback pages + landing page — shipped late last week, too recent to recrawl <span class="f">(#417, #432, #440, #442)</span></span><span class="attrt" style="color:#185fa5">predict ↑</span></div>
+    <div class="attrrow"><span class="attrm" style="color:var(--amber)">◆ EX platforms 0%</span><span class="attrc">Rewrote the experience-platforms page + added internal links <span class="f">(#414, #423)</span></span><span class="attrt" style="color:#185fa5">predict ↑</span></div>
+    <div class="attrrow"><span class="attrm" style="color:var(--amber)">◆ Retention 0%</span><span class="attrc">Ported the retention-tools roundup + retention solution page <span class="f">(#437, #443, #448, #430)</span></span><span class="attrt" style="color:#185fa5">predict ↑</span></div>
+    <div class="attrrow"><span class="attrm m">◦ Off-site</span><span class="attrc">Listed on craft.co, new "engagement survey tools" YouTube video, blog→commercial interlinks <span class="f">(Slack)</span></span><span class="attrt m">watch</span></div>
   </div>
 
   <div class="divider">explore the layers</div>
