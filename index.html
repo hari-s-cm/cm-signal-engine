@@ -192,21 +192,23 @@
   </div>
 
   <div class="attrcard">
-    <div class="attrh">What moved → why (likely)</div>
-    <div class="attrsub">Cause layer = merged PRs (cm-v4) + #mktg-shipped, trailing 2 weeks. Lag judged vs the poll date (ran Jun 22). Hypotheses, not proof.</div>
+    <div class="attrh">What moved → why</div>
+    <div class="attrsub">PRs matched by the page they edited. <b>Direct</b> = edited the cited page · <b>indirect</b> = edited a related/linking page that plausibly helped · <b>watch</b> = shipped but not surfacing. Trailing 2 wks, lag vs the Jun 22 poll. Hypotheses, not proof.</div>
 
-    <div class="attrhd">Moved this week — likely cause</div>
-    <div class="attrrow"><span class="attrm g">▲ Pulse 0→42%</span><span class="attrc">Rewrote the pulse-survey-tool page + refreshed pulse content <span class="f">(#426, #391, #403)</span></span><span class="attrt g">likely</span></div>
-    <div class="attrrow"><span class="attrm g">▲ eNPS 27→47%</span><span class="attrc">Reworked the eNPS survey-questions page <span class="f">(#405)</span></span><span class="attrt g">likely</span></div>
-    <div class="attrrow"><span class="attrm g">▲ Alternatives 21→31%</span><span class="attrc">Fixed the Officevibe / Culture Amp / Glint alternatives pages + added FAQ schema <span class="f">(#386, #387, #389)</span></span><span class="attrt g">likely</span></div>
-    <div class="attrrow"><span class="attrm g">▲ Third-party 7→20%</span><span class="attrc">Updated the third-party survey companies page <span class="f">(#395)</span></span><span class="attrt" style="color:var(--amber)">possible</span></div>
-    <div class="attrrow"><span class="attrm g">▲ Eng. survey 13→21%</span><span class="attrc">Redesigned the engagement-survey comparison page + new climate-survey listicle <span class="f">(#412, #388)</span></span><span class="attrt" style="color:var(--amber)">possible</span></div>
+    <div class="attrhd">Direct — a PR edited the cited page</div>
+    <div class="attrrow"><span class="attrm g">▲ Alternatives 21→31%</span><span class="attrc">Rewrote the Culture Amp + Officevibe alternatives pages — the exact pages cited in this cluster <span class="f">(#387, #389)</span></span><span class="attrt g">direct</span></div>
+    <div class="attrrow"><span class="attrm g">▲ Third-party 7→20%</span><span class="attrc">Updated the third-party-survey-companies page — the cited page <span class="f">(#395)</span></span><span class="attrt g">direct</span></div>
 
-    <div class="attrhd">Shipped, effect pending — watch next week</div>
-    <div class="attrrow"><span class="attrm" style="color:var(--amber)">◆ Anonymous 0%</span><span class="attrc">Rebuilt &amp; SEO-upgraded the anonymous-feedback pages + landing page — shipped Jun 18–19, only ~3 days before the poll <span class="f">(#417, #432, #440, #442)</span></span><span class="attrt" style="color:#185fa5">predict ↑</span></div>
-    <div class="attrrow"><span class="attrm" style="color:var(--amber)">◆ EX platforms 0%</span><span class="attrc">Rewrote the experience-platforms page + internal links — but these went live Jun 15–17, before the Jun 22 poll, and still aren't surfacing <span class="f">(#414, #423)</span></span><span class="attrt" style="color:var(--amber)">investigate</span></div>
-    <div class="attrrow"><span class="attrm" style="color:var(--amber)">◆ Retention 0%</span><span class="attrc">Ported the retention-tools roundup + retention solution page — shipped Jun 19–22, right before/at the poll <span class="f">(#437, #443, #448, #430)</span></span><span class="attrt" style="color:#185fa5">predict ↑</span></div>
-    <div class="attrrow"><span class="attrm m">◦ Off-site</span><span class="attrc">Listed on craft.co, new "engagement survey tools" YouTube video, blog→commercial interlinks <span class="f">(Slack)</span></span><span class="attrt m">watch</span></div>
+    <div class="attrhd">Indirect — a related page was touched, plausibly helped</div>
+    <div class="attrrow"><span class="attrm g">▲ Pulse 0→42%</span><span class="attrc">Cited page is the pulse-survey-tools listicle; we rewrote the pulse-survey-tool LP that links to it — and saw that update drive the listicle's recrawl ~4× <span class="f">(#426, #391, #403 · LP→listicle)</span></span><span class="attrt" style="color:var(--amber)">indirect</span></div>
+    <div class="attrrow"><span class="attrm g">▲ eNPS 27→47%</span><span class="attrc">Reworked the eNPS-questions page — same eNPS topic, reinforces the cited enps-survey-software page <span class="f">(#405)</span></span><span class="attrt" style="color:var(--amber)">indirect</span></div>
+    <div class="attrrow"><span class="attrm g">▲ Eng. survey 13→21%</span><span class="attrc">Redesigned the comparison page + new climate-survey listicle — related engagement-survey pages, weaker link <span class="f">(#412, #388)</span></span><span class="attrt" style="color:var(--amber)">indirect</span></div>
+
+    <div class="attrhd">Shipped, not surfacing yet — watch / investigate</div>
+    <div class="attrrow"><span class="attrm" style="color:var(--amber)">◆ Anonymous 0%</span><span class="attrc">Rebuilt the anonymous-feedback pages + LP (Jun 18–19) — live but not cited yet <span class="f">(#417, #432, #440, #442)</span></span><span class="attrt" style="color:#185fa5">watch</span></div>
+    <div class="attrrow"><span class="attrm" style="color:var(--amber)">◆ EX platforms 0%</span><span class="attrc">#423 rewrote the EX-platforms page (live since Jun 17, still not cited). #414 was a different enterprise page, not EX <span class="f">(#423)</span></span><span class="attrt" style="color:var(--amber)">investigate</span></div>
+    <div class="attrrow"><span class="attrm" style="color:var(--amber)">◆ Retention 0%</span><span class="attrc">Ported the retention-tools + retention solution pages (Jun 19–22) — not cited yet <span class="f">(#437, #443, #448, #430)</span></span><span class="attrt" style="color:#185fa5">watch</span></div>
+    <div class="attrrow"><span class="attrm m">◦ Off-site</span><span class="attrc">craft.co listing, "engagement survey tools" YouTube, blog→commercial interlinks — watch for craft.co citations / referral lift <span class="f">(Slack)</span></span><span class="attrt m">watch</span></div>
   </div>
 
   <div class="divider">explore the layers</div>
