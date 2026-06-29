@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Signal Engine — Brand & LLM Visibility</title>
+<title>Signal Engine: Brand and LLM Visibility</title>
 <style>
   :root{
     --bg:#f6f7f9; --card:#ffffff; --ink:#1f2937; --muted:#6b7280; --faint:#9ca3af;
@@ -16,40 +16,34 @@
   .top{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:18px;}
   .top h1{font-size:18px;font-weight:600;margin:0;}
   .pill{font-size:12px;color:var(--muted);background:var(--chip);padding:4px 10px;border-radius:999px;white-space:nowrap;}
-
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:22px;}
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
   .card .h{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;}
   .trend{font-size:12px;font-weight:600;padding:2px 9px;border-radius:20px;white-space:nowrap;}
   .trend.g{color:var(--green);background:#e7f3ec;}
-  .trend.r{color:var(--red);background:#fbeaea;}
-  .trend.m{color:var(--muted);background:var(--chip);}
   .card .big{font-size:22px;font-weight:600;margin:8px 0 4px;}
   .card .sub{font-size:13px;color:var(--muted);}
-
   .trendcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px 10px;margin-bottom:16px;}
   .trendcard svg{width:100%;height:auto;display:block;margin-top:4px;}
   .tlegend{display:flex;gap:16px;font-size:12px;color:var(--muted);margin:2px 0 0;}
-  .takeaways{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px 10px;margin-bottom:16px;}
+  .takeaways{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px;margin-bottom:16px;}
   .tkh{font-size:16px;font-weight:600;margin-bottom:8px;}
   .tklist{margin:0;padding-left:20px;}
-  .tklist li{font-size:13px;margin-bottom:9px;line-height:1.55;}
-  .tklist li::marker{color:var(--faint);font-weight:600;}
-  .tkn{color:var(--muted);}
-  .tkn b{color:var(--green);font-weight:600;}
+  .tklist li{font-size:13px;margin-bottom:14px;line-height:1.55;}
+  .tklist li::marker{color:var(--faint);font-weight:700;}
+  .tkmain{color:var(--ink);}
+  .next{display:inline-block;margin-top:6px;background:#e7f3ec;color:#1a6b3c;font-size:12px;font-weight:600;padding:3px 11px;border-radius:8px;}
   .divider{display:flex;align-items:center;gap:10px;margin:4px 0 16px;color:var(--faint);font-size:11px;letter-spacing:.04em;text-transform:uppercase;}
   .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line);}
-
   .attrcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px 12px;margin-bottom:16px;}
   .attrh{font-size:16px;font-weight:600;margin-bottom:2px;}
   .attrsub{font-size:12px;color:var(--faint);margin-bottom:6px;}
-  .attrhd{font-size:11px;color:var(--muted);font-weight:600;margin:12px 0 4px;letter-spacing:.02em;}
+  .attrhd{font-size:13px;color:var(--ink);font-weight:700;margin:14px 0 5px;}
   .attrrow{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);}
   .attrrow:last-child{border-bottom:none;}
   .attrm{flex:0 0 178px;font-size:13px;font-weight:600;}
   .attrc{flex:1;font-size:12px;color:var(--muted);}
   .attrt{flex:0 0 66px;text-align:right;font-size:11px;font-weight:600;}
-
   .grp{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;}
   .ghead{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;user-select:none;}
   .ghead:hover{background:#fafbfc;}
@@ -57,12 +51,11 @@
   .grp.open .gcar{transform:rotate(90deg);}
   .gt{font-size:16px;font-weight:600;}
   .gs{font-size:12px;color:var(--faint);margin-top:1px;}
-  .gbody{display:none;padding:2px 16px 12px;border-top:1px solid var(--line);}
+  .gbody{display:none;padding:2px 16px 14px;border-top:1px solid var(--line);}
   .grp.open .gbody{display:block;}
   .gbody .stack{border:none;background:transparent;border-radius:0;margin:0;padding:0;}
-  .gbody .stack + .stack{border-top:1px dashed var(--line);margin-top:6px;padding-top:4px;}
-
-  .lyr{font-size:12px;color:var(--faint);margin:14px 0 2px;letter-spacing:.02em;font-weight:600;}
+  .gbody .stack + .stack{border-top:1px solid var(--line);margin-top:14px;padding-top:4px;}
+  .lyr{font-size:14px;color:var(--ink);font-weight:700;margin:16px 0 7px;}
   .row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);}
   .row:last-child{border-bottom:none;}
   .dot{width:9px;height:9px;border-radius:50%;flex:none;}
@@ -73,7 +66,8 @@
   .g{color:var(--green)} .r{color:var(--red)} .m{color:var(--muted)} .f{color:var(--faint)}
   .bg-g{background:var(--green)} .bg-r{background:var(--red)} .bg-m{background:var(--faint)} .bg-a{background:var(--amber)}
   .ov{font-size:13px;color:var(--muted);margin:4px 0 10px;}
-
+  .morep{display:inline-block;margin:8px 0 2px;font-size:12px;font-weight:600;color:var(--ink);background:var(--chip);padding:3px 12px;border-radius:20px;cursor:pointer;user-select:none;}
+  .morep:hover{background:#e7e9ec;}
   .clu{cursor:pointer;display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);}
   .clu:hover{background:#fafbfc;}
   .cae{flex:0 0 12px;color:var(--faint);font-size:10px;transition:transform .15s;}
@@ -84,17 +78,19 @@
   .cp{flex:0 0 50px;text-align:right;font-size:13px;font-weight:600;}
   .exp{display:none;padding:8px 0 14px 22px;border-bottom:1px solid var(--line);background:#fcfcfd;}
   .exp.open{display:block;}
-  .exph{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.01em;margin:8px 0 6px;}
+  .exph{font-size:13px;color:var(--ink);font-weight:700;margin:10px 0 6px;}
   .lr{display:flex;align-items:center;gap:10px;padding:3px 0;}
   .ln{flex:0 0 150px;font-size:12px;}
   .lbar{flex:1;height:7px;background:var(--track);border-radius:4px;overflow:hidden;}
   .lf{height:7px;border-radius:4px;}
   .lp{flex:0 0 46px;text-align:right;font-size:12px;font-weight:600;}
   .src{display:flex;align-items:center;gap:8px;padding:4px 0;font-size:12px;}
-  .src .sd{flex:1;}
-  .src .sct{color:var(--faint);min-width:54px;text-align:right;}
-  .src .sfl{min-width:120px;text-align:right;font-weight:600;}
-
+  .src .sd{flex:1;word-break:break-word;}
+  .src .sd a{color:var(--ink);text-decoration:none;}
+  .src .sd a:hover{text-decoration:underline;}
+  .src .sct{color:var(--faint);min-width:44px;text-align:right;}
+  .ourmiss{color:var(--red);font-size:12px;font-weight:600;padding:6px 0;}
+  .ourok{color:var(--green);}
   .arow{padding:9px 0;border-bottom:1px solid var(--line);}
   .arow:last-child{border-bottom:none;}
   .ahead{display:flex;align-items:center;gap:8px;}
@@ -108,12 +104,11 @@
   .gap{background:#fdeeee;border:1px solid #f3c0c0;border-radius:8px;padding:8px 12px;font-size:12px;color:var(--red);margin-top:10px;}
   .note{font-size:12px;color:var(--faint);margin-top:14px;}
   .seo{font-size:13px;color:var(--muted);margin:2px 0 12px;}
-
   .qgrid{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
   .qstat{flex:1;min-width:150px;background:var(--bg);border-radius:8px;padding:10px 12px;}
   .qstat .l{font-size:12px;color:var(--muted);}
   .qstat .v{font-size:20px;font-weight:600;margin-top:2px;}
-  .qlbl{font-size:11px;color:var(--muted);font-weight:600;margin:8px 0 6px;}
+  .qlbl{font-size:13px;color:var(--ink);font-weight:700;margin:14px 0 7px;}
   .qframe{display:flex;height:14px;border-radius:5px;overflow:hidden;margin-bottom:6px;}
   .qleg{display:flex;gap:14px;font-size:12px;color:var(--muted);margin-bottom:14px;flex-wrap:wrap;}
   .qrow{display:flex;align-items:center;gap:8px;padding:5px 0;flex-wrap:wrap;}
@@ -122,303 +117,320 @@
   .chipn{font-size:12px;background:var(--chip);color:#444;padding:2px 9px;border-radius:20px;}
   .quote{background:var(--bg);border-left:3px solid var(--amber);border-radius:0 6px 6px 0;padding:8px 12px;margin-top:12px;font-size:12px;color:var(--muted);font-style:italic;}
   .search{width:100%;padding:7px 10px;font-size:13px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:8px;margin:2px 0 8px;}
+  .ytsum{display:flex;gap:12px;flex-wrap:wrap;margin:2px 0 10px;}
+  .ytstat{flex:1;min-width:120px;background:var(--bg);border-radius:8px;padding:8px 12px;}
+  .ytstat .l{font-size:11px;color:var(--muted);} .ytstat .v{font-size:18px;font-weight:600;margin-top:2px;}
+  .ytclu{cursor:pointer;display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);}
+  .ytclu:hover{background:#fafbfc;}
+  .ytclu.open .cae{transform:rotate(90deg);}
+  .ytname{flex:0 0 150px;font-size:13px;}
+  .ytmeta{flex:1;font-size:12px;color:var(--muted);}
+  .ytt{flex:0 0 auto;font-size:11px;font-weight:600;padding:1px 9px;border-radius:20px;white-space:nowrap;}
+  .ytt.g{color:var(--green);background:#e7f3ec;} .ytt.r{color:var(--red);background:#fbeaea;}
+  .ytt.a{color:var(--amber);background:#fdf0e3;} .ytt.f{color:var(--muted);background:var(--chip);}
+  .ytrow{display:flex;align-items:center;gap:8px;padding:5px 0;flex-wrap:wrap;}
+  .ytttl{flex:1 1 230px;font-size:12px;color:var(--ink);text-decoration:none;}
+  .ytttl:hover{text-decoration:underline;}
+  .ytch{flex:0 0 auto;font-size:11px;color:var(--muted);}
+  .ytc{flex:0 0 96px;text-align:right;font-size:11px;color:var(--faint);}
+  .ytb{font-size:10px;font-weight:600;padding:0 6px;border-radius:5px;margin-left:4px;}
+  .ytb.g{color:var(--green);background:#e7f3ec;} .ytb.r{color:var(--red);background:#fbeaea;} .ytb.m{color:var(--muted);background:var(--chip);}
 </style>
 </head>
 <body>
 <div class="wrap">
-
   <div class="top">
-    <h1>Signal Engine — brand &amp; LLM visibility</h1>
-    <span class="pill">Week of Jun 22–26, 2026</span>
+    <h1>Signal Engine: brand and LLM visibility</h1>
+    <span class="pill">Week of Jun 22 to 26, 2026</span>
   </div>
-
   <div class="cards">
     <div class="card">
-      <div class="h"><span>Story A · AI is working</span><span class="trend g" title="presence vs last week">▲ 4.8 pts wk/wk</span></div>
+      <div class="h"><span>Story A &middot; AI is working</span><span class="trend g">&#9650; 4.8 pts wk/wk</span></div>
       <div class="big g">24.9% AI presence</div>
-      <div class="sub">Verified real (citation churn + control clusters). Surging: alternatives 51%, pulse 42%, eNPS 40%, engagement survey 26%, feedback 26%. Still blind: EX platforms 0%.</div>
+      <div class="sub">Verified real (citation churn + control clusters). Strong: alternatives 51%, pulse 42%, eNPS 40%, engagement survey 26%, feedback 26%. Still absent: EX platforms 0%.</div>
     </div>
     <div class="card">
-      <div class="h"><span>Story B · Brand is growing</span><span class="trend g" title="branded clicks vs last week">▲ 30% wk/wk</span></div>
+      <div class="h"><span>Story B &middot; Brand is growing</span><span class="trend g">&#9650; 30% wk/wk</span></div>
       <div class="big" style="color:var(--amber)">Interest rising</div>
-      <div class="sub">Branded clicks +30%, impressions +75% (footprint widening); homepage sessions flat. But AI referral clicks fell 29→16.</div>
+      <div class="sub">Branded clicks +30%, impressions +75% (more people searching us). Homepage sessions flat. But AI referral clicks fell from 29 to 16.</div>
     </div>
   </div>
-
   <div class="trendcard">
-    <div class="tkh">3-week trend · AI presence vs branded clicks</div>
-    <div class="tlegend"><span><span class="g">●</span> AI presence (%)</span><span><span style="color:var(--amber)">●</span> Branded clicks</span></div>
-    <svg viewBox="0 0 700 200" role="img" aria-label="Two-line trend of AI presence and branded clicks over three weeks">
-      <!-- gridlines -->
-      <line x1="46" y1="20" x2="652" y2="20" stroke="var(--line)"/>
-      <line x1="46" y1="90" x2="652" y2="90" stroke="var(--line)"/>
-      <line x1="46" y1="160" x2="652" y2="160" stroke="var(--faint)"/>
-      <!-- left axis caption (presence) -->
-      <text x="40" y="24" text-anchor="end" font-size="10" fill="var(--green)">25%</text>
-      <text x="40" y="163" text-anchor="end" font-size="10" fill="var(--green)">0</text>
-      <!-- right axis caption (clicks) -->
-      <text x="658" y="24" text-anchor="start" font-size="10" fill="var(--amber)">100</text>
-      <text x="658" y="163" text-anchor="start" font-size="10" fill="var(--amber)">0</text>
-      <!-- x labels -->
-      <text x="46" y="178" text-anchor="middle" font-size="11" fill="var(--muted)">Jun 12</text>
-      <text x="349" y="178" text-anchor="middle" font-size="11" fill="var(--muted)">Jun 19</text>
-      <text x="652" y="178" text-anchor="middle" font-size="11" fill="var(--muted)">Jun 26</text>
-      <!-- branded clicks line (amber, right axis 0-100) -->
-      <polyline points="46,81.6 349,56.4 652,25.6" fill="none" stroke="var(--amber)" stroke-width="2"/>
-      <circle cx="46" cy="81.6" r="3.5" fill="var(--amber)"/>
-      <circle cx="349" cy="56.4" r="3.5" fill="var(--amber)"/>
-      <circle cx="652" cy="25.6" r="3.5" fill="var(--amber)"/>
-      <text x="46" y="74" text-anchor="start" font-size="11" font-weight="600" fill="var(--amber)">56</text>
-      <text x="652" y="19" text-anchor="end" font-size="11" font-weight="600" fill="var(--amber)">96</text>
-      <!-- AI presence line (green, left axis 0-25) -->
-      <polyline points="46,69.8 349,47.4 652,20.6" fill="none" stroke="var(--green)" stroke-width="2"/>
-      <circle cx="46" cy="69.8" r="3.5" fill="var(--green)"/>
-      <circle cx="349" cy="47.4" r="3.5" fill="var(--green)"/>
-      <circle cx="652" cy="20.6" r="3.5" fill="var(--green)"/>
-      <text x="46" y="83" text-anchor="start" font-size="11" font-weight="600" fill="var(--green)">16.1%</text>
-      <text x="640" y="34" text-anchor="end" font-size="11" font-weight="600" fill="var(--green)">24.9%</text>
-    </svg>
-    <div class="acl" style="margin-top:6px;">Three straight weeks of climb on both lines. Presence 16→20→25%, branded clicks 56→74→96.</div>
+    <div class="tkh">Weekly trend: AI presence vs branded clicks</div>
+    <div class="tlegend"><span><span class="g">&#9679;</span> AI presence (%)</span><span><span style="color:var(--amber)">&#9679;</span> Branded clicks</span></div>
+    <svg id="trendchart" viewBox="0 0 700 210" role="img" aria-label="Weekly trend of AI presence and branded clicks"></svg>
+    <div class="acl" id="trendcap" style="margin-top:6px;"></div>
   </div>
-
   <div class="takeaways">
-    <div class="tkh">Key takeaways · week of Jun 22–26</div>
+    <div class="tkh">Key takeaways: week of Jun 22 to 26</div>
     <ol class="tklist">
-      <li><b>Proven win compounding:</b> editing the exact pages AI cites keeps paying off. Competitor alternatives jumped 31→51%, with officevibe-alternatives citations climbing 6→11→15 and culture-amp 8→12→13 (#461, #465, plus #387/#389 at 2-3 wk lag). <span class="tkn"><b>Next:</b> run the same direct-edit play on the absent clusters rather than adjacent landing pages.</span></li>
-      <li>The 24.9% presence is real, not a cache artifact: 24% of citations were new this week, the gain is concentrated in worked clusters, and do-nothing clusters stayed flat. <span class="tkn"><b>Next:</b> keep the citation-churn and control-cluster check on every run.</span></li>
-      <li>Two of last week's three predictions landed: retention surfaced 0→5.6% (page now cited) and anonymous 0→6.7%; EX platforms is still 0% after 12 days live. <span class="tkn"><b>Next:</b> audit employee-experience-platforms for citation eligibility (schema, listicle format) — it should be moving and isn't.</span></li>
-      <li>Brand demand up but AI clicks down: branded clicks +30% and impressions +75%, yet LLM referral sessions fell 29→16. <span class="tkn"><b>Next:</b> the bottleneck is click-through from AI answers — strengthen CTAs and conversion paths on the cited pages.</span></li>
-      <li>The crawl-routing play is working: commercial-page crawl share doubled 4%→9%, with the optimised engagement-survey, retention and anonymous LPs now top crawled. <span class="tkn"><b>Next:</b> point new backlinks (6+ won in 2 wks, incl. Featurebase DR84, Research.com DR83) at the absent-cluster pages to push them over the citation line.</span></li>
+      <li><div class="tkmain">Editing the exact pages AI cites is working. Competitor alternatives went from 31% to 51%, our biggest jump of the week.</div><div class="next">Next: do the same direct edits on the clusters where we are absent.</div></li>
+      <li><div class="tkmain">The 24.9% is real, not a fluke. 24% of citations were new this week and the gain sits only in the clusters we worked on.</div><div class="next">Next: keep running the weekly reality check before reporting any gain.</div></li>
+      <li><div class="tkmain">Two of last week's three calls came true. Retention and anonymous both started getting cited. EX platforms still has zero.</div><div class="next">Next: audit the EX platforms page to find why it is not being cited.</div></li>
+      <li><div class="tkmain">People search our brand more, but click us less from AI. Branded clicks up 30%, yet AI referral visits fell from 29 to 16.</div><div class="next">Next: add stronger calls to action on the pages AI cites.</div></li>
+      <li><div class="tkmain">AI bots are starting to read our product pages, not just our blog. Product-page crawls doubled to 9%.</div><div class="next">Next: aim new backlinks at the retention, EX, and anonymous pages.</div></li>
     </ol>
   </div>
-
   <div class="attrcard">
-    <div class="attrh">What moved → why</div>
-    <div class="attrsub">PRs matched by the page they edited. <b>Direct</b> = edited the cited page · <b>indirect</b> = edited a related/linking page that plausibly helped · <b>watch</b> = shipped but not surfacing. Trailing 2 wks, lag vs the Jun 29 poll. Hypotheses, not proof.</div>
-
-    <div class="attrhd">Direct — a PR edited the cited page</div>
-    <div class="attrrow"><span class="attrm g">▲ Alternatives 31→51%</span><span class="attrc">Added a tool to officevibe-alternatives (cited, 11→15) + schema fix surfaced glint-alternatives as a new citation (0→3); compounding last cycle's Culture Amp + Officevibe rewrites <span class="f">(#461, #465 · + #387/#389)</span></span><span class="attrt g">direct</span></div>
-    <div class="attrrow"><span class="attrm g">▲ Retention 0→5.6%</span><span class="attrc">Ported the solutions/employee-retention-software page to Paper — now earning its first-ever citation (0→1) <span class="f">(#430)</span></span><span class="attrt g">direct</span></div>
-
-    <div class="attrhd">Indirect — a related page was touched, plausibly helped</div>
-    <div class="attrrow"><span class="attrm g">▲ Eng. survey 21→26%</span><span class="attrc">The cited survey-vendors guide jumped 9→17; interlinks added from top-cited blogs to commercial pages, plus a ghost-port that touched the cited survey-tools page <span class="f">(Slack · #472)</span></span><span class="attrt" style="color:var(--amber)">indirect</span></div>
-    <div class="attrrow"><span class="attrm g">▲ Anonymous 0→6.7%</span><span class="attrc">anonymous-feedback-remote-teams citation 1→3 + Featurebase DR84 do-follow listicle pushed CM to #4 — the rebuilt pages starting to surface <span class="f">(Slack · #417/#432/#440)</span></span><span class="attrt" style="color:var(--amber)">indirect</span></div>
-    <div class="attrrow"><span class="attrm g">▲ Off-site → alternatives</span><span class="attrc">Research.com culture-amp listicle DR83, FeedbackPulse reciprocal, and the Darcy EESV YouTube short (self-reported as citing CM for "officevibe alternatives") reinforce the alternatives surge <span class="f">(Slack)</span></span><span class="attrt" style="color:var(--amber)">indirect</span></div>
-
-    <div class="attrhd">Shipped, not surfacing yet — watch / investigate</div>
-    <div class="attrrow"><span class="attrm" style="color:var(--amber)">◆ EX platforms 0%</span><span class="attrc">EX-platforms page live + internally linked since Jun 17, ~12 days, still zero citations — escalate to a citation-eligibility audit (schema, listicle format) <span class="f">(#423)</span></span><span class="attrt" style="color:var(--amber)">investigate</span></div>
-    <div class="attrrow"><span class="attrm" style="color:var(--amber)">◆ Qualtrics + 15Five alts</span><span class="attrc">New Qualtrics-alternatives guide + 15Five rewrite shipped Jun 22–23 — not cited yet, normal lag <span class="f">(#467, #451)</span></span><span class="attrt" style="color:#185fa5">watch</span></div>
-    <div class="attrrow"><span class="attrm m">◦ New LPs</span><span class="attrc">employee-engagement-survey LP (#473) + pulse LP live — landing pages aren't citation targets; watch whether interlinks route citations to the listicles <span class="f">(#473 · Slack)</span></span><span class="attrt m">watch</span></div>
-
-    <div class="attrhd">Scorecard — last run's predictions, graded</div>
-    <div class="attrrow"><span class="attrm g">✓ Retention</span><span class="attrc">Predicted to surface after the Jun 19–22 ports — it did, 0→5.6% with the page now cited</span><span class="attrt g">hit</span></div>
-    <div class="attrrow"><span class="attrm g">✓ Anonymous</span><span class="attrc">Predicted after the Jun 18–19 rebuilds — surfaced 0→6.7%, page cited 1→3</span><span class="attrt g">hit</span></div>
-    <div class="attrrow"><span class="attrm r">✗ EX platforms</span><span class="attrc">Predicted to surface after #423 — still 0% two weeks on. Prediction missed; now an investigate item</span><span class="attrt r">miss</span></div>
+    <div class="attrh">What moved and why</div>
+    <div class="attrsub">PRs matched to the page they edited. <b>Direct</b> = edited the cited page. <b>Indirect</b> = edited a related or linking page that likely helped. <b>Watch</b> = shipped but not surfacing. Trailing 2 weeks, lag vs the Jun 29 poll. Hypotheses, not proof.</div>
+    <div class="attrhd">Direct: a PR edited the cited page</div>
+    <div class="attrrow"><span class="attrm g">&#9650; Alternatives 31 to 51%</span><span class="attrc">Added a tool to officevibe-alternatives (cited, 11 to 15) and a schema fix surfaced glint-alternatives as a new citation (0 to 3); building on the earlier Culture Amp and Officevibe rewrites <span class="f">(#461, #465, plus #387/#389)</span></span><span class="attrt g">direct</span></div>
+    <div class="attrrow"><span class="attrm g">&#9650; Retention 0 to 5.6%</span><span class="attrc">Ported the solutions/employee-retention-software page to Paper, now earning its first citation (0 to 1) <span class="f">(#430)</span></span><span class="attrt g">direct</span></div>
+    <div class="attrhd">Indirect: a related page was touched, likely helped</div>
+    <div class="attrrow"><span class="attrm g">&#9650; Eng. survey 21 to 26%</span><span class="attrc">The cited survey-vendors guide jumped 9 to 17; interlinks added from top-cited blogs to commercial pages, plus a ghost-port that touched the cited survey-tools page <span class="f">(Slack, #472)</span></span><span class="attrt" style="color:var(--amber)">indirect</span></div>
+    <div class="attrrow"><span class="attrm g">&#9650; Anonymous 0 to 6.7%</span><span class="attrc">anonymous-feedback-remote-teams citation 1 to 3, plus a Featurebase DR84 do-follow listicle pushed CM to #4. The rebuilt pages are starting to surface <span class="f">(Slack, #417/#432/#440)</span></span><span class="attrt" style="color:var(--amber)">indirect</span></div>
+    <div class="attrrow"><span class="attrm g">&#9650; Off-site to alternatives</span><span class="attrc">Research.com culture-amp listicle DR83, FeedbackPulse reciprocal, and the Darcy EESV YouTube short (self-reported as citing CM for officevibe alternatives) reinforce the alternatives surge <span class="f">(Slack)</span></span><span class="attrt" style="color:var(--amber)">indirect</span></div>
+    <div class="attrhd">Shipped, not surfacing yet: watch / investigate</div>
+    <div class="attrrow"><span class="attrm" style="color:var(--amber)">&#9670; EX platforms 0%</span><span class="attrc">EX-platforms page live and internally linked since Jun 17, about 12 days, still zero citations. Escalate to a citation-eligibility audit (schema, listicle format) <span class="f">(#423)</span></span><span class="attrt" style="color:var(--amber)">investigate</span></div>
+    <div class="attrrow"><span class="attrm" style="color:var(--amber)">&#9670; Qualtrics + 15Five alts</span><span class="attrc">New Qualtrics-alternatives guide and 15Five rewrite shipped Jun 22 to 23, not cited yet, normal lag <span class="f">(#467, #451)</span></span><span class="attrt" style="color:#185fa5">watch</span></div>
+    <div class="attrrow"><span class="attrm m">&#9702; New LPs</span><span class="attrc">employee-engagement-survey LP (#473) and pulse LP live. Landing pages are not citation targets; watch whether interlinks route citations to the listicles <span class="f">(#473, Slack)</span></span><span class="attrt m">watch</span></div>
+    <div class="attrhd">Scorecard: last run's predictions, graded</div>
+    <div class="attrrow"><span class="attrm g">&#10003; Retention</span><span class="attrc">Predicted to surface after the Jun 19 to 22 ports. It did, 0 to 5.6% with the page now cited</span><span class="attrt g">hit</span></div>
+    <div class="attrrow"><span class="attrm g">&#10003; Anonymous</span><span class="attrc">Predicted after the Jun 18 to 19 rebuilds. Surfaced 0 to 6.7%, page cited 1 to 3</span><span class="attrt g">hit</span></div>
+    <div class="attrrow"><span class="attrm r">&#10007; EX platforms</span><span class="attrc">Predicted to surface after #423. Still 0% two weeks on. Missed; now an investigate item</span><span class="attrt r">miss</span></div>
   </div>
-
   <div class="divider">explore the layers</div>
-
-  <!-- GROUP 1 -->
   <section class="grp" id="g1">
-    <div class="ghead"><span class="gcar">▶</span><div><div class="gt">1 · AI crawl &amp; ingestion</div><div class="gs">Are AI engines reading us? · 31,681 bot hits · 77% from untracked crawlers · commercial-page crawl share doubled 4%→9%</div></div></div>
+    <div class="ghead"><span class="gcar">&#9654;</span><div><div class="gt">1 &middot; AI crawl and ingestion</div><div class="gs">Are AI engines reading us? &middot; 31,681 bot visits &middot; 77% from untracked crawlers &middot; product-page reads doubled to 9%</div></div></div>
     <div class="gbody">
-
       <div class="stack">
-        <div class="lyr">Layer 1 · ingestion (tracked bots) — matched Tue–Fri vs last week</div>
-        <div class="row"><span class="dot bg-g"></span><span class="nm">Answer-engine hits <span class="chip">logs</span></span><span class="val">5,787</span><span class="delta g">▲ 14%</span></div>
-        <div class="row"><span class="dot bg-m"></span><span class="nm">Training hits <span class="chip">logs</span></span><span class="val">3,239</span><span class="delta m">▬ flat</span></div>
-        <div class="row"><span class="dot bg-g"></span><span class="nm">Commercial-page crawl share <span class="chip">logs</span></span><span class="val">9%</span><span class="delta g">▲ from 4%</span></div>
-        <div class="row"><span class="dot bg-r"></span><span class="nm">Bot 404s (all crawlers) <span class="chip">logs</span></span><span class="val">557</span><span class="delta r">waste</span></div>
+        <div class="lyr">AI bots reading our site (Mon to Fri, vs last week)</div>
+        <div class="row"><span class="dot bg-g"></span><span class="nm">Answer-engine visits <span class="chip">live AI search bots</span></span><span class="val">5,544</span><span class="delta g">&#9650; 20%</span></div>
+        <div class="row"><span class="dot bg-m"></span><span class="nm">Training-crawler visits <span class="chip">model training bots</span></span><span class="val">1,815</span><span class="delta m">&#9644; flat</span></div>
+        <div class="row"><span class="dot bg-g"></span><span class="nm">Unique pages crawled <span class="chip">logs</span></span><span class="val">1,130</span><span class="delta g">&#9650; vs 945</span></div>
+        <div class="row"><span class="dot bg-r"></span><span class="nm">Broken links bots hit (404s) <span class="chip">fixable</span></span><span class="val">557</span><span class="delta r">waste</span></div>
       </div>
-
       <div class="stack">
-        <div class="lyr">Layer 1b · what the bots actually read <span class="chip">raw log · Claude</span></div>
-        <div class="seo">Layer 1 tracks 6 bots. The raw log shows the <em>full</em> AI crawl — and 77% of it is invisible to the counts above.</div>
-        <div class="qlbl">Who's crawling — 31,681 hits (Jun 22–26)</div>
-        <div class="src"><span class="sd"><strong>Answer engines</strong> <span class="f">— cite you in live answers</span></span><span class="sfl g">5,544</span></div>
-        <div class="acl" style="margin:0 0 6px;">OAI-SearchBot 4,000 (▲ from 2,580) · PerplexityBot 1,379 · Claude-User 165</div>
-        <div class="src"><span class="sd"><strong>Training crawlers</strong></span><span class="sfl m">1,815</span></div>
-        <div class="acl" style="margin:0 0 6px;">ClaudeBot 1,347 · GPTBot 468</div>
-        <div class="src"><span class="sd"><strong>Other AI crawlers</strong> <span class="f">— untracked</span></span><span class="sfl r">24,322</span></div>
-        <div class="acl" style="margin:0 0 2px;">Bytespider (ByteDance) 18,242 · Meta-ExternalAgent 2,597 · PetalBot 1,727 · Applebot 1,298</div>
-        <div class="gap">77% of AI-crawl volume comes from bots the engine doesn't count — Bytespider alone is ~2.5× all tracked bots combined.</div>
-        <div class="qlbl">What they read — commercial share doubled to 9%</div>
+        <div class="lyr">Full AI crawl picture <span class="chip">raw log</span></div>
+        <div class="seo">The metrics above track 6 named bots. The raw log shows the full AI crawl, and 77% of it comes from bots those metrics never count.</div>
+        <div class="qlbl">Who is crawling us (31,681 visits, Jun 22 to 26)</div>
+        <div class="src"><span class="sd"><strong>Answer engines</strong> <span class="f">(these cite you in live AI answers)</span></span><span class="sct" style="min-width:60px;font-weight:600;color:var(--green)">5,544</span></div>
+        <div class="acl" style="margin:0 0 6px;">OAI-SearchBot 4,000 (up from 2,580) &middot; PerplexityBot 1,379 &middot; Claude-User 165</div>
+        <div class="src"><span class="sd"><strong>Training crawlers</strong> <span class="f">(feed model training, not live answers)</span></span><span class="sct" style="min-width:60px;font-weight:600;color:var(--muted)">1,815</span></div>
+        <div class="acl" style="margin:0 0 6px;">ClaudeBot 1,347 &middot; GPTBot 468</div>
+        <div class="src"><span class="sd"><strong>Other AI crawlers</strong> <span class="f">(not tracked by the named-bot metrics)</span></span><span class="sct" style="min-width:60px;font-weight:600;color:var(--red)">24,322</span></div>
+        <div class="acl" style="margin:0 0 2px;">Bytespider (ByteDance) 18,242 &middot; Meta-ExternalAgent 2,597 &middot; PetalBot 1,727 &middot; Applebot 1,298</div>
+        <div class="gap">77% of all AI crawling is from bots the named-bot metrics never count. Bytespider alone is about 2.5x every tracked bot combined.</div>
+        <div class="qlbl">What pages they read</div>
+        <div class="seo" style="margin:0 0 8px;">Most AI crawling lands on our blog, not the product and comparison pages that actually sell. Those selling pages got 9% of crawls this week, up from 4%.</div>
         <div class="qframe"><div style="width:91%;background:var(--faint)"></div><div style="width:9%;background:var(--amber)"></div></div>
-        <div class="qleg"><span><span class="m">●</span> Content / blog 91% (7,360)</span><span><span style="color:var(--amber)">●</span> Commercial 9% (699)</span></div>
-        <div class="src"><span class="sd">/employee-engagement-survey/ <span class="chip">commercial · optimised LP</span></span><span class="sct">17×</span></div>
-        <div class="src"><span class="sd">/solutions/employee-retention-software/ <span class="chip">commercial</span></span><span class="sct">14×</span></div>
-        <div class="src"><span class="sd">/anonymous-employee-feedback-tool/ <span class="chip">commercial · optimised LP</span></span><span class="sct">13×</span></div>
-        <div class="src"><span class="sd">/employee-engagement/employee-engagement-survey-tools/ <span class="chip">commercial</span></span><span class="sct">13×</span></div>
-        <div class="acl" style="margin-top:4px;">The interlinking play is landing: the optimised LPs (engagement-survey, retention, anonymous) are now the most-crawled commercial pages, up from near-zero.</div>
-        <div class="qlbl">Crawl waste — 557 hits on 334 dead URLs (fixable)</div>
-        <div class="src"><span class="sd">/articles/blog/</span><span class="sct">11×</span></div>
-        <div class="src"><span class="sd">/sitemap-index.xml</span><span class="sct">6×</span></div>
-        <div class="src"><span class="sd">/employee-engagement/content/images/2026/04/pulse-survey-tools-1.jpg</span><span class="sct">6×</span></div>
-        <div class="src"><span class="sd">/page-data/articles/blog/page-data.json</span><span class="sct">6×</span></div>
-        <div class="src"><span class="sd">/hr-glossary/employee-engagement/</span><span class="sct">5×</span></div>
+        <div class="qleg"><span><span class="m">&#9679;</span> Blog and guides 91% (7,360)</span><span><span style="color:var(--amber)">&#9679;</span> Product and comparison pages 9% (699)</span></div>
+        <div class="src"><span class="sd">/employee-engagement-survey/ <span class="chip">product page, optimised</span></span><span class="sct">17&times;</span></div>
+        <div class="src"><span class="sd">/solutions/employee-retention-software/ <span class="chip">product page</span></span><span class="sct">14&times;</span></div>
+        <div class="src"><span class="sd">/anonymous-employee-feedback-tool/ <span class="chip">product page, optimised</span></span><span class="sct">13&times;</span></div>
+        <div class="morewrap" id="mp1" style="display:none">
+        <div class="src"><span class="sd">/employee-engagement/employee-engagement-survey-tools/ <span class="chip">comparison page</span></span><span class="sct">13&times;</span></div>
+        </div><span class="morep" data-t="mp1" data-n="1">See more (1)</span>
+        <div class="acl" style="margin-top:4px;">The interlinking work is landing: the optimised product pages (engagement-survey, retention, anonymous) are now the most-crawled selling pages, up from almost nothing.</div>
+        <div class="qlbl">Wasted crawl: bots hitting broken links (557 hits, 334 dead URLs)</div>
+        <div class="src"><span class="sd">/articles/blog/</span><span class="sct">11&times;</span></div>
+        <div class="src"><span class="sd">/sitemap-index.xml</span><span class="sct">6&times;</span></div>
+        <div class="src"><span class="sd">/employee-engagement/content/images/2026/04/pulse-survey-tools-1.jpg</span><span class="sct">6&times;</span></div>
+        <div class="morewrap" id="mp2" style="display:none">
+        <div class="src"><span class="sd">/page-data/articles/blog/page-data.json</span><span class="sct">6&times;</span></div>
+        <div class="src"><span class="sd">/hr-glossary/employee-engagement/</span><span class="sct">5&times;</span></div>
+        </div><span class="morep" data-t="mp2" data-n="2">See more (2)</span>
       </div>
-
     </div>
   </section>
-
-  <!-- GROUP 2 -->
   <section class="grp open" id="g2">
-    <div class="ghead"><span class="gcar">▶</span><div><div class="gt">2 · LLM visibility &amp; citations</div><div class="gs">Do we show up in AI answers? · 24.9% presence ▲4.8pts (verified real) · alternatives 51% · 62 mentions, on-message</div></div></div>
+    <div class="ghead"><span class="gcar">&#9654;</span><div><div class="gt">2 &middot; LLM visibility and citations</div><div class="gs">Do we show up in AI answers? &middot; 24.9% presence, up 4.8 pts (verified real) &middot; alternatives 51% &middot; 62 mentions, on-message</div></div></div>
     <div class="gbody">
-
       <div class="stack">
-        <div class="lyr">Layer 2 · LLM visibility — share of voice by cluster (Perplexity sonar, Jun 29 poll)</div>
-        <div class="ov">Overall 24.9% (62 of 249 answers) — up from 20.1%, and <strong>verified real</strong>: 24% of citations were new this week (not a stale cache) and the gain concentrated in worked clusters while do-nothing clusters stayed flat. <strong>Click any cluster</strong> for who shows up instead + the sources feeding it. Small samples (3 runs) — trust direction over weeks.</div>
+        <div class="lyr">Share of voice by cluster <span class="chip">Perplexity sonar, Jun 29</span></div>
+        <div class="ov">Overall 24.9% (62 of 249 answers), up from 20.1%, and verified real: 24% of citations were new this week (not a stale cache) and the gain sat in clusters we worked on while untouched clusters stayed flat. <strong>Click any cluster</strong> for who shows up instead and the pages feeding it. Small samples (3 runs), so trust direction over weeks.</div>
         <div id="clusters"></div>
       </div>
-
       <div class="stack">
-        <div class="lyr">Layer 2c · quality of voice — how AI frames us <span class="chip">mentions_log · Claude</span></div>
-        <div class="seo">Not just <em>whether</em> we're named, but <em>how</em> — framing, rank, and the attributes the model ties to us vs competitors.</div>
+        <div class="lyr">How AI talks about us <span class="chip">quality of voice</span></div>
+        <div class="seo">Not just whether we are named, but how: where we land in the answer, the tone, and the strengths the model ties to us vs competitors.</div>
         <div class="qgrid">
-          <div class="qstat"><div class="l">Where we appear in the answer</div><div class="v">~36% in <span style="font-size:12px;color:var(--faint);font-weight:400;">(upper third)</span></div></div>
-          <div class="qstat"><div class="l">Mentions this week</div><div class="v">62 <span style="font-size:12px;color:var(--green);font-weight:400;">▲ vs 50</span></div></div>
+          <div class="qstat"><div class="l">Where we land in the answer</div><div class="v">~36% <span style="font-size:12px;color:var(--faint);font-weight:400;">in the top third</span></div></div>
+          <div class="qstat"><div class="l">Mentions this week</div><div class="v">62 <span style="font-size:12px;color:var(--green);font-weight:400;">up from 50</span></div></div>
         </div>
-        <div class="qlbl">How we're framed</div>
+        <div class="qlbl">How we are framed</div>
         <div class="qframe"><div style="width:46%;background:var(--green)"></div><div style="width:42%;background:var(--faint)"></div><div style="width:12%;background:var(--amber)"></div></div>
-        <div class="qleg">
-          <span><span class="g">●</span> Positive 46%</span>
-          <span><span class="m">●</span> Neutral / just listed 42%</span>
-          <span><span style="color:var(--amber)">●</span> Caveated 12%</span>
-        </div>
-        <div class="qlbl">Attributes AI ties to each vendor</div>
-        <div class="qrow"><span class="qn" style="font-weight:600;color:var(--green)">CultureMonkey</span><span class="chipg">frontline &amp; multilingual</span><span class="chipg">enterprise lifecycle listening</span><span class="chipg">AI sentiment analysis</span><span class="chipg">manager dashboards</span><span class="chipg">17+ HRIS integrations</span><span class="chipg">affordable ($5/user)</span></div>
+        <div class="qleg"><span><span class="g">&#9679;</span> Positive 46%</span><span><span class="m">&#9679;</span> Neutral / just listed 42%</span><span><span style="color:var(--amber)">&#9679;</span> With a caveat 12%</span></div>
+        <div class="qlbl">Strengths AI ties to each vendor</div>
+        <div class="qrow"><span class="qn" style="font-weight:600;color:var(--green)">CultureMonkey</span><span class="chipg">frontline and multilingual</span><span class="chipg">enterprise lifecycle listening</span><span class="chipg">AI sentiment analysis</span><span class="chipg">manager dashboards</span><span class="chipg">17+ HRIS integrations</span><span class="chipg">affordable ($5/user)</span></div>
         <div class="qrow"><span class="qn m">Culture Amp</span><span class="chipn">analytics depth</span><span class="chipn">benchmarking</span><span class="chipn">intuitive setup</span></div>
         <div class="qrow"><span class="qn m">Qualtrics</span><span class="chipn">predictive analytics</span><span class="chipn">survey science</span></div>
         <div class="qrow"><span class="qn m">Lattice</span><span class="chipn">performance + OKRs</span></div>
-        <div class="quote">"CultureMonkey is best for enterprise listening at the frontline, especially with multi-channel delivery (WhatsApp, QR, kiosk) — more focused on listening than full performance suites." <span style="font-style:normal;color:var(--faint);">— representative framing, alternatives cluster</span></div>
+        <div class="quote">"CultureMonkey is best for enterprise listening at the frontline, especially with multi-channel delivery (WhatsApp, QR, kiosk), more focused on listening than full performance suites." <span style="font-style:normal;color:var(--faint);">representative framing, alternatives cluster</span></div>
       </div>
-
       <div class="stack">
-        <div class="lyr">Citation action · A — off-page targets <span class="chip">third-party</span></div>
-        <div class="seo">Sources the answers come from, ranked by frequency. Co-cite % = how often we ride along (baseline ≈20%). <span class="r">◆ target</span> = influential but we rarely surface · <span style="color:var(--amber)">watch</span> · <span class="g">✓ working</span>. Competitor &amp; own domains excluded here.</div>
+        <div class="lyr">Off-page targets: third-party pages AI pulls from</div>
+        <div class="seo">The third-party pages AI quotes when answering, ranked by how often they are used. "CM co-cite %" = how often we appear when that page is used. Low % means we are missing from a page that shapes answers. <span class="r">&#9670; target</span> (we rarely appear) &middot; <span style="color:var(--amber)">watch</span> &middot; <span class="g">&#10003; working</span>. Competitor and our own domains excluded here.</div>
         <div id="sectionA"></div>
       </div>
-
       <div class="stack">
-        <div class="lyr">Citation action · B — our cited pages, week over week <span class="chip">culturemonkey.io</span></div>
-        <div class="seo">Each CultureMonkey URL the LLM cited, and how it moved vs last week. Top 5 shown — search to find any URL.</div>
-        <input id="secB-search" type="text" placeholder="Search CultureMonkey URLs…" autocomplete="off" class="search">
+        <div class="lyr">Our cited pages, week over week <span class="chip">culturemonkey.io</span></div>
+        <div class="seo">Each CultureMonkey page the AI cited and how it moved vs last week. Top 3 shown, search to find any URL.</div>
+        <input id="secB-search" type="text" placeholder="Search CultureMonkey URLs..." autocomplete="off" class="search">
         <div id="secB-hint" class="acl" style="margin:0 0 4px;"></div>
         <div class="ahead" style="padding:0 0 5px;border-bottom:1px solid var(--line);"><span class="ad f" style="font-size:11px;letter-spacing:.02em;">URL</span><span class="act f" style="font-size:11px;">cites</span><span class="afl f" style="font-size:11px;">vs last wk</span></div>
         <div id="secB-rows"></div>
         <div id="secB-foot"></div>
       </div>
-
+      <div class="stack">
+        <div class="lyr">YouTube as a citation source <span class="chip">youtube.com</span></div>
+        <div class="seo">AI answers also pull YouTube videos as sources. This tracks one thing: does a video get cited, and is it ours? <span class="g">&#10003; we are cited</span> &middot; <span class="r">&#9670; gap</span> (a video is cited, none ours) &middot; <span style="color:var(--amber)">ride-along</span> (we are named in the answer but the video is not ours) &middot; <span class="m">white space</span> (no video cited yet). Click a cluster for the videos.</div>
+        <div class="ytsum">
+          <div class="ytstat"><div class="l">Videos AI cited</div><div class="v">11 <span style="font-size:11px;color:var(--muted);font-weight:400;">in 5 clusters</span></div></div>
+          <div class="ytstat"><div class="l">Ours</div><div class="v g">1 <span style="font-size:11px;color:var(--faint);font-weight:400;">Darcy short</span></div></div>
+          <div class="ytstat"><div class="l">Clusters with no video</div><div class="v" style="color:var(--amber)">5</div></div>
+        </div>
+        <div id="ytclusters"></div>
+        <div class="gap" style="background:#eef4fb;border-color:#c5d8ef;color:#1f4e79;margin-top:10px;">Competitors and tools own YouTube as a citation source: Jotform's feedback video is pulled across several queries, Teamflect owns engagement survey and software, ThriveSparrow owns the culture-amp-alternatives video. Our only cited video is the Darcy Officevibe short. Biggest openings: a CM video for <strong>Feedback</strong> and <strong>Engagement software</strong> (pure gaps) plus the 5 clusters with no video at all.</div>
+      </div>
     </div>
   </section>
-
-  <!-- GROUP 3 -->
   <section class="grp" id="g3">
-    <div class="ghead"><span class="gcar">▶</span><div><div class="gt">3 · Brand &amp; business impact</div><div class="gs">Is it translating? · branded ▲30% · impressions ▲75% · LLM referrals 16 ▼45% · inbound leads 9</div></div></div>
+    <div class="ghead"><span class="gcar">&#9654;</span><div><div class="gt">3 &middot; Brand and business impact</div><div class="gs">Is it translating? &middot; branded clicks +30% &middot; impressions +75% &middot; AI referral visits 16, down 45% &middot; inbound leads 9</div></div></div>
     <div class="gbody">
-
       <div class="stack">
-        <div class="lyr">Layer 3 · branded demand — vs last week</div>
-        <div class="row"><span class="dot bg-g"></span><span class="nm">Branded clicks <span class="chip">GSC</span></span><span class="val">96</span><span class="delta g">▲ 30%</span></div>
-        <div class="row"><span class="dot bg-g"></span><span class="nm">Branded impressions <span class="chip">GSC</span></span><span class="val">414</span><span class="delta g">▲ 75%</span></div>
-        <div class="row"><span class="dot bg-m"></span><span class="nm">Branded position <span class="chip">GSC</span></span><span class="val">7.2</span><span class="delta m">▼ from 1.4 · footprint widened</span></div>
-        <div class="row"><span class="dot bg-m"></span><span class="nm">Homepage sessions <span class="chip">GA4</span></span><span class="val">467</span><span class="delta m">▬ flat</span></div>
-        <div class="row"><span class="dot bg-r"></span><span class="nm">Homepage engagement <span class="chip">GA4</span></span><span class="val">50.5%</span><span class="delta r">▼ 10.8pts</span></div>
+        <div class="lyr">Branded search demand (vs last week)</div>
+        <div class="row"><span class="dot bg-g"></span><span class="nm">Branded clicks <span class="chip">GSC</span></span><span class="val">96</span><span class="delta g">&#9650; 30%</span></div>
+        <div class="row"><span class="dot bg-g"></span><span class="nm">Branded impressions <span class="chip">GSC</span></span><span class="val">414</span><span class="delta g">&#9650; 75%</span></div>
+        <div class="row"><span class="dot bg-m"></span><span class="nm">Average position <span class="chip">GSC</span></span><span class="val">7.2</span><span class="delta m">down from 1.4, more brand terms now showing</span></div>
+        <div class="row"><span class="dot bg-m"></span><span class="nm">Homepage sessions <span class="chip">GA4</span></span><span class="val">467</span><span class="delta m">&#9644; flat</span></div>
+        <div class="row"><span class="dot bg-r"></span><span class="nm">Homepage engagement <span class="chip">GA4</span></span><span class="val">50.5%</span><span class="delta r">&#9660; 10.8 pts</span></div>
       </div>
-
       <div class="stack">
-        <div class="lyr">Layer 4 · traffic — vs last week</div>
-        <div class="row"><span class="dot bg-r"></span><span class="nm">LLM referral sessions <span class="chip">GA4</span></span><span class="val">16</span><span class="delta r">▼ 45%</span></div>
-        <div class="acl" style="margin-top:2px;">The visibility-to-click gap: presence up, AI referral clicks down. ChatGPT 26→14, Copilot 2→0.</div>
+        <div class="lyr">Traffic from AI tools (vs last week)</div>
+        <div class="row"><span class="dot bg-r"></span><span class="nm">AI referral visits <span class="chip">GA4</span></span><span class="val">16</span><span class="delta r">&#9660; 45%</span></div>
+        <div class="acl" style="margin-top:2px;">Presence is up but AI clicks are down. ChatGPT 26 to 14, Copilot 2 to 0. This is the gap to close.</div>
       </div>
-
       <div class="stack">
-        <div class="lyr">Layer 5 · leads (HubSpot, inbound only — excl. internal/gmail + sales prospecting) — vs last week</div>
-        <div class="row"><span class="dot bg-m"></span><span class="nm">Inbound leads <span class="chip">HubSpot</span></span><span class="val">9</span><span class="delta m">organic 6 · paid 2 · direct 1</span></div>
-        <div class="row"><span class="dot bg-r"></span><span class="nm">AI-sourced leads <span class="chip">HubSpot</span></span><span class="val">0</span><span class="delta r">▼ from 1</span></div>
-        <div class="row"><span class="dot bg-m"></span><span class="nm f">Self-reported via AI <span class="chip">HubSpot</span></span><span class="val f">0</span><span class="delta f">low-n</span></div>
-        <div class="acl" style="margin-top:2px;">Definition tightened this week: excludes ~99 sales-extension prospecting contacts that aren't marketing-generated. Prior weeks' "27" counted some of those, so don't read 9 as a drop.</div>
+        <div class="lyr">Leads (HubSpot, inbound only)</div>
+        <div class="row"><span class="dot bg-m"></span><span class="nm">Inbound leads <span class="chip">HubSpot</span></span><span class="val">9</span><span class="delta m">organic 6 &middot; paid 2 &middot; direct 1</span></div>
+        <div class="row"><span class="dot bg-r"></span><span class="nm">AI-sourced leads <span class="chip">HubSpot</span></span><span class="val">0</span><span class="delta r">down from 1</span></div>
+        <div class="row"><span class="dot bg-m"></span><span class="nm f">Self-reported via AI <span class="chip">HubSpot</span></span><span class="val f">0</span><span class="delta f">low volume</span></div>
+        <div class="acl" style="margin-top:2px;">Counts inbound only, excluding internal/gmail and the roughly 99 sales-prospecting contacts that are not marketing leads. Prior weeks counted some of those, so do not read 9 as a drop.</div>
       </div>
-
     </div>
   </section>
-
-  <div class="note">Week of Jun 22–26, 2026 · poll ran Jun 29 · L1 matched Tue–Fri (last week's log was a 6-day window). Layer 2 = web-grounded share of voice (Perplexity sonar), 83 queries / 10 clusters; the lift cleared the "is it real?" gate (citation churn + control clusters + noise floor). Layer 1b from the raw AI-bot log; quality of voice judged from mentions_log. Competitors tracked: Culture Amp, Lattice, Officevibe, 15Five, Qualtrics, Glint, Leapsome, Vantage Circle. HubSpot leads = inbound only, excl. gmail/culturemonkey/effy + sales-extension prospecting.</div>
+  <div class="note">Week of Jun 22 to 26, 2026, poll ran Jun 29. Crawl numbers are Mon to Fri (last week's Monday was missing from the log, so the percentage uses matched weekdays). Share of voice is web-grounded (Perplexity sonar), 83 queries across 10 clusters; the lift cleared the reality check (citation churn, control clusters, noise floor). Full crawl picture from the raw AI-bot log. Competitors tracked: Culture Amp, Lattice, Officevibe, 15Five, Qualtrics, Glint, Leapsome, Vantage Circle. HubSpot leads are inbound only, excluding gmail, culturemonkey, effy and sales prospecting.</div>
 </div>
-
 <script>
-const DATA = {"overall": 24.9, "mentions": 62, "clusters": [{"name": "Engagement survey tools / software / vendors", "cm": 26.4, "comp": [["Qualtrics", 90.3], ["Culture Amp", 80.6], ["Lattice", 75.0], ["Leapsome", 41.7], ["Officevibe", 40.3], ["Glint", 31.9], ["15Five", 12.5], ["Vantage Circle", 5.6]], "src": [["reddit.com", 60, "watch"], ["bestcompaniesgroup.com", 59, "target"], ["vendordirectory.shrm.org", 56, "target"], ["gallup.com", 40, "watch"], ["culturemonkey.io", 39, "own"]], "hole": false, "pageButLosing": false}, {"name": "Employee engagement software (general)", "cm": 0.0, "comp": [["Lattice", 71.4], ["Officevibe", 47.6], ["Culture Amp", 33.3], ["15Five", 33.3], ["Qualtrics", 33.3], ["Vantage Circle", 23.8], ["Glint", 19.0], ["Leapsome", 4.8]], "src": [["selectsoftwarereviews.com", 18, "target"], ["reddit.com", 13, "target"], ["quantumworkplace.com", 11, "target"], ["peoplemanagingpeople.com", 11, "target"], ["achievers.com", 10, "target"]], "hole": false, "pageButLosing": true}, {"name": "Employee feedback tools / software", "cm": 25.9, "comp": [["Culture Amp", 92.6], ["Officevibe", 85.2], ["Qualtrics", 85.2], ["Lattice", 81.5], ["15Five", 77.8], ["Leapsome", 48.1], ["Glint", 25.9], ["Vantage Circle", 22.2]], "src": [["peoplemanagingpeople.com", 27, "working"], ["reddit.com", 25, "working"], ["featurebase.app", 20, "watch"], ["smartsurvey.com", 18, "watch"], ["eletive.com", 16, "watch"]], "hole": false, "pageButLosing": false}, {"name": "Anonymous feedback", "cm": 6.7, "comp": [["Culture Amp", 60.0], ["Officevibe", 60.0], ["Lattice", 46.7], ["15Five", 40.0], ["Leapsome", 20.0], ["Qualtrics", 0.0], ["Glint", 0.0], ["Vantage Circle", 0.0]], "src": [["surveymonkey.com", 15, "watch"], ["reddit.com", 15, "watch"], ["proprofssurvey.com", 14, "watch"], ["employmenthero.com", 11, "watch"], ["suggestionox.com", 9, "target"]], "hole": false, "pageButLosing": false}, {"name": "Pulse surveys", "cm": 41.7, "comp": [["Qualtrics", 83.3], ["Lattice", 75.0], ["15Five", 66.7], ["Officevibe", 50.0], ["Glint", 50.0], ["Culture Amp", 41.7], ["Leapsome", 25.0], ["Vantage Circle", 0.0]], "src": [["contactmonkey.com", 11, "working"], ["quantumworkplace.com", 9, "working"], ["peoplemanagingpeople.com", 8, "working"], ["culturemonkey.io", 7, "own"], ["engagesoft.me", 7, "working"]], "hole": false, "pageButLosing": false}, {"name": "Employee experience platforms", "cm": 0.0, "comp": [["Culture Amp", 93.3], ["Lattice", 80.0], ["Qualtrics", 73.3], ["Leapsome", 73.3], ["Officevibe", 33.3], ["Glint", 33.3], ["Vantage Circle", 13.3], ["15Five", 6.7]], "src": [["reddit.com", 13, "target"], ["happeo.com", 12, "target"], ["peoplemanagingpeople.com", 11, "target"], ["mentorcliq.com", 11, "target"], ["medallia.com", 11, "target"]], "hole": true, "pageButLosing": false}, {"name": "Employee retention software", "cm": 5.6, "comp": [["Lattice", 66.7], ["15Five", 61.1], ["Leapsome", 61.1], ["Culture Amp", 50.0], ["Qualtrics", 22.2], ["Glint", 16.7], ["Officevibe", 11.1], ["Vantage Circle", 0.0]], "src": [["leapsome.com", 15, "watch"], ["reclaim.ai", 15, "watch"], ["betterworks.com", 13, "watch"], ["imocha.io", 12, "working"], ["engagedly.com", 12, "working"]], "hole": false, "pageButLosing": false}, {"name": "eNPS software", "cm": 40.0, "comp": [["Qualtrics", 80.0], ["Lattice", 46.7], ["Culture Amp", 40.0], ["Officevibe", 40.0], ["15Five", 40.0], ["Leapsome", 33.3], ["Glint", 0.0], ["Vantage Circle", 0.0]], "src": [["peoplelytics.co", 15, "target"], ["questionpro.com", 13, "target"], ["delighted.com", 12, "target"], ["smartsurvey.com", 12, "target"], ["surveymonkey.com", 10, "target"]], "hole": false, "pageButLosing": false}, {"name": "Third-party survey companies", "cm": 20.0, "comp": [["Qualtrics", 60.0], ["Culture Amp", 53.3], ["Lattice", 40.0], ["Leapsome", 26.7], ["15Five", 20.0], ["Vantage Circle", 20.0], ["Officevibe", 0.0], ["Glint", 0.0]], "src": [["driveresearch.com", 18, "target"], ["rippling.com", 14, "target"], ["vendordirectory.shrm.org", 12, "target"], ["reddit.com", 10, "target"], ["quantumworkplace.com", 7, "target"]], "hole": false, "pageButLosing": false}, {"name": "Competitor alternatives", "cm": 51.3, "comp": [["Culture Amp", 92.3], ["Lattice", 79.5], ["Officevibe", 76.9], ["15Five", 74.4], ["Leapsome", 66.7], ["Qualtrics", 28.2], ["Glint", 23.1], ["Vantage Circle", 2.6]], "src": [["culturemonkey.io", 34, "own"], ["reddit.com", 29, "target"], ["leapsome.com", 16, "working"], ["qualee.com", 15, "watch"], ["cultureamp.com", 15, "working"]], "hole": false, "pageButLosing": false}], "secA": [{"d": "reddit.com", "n": 171, "rate": 11, "flag": "target", "urls": ["https://www.reddit.com/r/AcademicPsychology/comments/11ss012/qualtrics_alternatives/", "https://www.reddit.com/r/AskAcademia/comments/yiejyl/im_looking_for_an_anonymous_feedback_tool_anyone/"]}, {"d": "peoplemanagingpeople.com", "n": 106, "rate": 12, "flag": "watch", "urls": ["https://peoplemanagingpeople.com/tools/best-ai-employee-feedback-software/", "https://peoplemanagingpeople.com/tools/best-anonymous-employee-feedback-tool/"]}, {"d": "vendordirectory.shrm.org", "n": 85, "rate": 13, "flag": "watch", "urls": ["https://vendordirectory.shrm.org/category/employee-engagement/employee-engagement-surveys"]}, {"d": "quantumworkplace.com", "n": 69, "rate": 15, "flag": "watch", "urls": ["https://www.quantumworkplace.com/future-of-work/employee-engagement-survey-vendors", "https://www.quantumworkplace.com/future-of-work/what-is-employee-engagement-software"]}, {"d": "eletive.com", "n": 66, "rate": 21, "flag": "watch", "urls": ["https://eletive.com/blog/best-employee-engagement-tools/", "https://eletive.com/blog/cultureamp-alternatives/"]}, {"d": "bestcompaniesgroup.com", "n": 64, "rate": 9, "flag": "target", "urls": ["https://bestcompaniesgroup.com", "https://bestcompaniesgroup.com/blog/5-best-employee-engagement-survey-providers/"]}, {"d": "rippling.com", "n": 57, "rate": 10, "flag": "target", "urls": ["https://www.rippling.com/blog/employee-engagement-survey-providers", "https://www.rippling.com/products/hr/surveys"]}, {"d": "selectsoftwarereviews.com", "n": 55, "rate": 11, "flag": "target", "urls": ["https://www.selectsoftwarereviews.com/buyer-guide/best-employee-engagement-software"]}, {"d": "achievers.com", "n": 49, "rate": 16, "flag": "watch", "urls": ["https://www.achievers.com/blog/employee-engagement-software-platforms/", "https://www.achievers.com/blog/employee-experience-platform/"]}, {"d": "gallup.com", "n": 48, "rate": 12, "flag": "watch", "urls": ["https://www.gallup.com/access/239201/employee-surveys.aspx", "https://www.gallup.com/access/709166/gallup-access-culture-amp.aspx"]}, {"d": "formgrid.com", "n": 44, "rate": 16, "flag": "watch", "urls": ["https://www.formgrid.com/blog/employee-engagement-survey-tools"]}, {"d": "surveymonkey.com", "n": 37, "rate": 14, "flag": "watch", "urls": ["https://www.surveymonkey.com/learn/employee-feedback/anonymous-employee-surveys/", "https://www.surveymonkey.com/learn/employee-feedback/employee-nps-benchmarks/"]}], "secB": [{"u": "culturemonkey.io/employee-engagement/employee-engagement-survey-tools/", "n": 28, "delta": 0, "cl": ["Competitor alternatives", "Engagement survey", "Feedback"]}, {"u": "culturemonkey.io/guides/employee-engagement-survey-questions/employee-engagement-survey-vendors/top-employee-engagement-survey-vendors-to-choose-from/", "n": 17, "delta": 89, "cl": ["Engagement survey"]}, {"u": "culturemonkey.io/employee-engagement/officevibe-alternatives/", "n": 15, "delta": 36, "cl": ["Competitor alternatives"]}, {"u": "culturemonkey.io/employee-engagement/culture-amp-alternatives/", "n": 13, "delta": 8, "cl": ["Competitor alternatives"]}, {"u": "culturemonkey.io/employee-engagement/pulse-survey-tools/", "n": 10, "delta": -17, "cl": ["Engagement software", "Pulse"]}, {"u": "culturemonkey.io/enps-survey-software/", "n": 7, "delta": 0, "cl": ["eNPS"]}, {"u": "culturemonkey.io/employee-engagement/third-party-survey-companies/", "n": 6, "delta": -25, "cl": ["Third-party"]}, {"u": "culturemonkey.io/employee-engagement/employee-engagement-survey-vendors-pricing/", "n": 3, "delta": 0, "cl": ["Engagement software"]}, {"u": "culturemonkey.io/employee-engagement/anonymous-feedback-remote-teams/", "n": 3, "delta": 200, "cl": ["Anonymous"]}, {"u": "culturemonkey.io/employee-engagement/glint-alternatives/", "n": 3, "delta": null, "cl": ["Competitor alternatives"]}, {"u": "culturemonkey.io/employee-engagement/employee-engagement-survey-vendor-rfp-template/", "n": 2, "delta": 0, "cl": ["Engagement software"]}, {"u": "culturemonkey.io/employee-engagement/employee-feedback-tools/", "n": 2, "delta": -33, "cl": ["Anonymous", "Feedback"]}, {"u": "culturemonkey.io/solutions/employee-retention-software/", "n": 1, "delta": null, "cl": ["Retention"]}]};
-
-const barFill = p => p>=20 ? 'var(--green)' : (p>0 ? 'var(--amber)' : 'var(--red)');
-const cpClass = p => p>=20 ? 'g' : (p>0 ? 'a' : 'r');
-const flLabel = f => f==="own" ? '<span class="m">our page</span>'
-  : f==="working" ? '<span class="g">✓ working</span>'
-  : f==="watch" ? '<span style="color:var(--amber)">watch</span>'
-  : '<span class="r">◆ target</span>';
+const DATA = {"overall": 24.9, "mentions": 62, "clusters": [{"name": "Engagement survey tools / software / vendors", "s": "Engagement survey", "cm": 26.4, "comp": [["Qualtrics", 90.3], ["Culture Amp", 80.6], ["Lattice", 75.0], ["Leapsome", 41.7], ["Officevibe", 40.3], ["Glint", 31.9], ["15Five", 12.5], ["Vantage Circle", 5.6]], "srcUrls": [["bestcompaniesgroup.com/blog/5-best-employee-engagement-survey-providers", 58], ["vendordirectory.shrm.org/category/employee-engagement/employee-engagement-surveys", 56], ["selectsoftwarereviews.com/buyer-guide/best-employee-engagement-software", 34], ["formgrid.com/blog/employee-engagement-survey-tools", 28], ["cultureamp.com/platform/engage", 27]], "ourUrls": [["culturemonkey.io/employee-engagement/employee-engagement-survey-tools", 22], ["culturemonkey.io/guides/employee-engagement-survey-questions/employee-engagement-survey-vendors/top-employee-engagement-survey-vendors-to-choose-from", 17], ["reddit.com/r/culturemonkey/comments/1txc230/top_5_employee_engagement_survey_vendors_built", 2]]}, {"name": "Employee engagement software (general)", "s": "Engagement software", "cm": 0.0, "comp": [["Lattice", 71.4], ["Officevibe", 47.6], ["Culture Amp", 33.3], ["15Five", 33.3], ["Qualtrics", 33.3], ["Vantage Circle", 23.8], ["Glint", 19.0], ["Leapsome", 4.8]], "srcUrls": [["selectsoftwarereviews.com/buyer-guide/best-employee-engagement-software", 18], ["achievers.com/blog/employee-engagement-software-platforms", 10], ["reddit.com/r/internalcomms/comments/1qsi0fy/best_employee_engagement_tools", 9], ["peoplemanagingpeople.com/tools/best-employee-engagement-software", 8], ["vendordirectory.shrm.org/category/employee-engagement/employee-engagement-surveys", 8]], "ourUrls": [["culturemonkey.io/employee-engagement/employee-engagement-survey-vendors-pricing", 3], ["culturemonkey.io/employee-engagement/pulse-survey-tools", 3], ["culturemonkey.io/employee-engagement/employee-engagement-survey-vendor-rfp-template", 2]]}, {"name": "Employee feedback tools / software", "s": "Feedback", "cm": 25.9, "comp": [["Culture Amp", 92.6], ["Officevibe", 85.2], ["Qualtrics", 85.2], ["Lattice", 81.5], ["15Five", 77.8], ["Leapsome", 48.1], ["Glint", 25.9], ["Vantage Circle", 22.2]], "srcUrls": [["peoplemanagingpeople.com/tools/best-employee-feedback-software", 26], ["featurebase.app/blog/employee-feedback-tools", 20], ["reddit.com/r/humanresources/comments/id83vd/what_employee_feedback_tools_are_you_using", 20], ["smartsurvey.com/blog/employee-feedback-tools", 18], ["eletive.com/blog/employee-feedback-software", 16]], "ourUrls": [["culturemonkey.io/employee-engagement/employee-engagement-survey-tools", 3], ["culturemonkey.io/employee-engagement/employee-feedback-tools", 1]]}, {"name": "Anonymous feedback", "s": "Anonymous", "cm": 6.7, "comp": [["Culture Amp", 60.0], ["Officevibe", 60.0], ["Lattice", 46.7], ["15Five", 40.0], ["Leapsome", 20.0], ["Qualtrics", 0.0], ["Glint", 0.0], ["Vantage Circle", 0.0]], "srcUrls": [["surveymonkey.com/learn/employee-feedback/anonymous-employee-surveys", 15], ["proprofssurvey.com/blog/best-anonymous-feedback-tools", 14], ["employmenthero.com/uk/blog/anonymous-employee-feedback", 11], ["sparkbay.com/en/anonymous-employee-feedback-tool", 9], ["questworks.io/blog/best-anonymous-employee-feedback-tools.html", 7]], "ourUrls": [["culturemonkey.io/employee-engagement/anonymous-feedback-remote-teams", 3], ["culturemonkey.io/employee-engagement/employee-feedback-tools", 1]]}, {"name": "Pulse surveys", "s": "Pulse", "cm": 41.7, "comp": [["Qualtrics", 83.3], ["Lattice", 75.0], ["15Five", 66.7], ["Officevibe", 50.0], ["Glint", 50.0], ["Culture Amp", 41.7], ["Leapsome", 25.0], ["Vantage Circle", 0.0]], "srcUrls": [["contactmonkey.com/blog/pulse-survey-tool", 11], ["quantumworkplace.com/product/engagement/pulse-survey-software", 9], ["peoplemanagingpeople.com/tools/best-employee-survey-tools", 8], ["engagesoft.me/blog/best-employee-pulse-survey-software", 7], ["vendordirectory.shrm.org/category/employee-engagement/employee-engagement-surveys", 6]], "ourUrls": [["culturemonkey.io/employee-engagement/pulse-survey-tools", 7]]}, {"name": "Employee experience platforms", "s": "EX platforms", "cm": 0.0, "comp": [["Culture Amp", 93.3], ["Lattice", 80.0], ["Qualtrics", 73.3], ["Leapsome", 73.3], ["Officevibe", 33.3], ["Glint", 33.3], ["Vantage Circle", 13.3], ["15Five", 6.7]], "srcUrls": [["reddit.com/r/IOPsychology/comments/1egyncv/which_employee_experience_platform_would_you", 13], ["happeo.com/blog/employee-experience-platforms", 12], ["peoplemanagingpeople.com/tools/best-employee-experience-tools", 11], ["mentorcliq.com/insights/employee-experience-platforms", 11], ["medallia.com/blog/best-employee-experience-platforms", 11]], "ourUrls": []}, {"name": "Employee retention software", "s": "Retention", "cm": 5.6, "comp": [["Lattice", 66.7], ["15Five", 61.1], ["Leapsome", 61.1], ["Culture Amp", 50.0], ["Qualtrics", 22.2], ["Glint", 16.7], ["Officevibe", 11.1], ["Vantage Circle", 0.0]], "srcUrls": [["leapsome.com/comparisons/employee-retention-software", 15], ["reclaim.ai/blog/employee-retention-software", 15], ["betterworks.com/magazine/best-employee-retention-software", 13], ["imocha.io/blog/employee-retention-software", 12], ["engagedly.com/blog/best-employee-retention-softwares", 12]], "ourUrls": [["culturemonkey.io/solutions/employee-retention-software", 1]]}, {"name": "eNPS software", "s": "eNPS", "cm": 40.0, "comp": [["Qualtrics", 80.0], ["Lattice", 46.7], ["Culture Amp", 40.0], ["Officevibe", 40.0], ["15Five", 40.0], ["Leapsome", 33.3], ["Glint", 0.0], ["Vantage Circle", 0.0]], "srcUrls": [["smartsurvey.com/enps-software", 12], ["delighted.com/enps", 11], ["surveymonkey.com/learn/employee-feedback/employee-nps-benchmarks", 8], ["zoho.com/people/employee-engagement-software.html", 8], ["questionpro.com/blog/enps-software", 7]], "ourUrls": [["culturemonkey.io/enps-survey-software", 7]]}, {"name": "Third-party survey companies", "s": "Third-party", "cm": 20.0, "comp": [["Qualtrics", 60.0], ["Culture Amp", 53.3], ["Lattice", 40.0], ["Leapsome", 26.7], ["15Five", 20.0], ["Vantage Circle", 20.0], ["Officevibe", 0.0], ["Glint", 0.0]], "srcUrls": [["rippling.com/blog/employee-engagement-survey-providers", 14], ["driveresearch.com/market-research-company-blog/using-a-third-party-for-employee-surveys", 12], ["vendordirectory.shrm.org/category/employee-engagement/employee-engagement-surveys", 12], ["quantumworkplace.com/top-employee-engagement-survey-vendors", 7], ["resources.wellcertified.com/articles/why-should-i-use-a-third-party-survey-provider-for-my-well-project", 6]], "ourUrls": [["culturemonkey.io/employee-engagement/third-party-survey-companies", 6]]}, {"name": "Competitor alternatives", "s": "Competitor alternatives", "cm": 51.3, "comp": [["Culture Amp", 92.3], ["Lattice", 79.5], ["Officevibe", 76.9], ["15Five", 74.4], ["Leapsome", 66.7], ["Qualtrics", 28.2], ["Glint", 23.1], ["Vantage Circle", 2.6]], "srcUrls": [["leapsome.com/competitor-new/officevibe", 15], ["reddit.com/r/Entrepreneur/comments/1mo7j0o/trying_to_evaluate_performance_tools_like_lattice", 13], ["pando.com/blog-post/culture-amp-alternatives", 13], ["taito.ai/blog/cultureamp-competitors-and-alternatives", 12], ["qualee.com/what-is-the-best-officevibe-alternative", 12]], "ourUrls": [["culturemonkey.io/employee-engagement/officevibe-alternatives", 15], ["culturemonkey.io/employee-engagement/culture-amp-alternatives", 13], ["culturemonkey.io/employee-engagement/employee-engagement-survey-tools", 3], ["culturemonkey.io/employee-engagement/glint-alternatives", 3]]}], "secA": [{"d": "reddit.com", "n": 171, "rate": 30, "flag": "working", "urls": ["https://www.reddit.com/r/AcademicPsychology/comments/11ss012/qualtrics_alternatives/", "https://www.reddit.com/r/AskAcademia/comments/yiejyl/im_looking_for_an_anonymous_feedback_tool_anyone/"]}, {"d": "peoplemanagingpeople.com", "n": 106, "rate": 31, "flag": "working", "urls": ["https://peoplemanagingpeople.com/tools/best-ai-employee-feedback-software/", "https://peoplemanagingpeople.com/tools/best-anonymous-employee-feedback-tool/"]}, {"d": "vendordirectory.shrm.org", "n": 85, "rate": 40, "flag": "working", "urls": ["https://vendordirectory.shrm.org/category/employee-engagement/employee-engagement-surveys"]}, {"d": "quantumworkplace.com", "n": 69, "rate": 42, "flag": "working", "urls": ["https://www.quantumworkplace.com/future-of-work/employee-engagement-survey-vendors", "https://www.quantumworkplace.com/future-of-work/what-is-employee-engagement-software"]}, {"d": "eletive.com", "n": 66, "rate": 34, "flag": "working", "urls": ["https://eletive.com/blog/best-employee-engagement-tools/", "https://eletive.com/blog/cultureamp-alternatives/"]}, {"d": "bestcompaniesgroup.com", "n": 64, "rate": 36, "flag": "working", "urls": ["https://bestcompaniesgroup.com", "https://bestcompaniesgroup.com/blog/5-best-employee-engagement-survey-providers/"]}, {"d": "rippling.com", "n": 57, "rate": 38, "flag": "working", "urls": ["https://www.rippling.com/blog/employee-engagement-survey-providers", "https://www.rippling.com/products/hr/surveys"]}, {"d": "selectsoftwarereviews.com", "n": 55, "rate": 16, "flag": "watch", "urls": ["https://www.selectsoftwarereviews.com/buyer-guide/best-employee-engagement-software"]}, {"d": "achievers.com", "n": 49, "rate": 26, "flag": "working", "urls": ["https://www.achievers.com/blog/employee-engagement-software-platforms/", "https://www.achievers.com/blog/employee-experience-platform/"]}, {"d": "gallup.com", "n": 48, "rate": 29, "flag": "working", "urls": ["https://www.gallup.com/access/239201/employee-surveys.aspx", "https://www.gallup.com/access/709166/gallup-access-culture-amp.aspx"]}, {"d": "formgrid.com", "n": 44, "rate": 32, "flag": "working", "urls": ["https://www.formgrid.com/blog/employee-engagement-survey-tools"]}, {"d": "surveymonkey.com", "n": 37, "rate": 29, "flag": "working", "urls": ["https://www.surveymonkey.com/learn/employee-feedback/anonymous-employee-surveys/", "https://www.surveymonkey.com/learn/employee-feedback/employee-nps-benchmarks/"]}], "secB": [{"u": "culturemonkey.io/employee-engagement/employee-engagement-survey-tools/", "n": 28, "delta": 0, "cl": ["Competitor alternatives", "Engagement survey", "Feedback"]}, {"u": "culturemonkey.io/guides/employee-engagement-survey-questions/employee-engagement-survey-vendors/top-employee-engagement-survey-vendors-to-choose-from/", "n": 17, "delta": 89, "cl": ["Engagement survey"]}, {"u": "culturemonkey.io/employee-engagement/officevibe-alternatives/", "n": 15, "delta": 36, "cl": ["Competitor alternatives"]}, {"u": "culturemonkey.io/employee-engagement/culture-amp-alternatives/", "n": 13, "delta": 8, "cl": ["Competitor alternatives"]}, {"u": "culturemonkey.io/employee-engagement/pulse-survey-tools/", "n": 10, "delta": -17, "cl": ["Engagement software", "Pulse"]}, {"u": "culturemonkey.io/enps-survey-software/", "n": 7, "delta": 0, "cl": ["eNPS"]}, {"u": "culturemonkey.io/employee-engagement/third-party-survey-companies/", "n": 6, "delta": -25, "cl": ["Third-party"]}, {"u": "culturemonkey.io/employee-engagement/employee-engagement-survey-vendors-pricing/", "n": 3, "delta": 0, "cl": ["Engagement software"]}, {"u": "culturemonkey.io/employee-engagement/anonymous-feedback-remote-teams/", "n": 3, "delta": 200, "cl": ["Anonymous"]}, {"u": "culturemonkey.io/employee-engagement/glint-alternatives/", "n": 3, "delta": null, "cl": ["Competitor alternatives"]}, {"u": "culturemonkey.io/employee-engagement/employee-engagement-survey-vendor-rfp-template/", "n": 2, "delta": 0, "cl": ["Engagement software"]}, {"u": "culturemonkey.io/employee-engagement/employee-feedback-tools/", "n": 2, "delta": -33, "cl": ["Anonymous", "Feedback"]}, {"u": "culturemonkey.io/solutions/employee-retention-software/", "n": 1, "delta": null, "cl": ["Retention"]}]};
+const YT = [{"cl": "Engagement survey tools / software / vendors", "s": "Engagement survey", "n": 1, "ours": 0, "tag": "gap", "vids": [{"id": "sIih5f0K8sw", "ch": "Teamflect", "title": "Best Engagement Survey Software 2026 [Ranked]", "owner": "competitor", "cites": 3, "q": "top employee engagement survey software 2026", "cm": 0}]}, {"cl": "Employee engagement software (general)", "s": "Engagement software", "n": 3, "ours": 0, "tag": "gap", "vids": [{"id": "fzYBCSeURyw", "ch": "PeopleGoal", "title": "What Is Employee Engagement Software & How It Works", "owner": "competitor", "cites": 3, "q": "best employee engagement software", "cm": 0}, {"id": "Cypb3Olvfmk", "ch": "SelectHub", "title": "Best Employee Engagement Software 2026", "owner": "thirdparty", "cites": 3, "q": "top employee engagement software for enterprise", "cm": 0}, {"id": "mjBMv7Ne96Y", "ch": "Teamflect", "title": "5 Best Employee Engagement Software for 2026", "owner": "competitor", "cites": 3, "q": "employee engagement software comparison", "cm": 0}]}, {"cl": "Employee feedback tools / software", "s": "Feedback", "n": 2, "ours": 0, "tag": "gap", "vids": [{"id": "o0CNcKYyAWM", "ch": "Jotform", "title": "10 Must-Have Tools for Employee Feedback (2026)", "owner": "competitor", "cites": 3, "q": "employee feedback tools comparison", "cm": 0}, {"id": "bpCjOzcknlQ", "ch": "Softr", "title": "Collect & Organise Employee Feedback with Softr", "owner": "thirdparty", "cites": 1, "q": "best employee feedback tools", "cm": 0}]}, {"cl": "Anonymous feedback", "s": "Anonymous", "n": 0, "ours": 0, "tag": "whitespace", "vids": []}, {"cl": "Pulse surveys", "s": "Pulse", "n": 1, "ours": 0, "tag": "ridealong", "vids": [{"id": "4ItYF7kMcq4", "ch": "Chris' IT Leadership Lab", "title": "Best Pulse Survey Tool: Tutorial & Reply Rate", "owner": "thirdparty", "cites": 3, "q": "best pulse survey tools", "cm": 1}]}, {"cl": "Employee experience platforms", "s": "EX platforms", "n": 0, "ours": 0, "tag": "whitespace", "vids": []}, {"cl": "Employee retention software", "s": "Retention", "n": 0, "ours": 0, "tag": "whitespace", "vids": []}, {"cl": "eNPS software", "s": "eNPS", "n": 0, "ours": 0, "tag": "whitespace", "vids": []}, {"cl": "Third-party survey companies", "s": "Third-party", "n": 0, "ours": 0, "tag": "whitespace", "vids": []}, {"cl": "Competitor alternatives", "s": "Competitor alternatives", "n": 4, "ours": 1, "tag": "own", "vids": [{"id": "J65GSSKGSHE", "ch": "ThriveSparrow", "title": "Top 5 Culture Amp Alternatives", "owner": "competitor", "cites": 2, "q": "culture amp alternatives for hr teams", "cm": 2}, {"id": "gRDUwtJD89Q", "ch": "CultureMonkey", "title": "7 Best Employee Engagement Survey Vendors 2026 (Short)", "owner": "ours", "cites": 2, "q": "officevibe alternatives for hr teams", "cm": 2}, {"id": "brlVkJ5Zpho", "ch": "TechnologyAdvice", "title": "OfficeVibe Software Review", "owner": "thirdparty", "cites": 2, "q": "officevibe vs other engagement tools", "cm": 2}, {"id": "bDBsw3FzEr4", "ch": "Workleap (Officevibe)", "title": "The Science behind Workleap Officevibe", "owner": "competitor", "cites": 1, "q": "officevibe vs other engagement tools", "cm": 1}]}];
+const TREND = [{"wk":"Jun 5","pres":null,"clicks":38},{"wk":"Jun 12","pres":16.1,"clicks":56},{"wk":"Jun 19","pres":20.1,"clicks":74},{"wk":"Jun 26","pres":24.9,"clicks":96}];
+let _cid=0;
+function listWithMore(rows,n=3){
+  if(rows.length<=n) return rows.join("");
+  const id="mw"+(_cid++); const hid=rows.length-n;
+  return rows.slice(0,n).join("")+`<div class="morewrap" id="${id}" style="display:none">${rows.slice(n).join("")}</div>`+`<span class="morep" data-t="${id}" data-n="${hid}">See more (${hid})</span>`;
+}
+document.addEventListener("click",e=>{
+  const p=e.target.closest(".morep"); if(!p) return;
+  const w=document.getElementById(p.dataset.t); if(!w) return;
+  const open=w.style.display!=="none";
+  w.style.display=open?"none":"block";
+  p.textContent=open?("See more ("+p.dataset.n+")"):"Collapse";
+});
+function renderTrend(){
+  const d=TREND.slice(-10); const L=46,R=652,T=20,B=160;
+  const pMax=25, cMax=Math.max(100,...d.map(x=>x.clicks));
+  const xs=i=> d.length<2?L:L+(R-L)*i/(d.length-1);
+  const yP=v=> B-(v/pMax)*(B-T); const yC=v=> B-(v/cMax)*(B-T);
+  let s="";
+  s+=`<line x1="${L}" y1="${T}" x2="${R}" y2="${T}" stroke="var(--line)"/>`;
+  s+=`<line x1="${L}" y1="${(T+B)/2}" x2="${R}" y2="${(T+B)/2}" stroke="var(--line)"/>`;
+  s+=`<line x1="${L}" y1="${B}" x2="${R}" y2="${B}" stroke="var(--faint)"/>`;
+  s+=`<text x="40" y="${T+4}" text-anchor="end" font-size="10" fill="var(--green)">${pMax}%</text>`;
+  s+=`<text x="40" y="${B+3}" text-anchor="end" font-size="10" fill="var(--green)">0</text>`;
+  s+=`<text x="658" y="${T+4}" text-anchor="start" font-size="10" fill="var(--amber)">${cMax}</text>`;
+  s+=`<text x="658" y="${B+3}" text-anchor="start" font-size="10" fill="var(--amber)">0</text>`;
+  d.forEach((x,i)=>{ s+=`<text x="${xs(i)}" y="${B+18}" text-anchor="middle" font-size="11" fill="var(--muted)">${x.wk}</text>`; });
+  const cpts=d.map((x,i)=>`${xs(i)},${yC(x.clicks)}`).join(" ");
+  s+=`<polyline points="${cpts}" fill="none" stroke="var(--amber)" stroke-width="2"/>`;
+  d.forEach((x,i)=> s+=`<circle cx="${xs(i)}" cy="${yC(x.clicks)}" r="10" fill="transparent" style="cursor:pointer"><title>${x.wk}: ${x.clicks} branded clicks</title></circle><circle cx="${xs(i)}" cy="${yC(x.clicks)}" r="3.5" fill="var(--amber)" pointer-events="none"/>`);
+  const ppts=d.map((x,i)=> x.pres!=null?`${xs(i)},${yP(x.pres)}`:null).filter(Boolean).join(" ");
+  s+=`<polyline points="${ppts}" fill="none" stroke="var(--green)" stroke-width="2"/>`;
+  d.forEach((x,i)=>{ if(x.pres!=null) s+=`<circle cx="${xs(i)}" cy="${yP(x.pres)}" r="10" fill="transparent" style="cursor:pointer"><title>${x.wk}: ${x.pres}% AI presence</title></circle><circle cx="${xs(i)}" cy="${yP(x.pres)}" r="3.5" fill="var(--green)" pointer-events="none"/>`; });
+  document.getElementById("trendchart").innerHTML=s;
+  const wks=d.filter(x=>x.pres!=null), last=d[d.length-1];
+  document.getElementById("trendcap").textContent=`Both lines climbing. AI presence ${wks[0].pres}% to ${last.pres}%, branded clicks ${d[0].clicks} to ${last.clicks}. Shows up to the last 10 weeks.`;
+}
+const barFill = p => p>=20 ? "var(--green)" : (p>0 ? "var(--amber)" : "var(--red)");
+const cpClass = p => p>=20 ? "g" : (p>0 ? "a" : "r");
+const flLabel = f => f==="working" ? '<span class="g">&#10003; working</span>' : f==="watch" ? '<span style="color:var(--amber)">watch</span>' : '<span class="r">&#9670; target</span>';
 const chipType = d => /culturemonkey/.test(d)?"owned":/reddit/.test(d)?"community":/gartner|forrester/.test(d)?"analyst":/shrm|gallup|quantumworkplace/.test(d)?"authority":"listicle";
-
+const shortLabel = u => u.length>58 ? u.slice(0,58)+"…" : u;
 function renderClusters(){
   const root = document.getElementById("clusters");
-  DATA.clusters.forEach((c,i)=>{
+  const clusters=[...DATA.clusters].sort((a,b)=>b.cm-a.cm);
+  const rows = clusters.map((c,i)=>{
     const sorted = [...c.comp].sort((a,b)=>b[1]-a[1]);
-    const leaderRows = sorted.map(([n,p])=>`<div class="lr"><span class="ln">${n}</span><div class="lbar"><div class="lf" style="width:${p}%;background:var(--faint)"></div></div><span class="lp">${Math.round(p)}%</span></div>`).join("");
-    const cmCol = c.cm>0?'var(--green)':'var(--red)';
+    const leaderRows = sorted.map(([n,p])=>`<div class="lr"><span class="ln">${n}</span><div class="lbar"><div class="lf" style="width:${p}%;background:var(--faint)"></div></div><span class="lp">${Math.round(p)}%</span></div>`);
+    const cmCol = c.cm>0?"var(--green)":"var(--red)";
     const cmRow = `<div class="lr" style="border-top:1px solid var(--line);margin-top:4px;padding-top:6px;"><span class="ln" style="font-weight:600;color:${cmCol}">CultureMonkey</span><div class="lbar"><div class="lf" style="width:${c.cm}%;background:${c.cm>0?'var(--green)':'transparent'}"></div></div><span class="lp" style="color:${cmCol}">${c.cm}%</span></div>`;
-    const srcRows = c.src.map(([d,n,f])=>`<div class="src"><span class="sd">${d} <span class="chip">${chipType(d)}</span></span><span class="sct">${n}×</span><span class="sfl">${flLabel(f)}</span></div>`).join("");
-    let gapMsg = "";
-    if(c.hole) gapMsg = `<div class="gap">No own-page cited here — content hole. The LLM has nothing of ours to pull from in this cluster.</div>`;
-    else if(c.pageButLosing) gapMsg = `<div class="gap">We have a page in this cluster but it isn't getting cited — 0% presence. Page exists; it's losing, not missing.</div>`;
-    root.insertAdjacentHTML("beforeend",
-      `<div class="clu" data-i="${i}"><span class="cae">▶</span><span class="cn">${c.name}</span><div class="cbar"><div class="cf" style="width:${c.cm}%;background:${barFill(c.cm)}"></div></div><span class="cp ${cpClass(c.cm)}">${c.cm}%</span></div>
+    const srcRows = (c.srcUrls||[]).map(([u,n])=>`<div class="src"><span class="sd"><a href="https://${u}" target="_blank" rel="noopener">${shortLabel(u)}</a> <span class="chip">${chipType(u)}</span></span><span class="sct">${n}&times;</span></div>`);
+    const srcBlock = srcRows.length ? listWithMore(srcRows,3) : '<div class="acl" style="padding:4px 0">No third-party page cited here yet.</div>';
+    let ourBlock;
+    if(c.ourUrls && c.ourUrls.length){
+      ourBlock = c.ourUrls.map(([u,n])=>`<div class="src"><span class="sd ourok"><a href="https://${u}" target="_blank" rel="noopener" style="color:var(--green)">${shortLabel(u)}</a></span><span class="sct g">${n}&times;</span></div>`).join("");
+    } else {
+      ourBlock = '<div class="ourmiss">&#9888; No CultureMonkey page is cited in this cluster</div>';
+    }
+    return `<div class="clu" data-i="${i}"><span class="cae">&#9654;</span><span class="cn">${c.name}</span><div class="cbar"><div class="cf" style="width:${c.cm}%;background:${barFill(c.cm)}"></div></div><span class="cp ${cpClass(c.cm)}">${c.cm}%</span></div>
        <div class="exp" id="exp${i}">
-         <div class="exph">Who shows up here (share of voice across this cluster)</div>
-         ${leaderRows}${cmRow}
-         <div class="exph" style="margin-top:14px;">Sources feeding this cluster</div>
-         ${srcRows}${gapMsg}
-       </div>`);
+         <div class="exph">Who shows up here</div>
+         ${listWithMore(leaderRows,3)}${cmRow}
+         <div class="exph" style="margin-top:14px;">Top pages cited here (not ours)</div>
+         ${srcBlock}
+         <div class="exph" style="margin-top:14px;">Our page in this cluster</div>
+         ${ourBlock}
+       </div>`;
   });
-  root.querySelectorAll(".clu").forEach(el=>{
-    el.addEventListener("click",()=>{ const i=el.dataset.i; el.classList.toggle("open"); document.getElementById("exp"+i).classList.toggle("open"); });
-  });
+  root.innerHTML = listWithMore(rows,3);
+  root.querySelectorAll(".clu").forEach(el=>{ el.addEventListener("click",()=>{ const i=el.dataset.i; el.classList.toggle("open"); document.getElementById("exp"+i).classList.toggle("open"); }); });
 }
-
 function renderSectionA(){
-  const root = document.getElementById("sectionA");
-  DATA.secA.forEach(s=>{
-    const urls = s.urls.map(u=>`<a href="https://${u.replace(/^https?:\/\//,'')}" target="_blank" rel="noopener">↗ ${u.replace(/^https?:\/\//,'')}</a>`).join("");
-    root.insertAdjacentHTML("beforeend",
-      `<div class="arow"><div class="ahead"><span class="ad">${s.d} <span class="chip">${chipType(s.d)}</span></span><span class="act">${s.n}×</span><span class="afl">${flLabel(s.flag)} · ${s.rate}%</span></div><div class="aurls">${urls}</div></div>`);
+  const rows = DATA.secA.map(s=>{
+    const urls = s.urls.map(u=>`<a href="https://${u.replace(/^https?:\/\//,'')}" target="_blank" rel="noopener">&#8599; ${shortLabel(u.replace(/^https?:\/\//,''))}</a>`).join("");
+    return `<div class="arow"><div class="ahead"><span class="ad">${s.d} <span class="chip">${chipType(s.d)}</span></span><span class="act">${s.n}&times;</span><span class="afl">${flLabel(s.flag)} &middot; CM co-cite ${s.rate}%</span></div><div class="aurls">${urls}</div></div>`;
   });
+  document.getElementById("sectionA").innerHTML = listWithMore(rows,3);
 }
-
 function renderSectionB(){
-  const all = DATA.secB, TOP = 5;
-  const deltaHtml = d => (d===null||d===undefined) ? '<span class="m">new</span>'
-    : d>0 ? '<span class="g">▲ '+d+'%</span>'
-    : d<0 ? '<span class="r">▼ '+Math.abs(d)+'%</span>'
-    : '<span class="m">▬ 0%</span>';
-  const row = s => `<div class="arow"><div class="ahead"><span class="ad"><a href="https://${s.u}" target="_blank" rel="noopener" style="color:var(--ink);text-decoration:none">${s.u}</a></span><span class="act">${s.n}×</span><span class="afl">${deltaHtml(s.delta)}</span></div><div class="acl">surfaces in: ${s.cl.join(", ")}</div></div>`;
+  const all = DATA.secB;
+  const deltaHtml = d => (d===null||d===undefined) ? '<span class="m">new</span>' : d>0 ? '<span class="g">&#9650; '+d+'%</span>' : d<0 ? '<span class="r">&#9660; '+Math.abs(d)+'%</span>' : '<span class="m">&#9644; 0%</span>';
+  const row = s => `<div class="arow"><div class="ahead"><span class="ad"><a href="https://${s.u}" target="_blank" rel="noopener" style="color:var(--ink);text-decoration:none">${shortLabel(s.u)}</a></span><span class="act">${s.n}&times;</span><span class="afl">${deltaHtml(s.delta)}</span></div><div class="acl">shows up in: ${s.cl.join(", ")}</div></div>`;
   const draw = q => {
-    q = (q||'').trim().toLowerCase();
-    let list, hint;
-    if(q){ list = all.filter(s=>s.u.toLowerCase().includes(q)); hint = list.length+' match'+(list.length===1?'':'es')+' of '+all.length; }
-    else { list = all.slice(0,TOP); hint = 'Showing top '+Math.min(TOP,all.length)+' of '+all.length+' — search to find any URL'; }
-    document.getElementById('secB-hint').textContent = hint;
-    document.getElementById('secB-rows').innerHTML = list.length ? list.map(row).join('') : '<div class="acl" style="padding:8px 0">No URL matches.</div>';
+    q=(q||"").trim().toLowerCase();
+    if(q){
+      const list=all.filter(s=>s.u.toLowerCase().includes(q));
+      document.getElementById("secB-hint").textContent=list.length+" match"+(list.length===1?"":"es")+" of "+all.length;
+      document.getElementById("secB-rows").innerHTML=list.length?list.map(row).join(""):'<div class="acl" style="padding:8px 0">No URL matches.</div>';
+    } else {
+      document.getElementById("secB-hint").textContent="Showing top 3 of "+all.length+", search to find any URL";
+      document.getElementById("secB-rows").innerHTML=listWithMore(all.map(row),3);
+    }
   };
-  document.getElementById('secB-search').addEventListener('input', e=>draw(e.target.value));
-  draw('');
-  document.getElementById('secB-foot').innerHTML =
-    `<div class="gap"><strong>Progress</strong> — Retention just earned its first citation (0→1) and Anonymous moved 1→3 after the rebuilds. Still a content hole on <strong>Employee experience platforms</strong> (0 citations, ~12 days live — investigate eligibility).</div>`;
+  document.getElementById("secB-search").addEventListener("input", e=>draw(e.target.value));
+  draw("");
+  document.getElementById("secB-foot").innerHTML='<div class="gap"><strong>Progress.</strong> Retention just earned its first citation (0 to 1) and Anonymous moved 1 to 3 after the rebuilds. Still nothing cited for <strong>Employee experience platforms</strong> (0 citations, about 12 days live, investigate).</div>';
 }
-
-renderClusters(); renderSectionA(); renderSectionB();
-
-// group dropdowns
-document.querySelectorAll('.grp .ghead').forEach(function(h){
-  h.addEventListener('click', function(){ h.closest('.grp').classList.toggle('open'); });
-});
+function renderYT(){
+  const TAG={own:["&#10003; we are cited","g"],gap:["&#9670; gap","r"],ridealong:["ride-along","a"],whitespace:["white space","f"]};
+  const badge=o=> o==="ours"?'<span class="ytb g">ours</span>':o==="competitor"?'<span class="ytb r">competitor</span>':'<span class="ytb m">third-party</span>';
+  const rows = YT.map((c,i)=>{
+    const [lbl,cls]=TAG[c.tag];
+    const meta = c.n ? `${c.n} video${c.n>1?"s":""} cited, ${c.ours} ours` : "no video cited yet";
+    const vids = c.vids.map(v=>`<div class="ytrow"><a class="ytttl" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">${v.title}</a><span class="ytch">${v.ch} ${badge(v.owner)}</span><span class="ytc">${v.cites}&times; &middot; ${v.cm>0?'<span class="g">CM named</span>':'<span class="f">CM absent</span>'}</span></div>`).join("");
+    const body = c.n ? vids : '<div class="acl" style="padding:6px 0">No video cited for this cluster yet. A CM video here could open a citation nobody is filming for.</div>';
+    return `<div class="ytclu" data-i="${i}"><span class="cae">&#9654;</span><span class="ytname">${c.s}</span><span class="ytmeta">${meta}</span><span class="ytt ${cls}">${lbl}</span></div>
+       <div class="exp" id="ytexp${i}">${body}</div>`;
+  });
+  const root=document.getElementById("ytclusters");
+  root.innerHTML = listWithMore(rows,3);
+  root.querySelectorAll(".ytclu").forEach(el=>{ el.addEventListener("click",()=>{const i=el.dataset.i;el.classList.toggle("open");document.getElementById("ytexp"+i).classList.toggle("open");}); });
+}
+renderTrend(); renderClusters(); renderSectionA(); renderSectionB(); renderYT();
+document.querySelectorAll(".grp .ghead").forEach(function(h){ h.addEventListener("click", function(){ h.closest(".grp").classList.toggle("open"); }); });
 </script>
 </body>
 </html>
