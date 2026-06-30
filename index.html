@@ -292,7 +292,7 @@
       </div>
       <div class="stack">
         <div class="lyr">Off-page targets: third-party pages AI pulls from</div>
-        <div class="seo">The third-party pages AI quotes when answering, ranked by how often they are used. "CM co-cite %" = how often we appear when that page is used. Low % means we are missing from a page that shapes answers. <span class="r">&#9670; target</span> (we rarely appear) &middot; <span style="color:var(--amber)">watch</span> &middot; <span class="g">&#10003; working</span>. Competitor and our own domains excluded here.</div>
+        <div class="seo">The third-party pages AI quotes when answering, ranked by how often they are used. "CM co-cite %" = how often we appear when that page is used. Low % means we are missing from a page that shapes answers. Competitor and our own domains excluded here.</div>
         <div id="sectionA"></div>
       </div>
       <div class="stack">
@@ -387,7 +387,6 @@ function renderTrend(){
 }
 const barFill = p => p>=20 ? "var(--green)" : (p>0 ? "var(--amber)" : "var(--red)");
 const cpClass = p => p>=20 ? "g" : (p>0 ? "a" : "r");
-const flLabel = f => f==="working" ? '<span class="g">&#10003; working</span>' : f==="watch" ? '<span style="color:var(--amber)">watch</span>' : '<span class="r">&#9670; target</span>';
 const chipType = d => /culturemonkey/.test(d)?"owned":/reddit/.test(d)?"community":/gartner|forrester/.test(d)?"analyst":/shrm|gallup|quantumworkplace/.test(d)?"authority":"listicle";
 const shortLabel = u => u.length>58 ? u.slice(0,58)+"…" : u;
 function renderClusters(){
@@ -422,7 +421,7 @@ function renderClusters(){
 function renderSectionA(){
   const rows = DATA.secA.map(s=>{
     const urls = s.urls.map(u=>`<a href="https://${u.replace(/^https?:\/\//,'')}" target="_blank" rel="noopener">&#8599; ${shortLabel(u.replace(/^https?:\/\//,''))}</a>`).join("");
-    return `<div class="arow"><div class="ahead"><span class="ad">${s.d} <span class="chip">${chipType(s.d)}</span></span><span class="act">${s.n}&times;</span><span class="afl">${flLabel(s.flag)} &middot; CM co-cite ${s.rate}%</span></div><div class="aurls">${urls}</div></div>`;
+    return `<div class="arow"><div class="ahead"><span class="ad">${s.d} <span class="chip">${chipType(s.d)}</span></span><span class="act">${s.n}&times;</span><span class="afl">CM co-cite ${s.rate}%</span></div><div class="aurls">${urls}</div></div>`;
   });
   document.getElementById("sectionA").innerHTML = listWithMore(rows,3);
 }
