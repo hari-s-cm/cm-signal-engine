@@ -453,6 +453,22 @@
     </div>
 
     <div class="blmod blwide">
+      <div class="blmh">Bing crawler check <span class="blmtag" style="background:#185fa5;color:#fff">live &middot; Bing Webmaster</span></div>
+      <div class="blmsub">Independent, third-party inbound-link data from Bing's crawler (every page below last crawled within days). This validates the Slack-reported wins with real index numbers. Inbound only: no crawler reports our outbound links.</div>
+      <div class="blbig">
+        <div><div class="blkpi blg">717</div><div class="blkt">inbound links to the homepage<br>(Bing index, crawled today)</div></div>
+        <div><div class="blkpi">2019</div><div class="blkt">site first seen by Bing<br>crawled near-daily since</div></div>
+      </div>
+      <div style="font-weight:700;font-size:13px;margin:8px 0 4px;">Inbound links by key page <span class="blf">(Bing anchor count)</span></div>
+      <div class="blrow"><span class="blnm">/employee-engagement/employee-engagement-survey-tools/ <span class="bltag blon">hub</span></span><span class="blval blg">213</span></div>
+      <div class="blrow"><span class="blnm">/enps-survey-software/ <span class="bltag blon">product</span></span><span class="blval blg">15</span></div>
+      <div class="blrow"><span class="blnm">/solutions/employee-retention-software/ <span class="bltag blon">product</span></span><span class="blval blg">11</span></div>
+      <div class="blrow"><span class="blnm">/employee-engagement/culture-amp-alternatives/ <span class="bltag blon">comparison</span></span><span class="blval bla">6</span></div>
+      <div class="blrow"><span class="blnm">/employee-engagement/officevibe-alternatives/ <span class="bltag blon">comparison</span></span><span class="blval bla">4</span></div>
+      <div class="blnote">Bing corroborates the strength: deep inbound authority on the homepage (717) and the engagement-survey-tools hub (213), which is why DR holds at 73. The newer commercial pages (retention 11, alternatives 4 to 6) are still early and are the ones to point future link-building at. Site-level totals are per-page anchor counts; Bing's aggregate link API is not yet populated for this fresh property.</div>
+    </div>
+
+    <div class="blmod blwide">
       <div class="blmh">Outbound leak <span class="blmtag blalarm">ALARM</span></div>
       <div class="blmsub">The reciprocal link exchanges in #backlinks-qna. Every exchange inserts a dofollow link from a CM blog page to a partner. The risk is not lost DR, it is a reciprocity plus off-topic footprint (a link-scheme signal) and topical dilution of our best content.</div>
       <div class="blbig" style="align-items:flex-start;">
@@ -532,7 +548,7 @@
     <div class="blfoot">
       <b>Scores (the health score and the four sub-scores) are out of 100.</b><br>
       <b>How this is measured.</b> Backlink Health = 40% inbound quality + 25% authority trend + 25% outbound hygiene + 10% toxic load. Link quality per link = 35% relevance + 30% authority + 20% placement/dofollow + 15% anchor health.<br>
-      <b>Data sources.</b> <span class="bldot blbgG"></span>Live: Dhanya's exchange-tracking sheet (individual live links, March to now), #backlinks-qna request pipeline (22 requests since April, deduped, current-team only), #mktg-shipped and #mktg-team listicle wins, Ahrefs free DR. &nbsp; <span class="bldot blbgA"></span>To wire: #offpage-engine monthly sheet (Drive re-auth needed; also only covers April), Ahrefs weekly CSV export (inbound DR + lost links, API tier here is gated), GA4 referral (which links drive traffic), GSC URL Inspection + Bing link counts (need account setup).<br>
+      <b>Data sources.</b> <span class="bldot blbgG"></span>Live: <b>Bing Webmaster crawler</b> (per-page inbound anchor counts, third-party verified), Dhanya's exchange-tracking sheet (individual live links, March to now), #backlinks-qna request pipeline (22 requests since April, deduped, current-team only), #mktg-shipped and #mktg-team listicle wins, Ahrefs free DR. &nbsp; <span class="bldot blbgA"></span>Not yet available: lost and toxic/disavow-link detection (needs an Ahrefs backlink export or a Bing backlinks feed, neither active), GA4 referral (which links drive traffic), GSC URL Inspection.<br>
       <b>Honest caveats.</b> The 22 are logged <b>requests</b> from the current team; a former member's requests (about two-thirds of the raw volume) are excluded. We treat the ~18 approved ("doable") as live (channel assumption). Dhanya's sheet is correlated on top and independently verifies ~5 outbound links live on-page (with anchors); it is partial, so live spans a hard-verified floor of 5 to the ~18 approved-assumed. Outbound relevance is a domain-level keyword classifier (directional; the off-topic examples are unambiguous). Dofollow status assumed by exchange convention, pending a rendered crawl. <b>Data window is April to June 2026</b> (pre-April exchanges excluded).
     </div>
   </section>
