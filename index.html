@@ -167,6 +167,25 @@
   .blsub .bln{font-size:11px;color:var(--faint);margin-top:1px;}
   .blbar{height:7px;background:var(--track);border-radius:4px;overflow:hidden;margin-top:7px;}
   .blbar>div{height:7px;border-radius:4px;}
+  .blvchart{display:flex;align-items:flex-start;margin:12px 0 4px;}
+  .blvyaxis{position:relative;width:14px;flex:0 0 14px;height:130px;}
+  .blvyaxis span{position:absolute;right:3px;transform:translateY(50%);font-size:9.5px;color:var(--muted);line-height:1;}
+  .blvmain{flex:1;min-width:0;}
+  .blvplot{display:flex;align-items:flex-end;justify-content:space-between;gap:8px;height:130px;border-left:1.5px solid var(--line);border-bottom:1.5px solid var(--line);padding:0 8px;}
+  .blvbar{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;}
+  .blvcount{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;}
+  .blvfill{position:relative;width:80%;max-width:68px;border-radius:4px 4px 0 0;background:var(--green);}
+  .blvbar.amber .blvfill{background:var(--amber);}
+  .blvlabels{display:flex;justify-content:space-between;gap:8px;padding:5px 8px 0;}
+  .blvlabels span{flex:1;text-align:center;font-size:10.5px;color:var(--muted);white-space:nowrap;}
+  .blvtip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);width:200px;background:#1b2733;color:#fff;padding:8px 10px;border-radius:8px;font-size:11px;line-height:1.55;box-shadow:0 6px 18px rgba(0,0,0,.2);opacity:0;visibility:hidden;transition:opacity .12s;z-index:30;pointer-events:none;text-align:left;}
+  .blvtip b{color:#fff;}
+  .blvtip:after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#1b2733;}
+  .blvbar:hover .blvtip{opacity:1;visibility:visible;}
+  .blvplot .blvbar:first-child .blvtip{left:0;transform:none;}
+  .blvplot .blvbar:first-child .blvtip:after{left:24px;transform:none;}
+  .blvplot .blvbar:last-child .blvtip{left:auto;right:0;transform:none;}
+  .blvplot .blvbar:last-child .blvtip:after{left:auto;right:24px;transform:none;}
   .blg{color:var(--green)}.blr{color:var(--red)}.bla{color:var(--amber)}.blb{color:#185fa5}.blmut{color:var(--muted)}.blf{color:var(--faint)}
   .blbgG{background:var(--green)}.blbgR{background:var(--red)}.blbgA{background:var(--amber)}.blbgB{background:#185fa5}.blbgM{background:var(--faint)}
   .blgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:16px;align-items:start;}
@@ -273,7 +292,7 @@
   <div class="takeaways">
     <div class="tkh">Key takeaways: week of Jun 29 to Jul 3</div>
     <ol class="tklist">
-      <li><div class="tkmain"><b>Retention is our biggest win, and it is proven.</b> After PR #430 rebuilt the retention-software page, its citations went 1 to 4 and the cluster jumped 5.6% to 33.3%.</div><div class="next">Next: run the same rebuild on the retention-tools listicle.</div></li>
+      <li><div class="tkmain"><b>Retention is our biggest win, and it is proven.</b> After PR #430 rebuilt the retention-software page, its citations went 1 to 4 and the cluster jumped 5.6% to 33.3%.</div><div class="next">Next: run the same rebuild on the engagement-software page, our weakest commercial cluster at 9.5%.</div></li>
       <li><div class="tkmain"><b>SelectSoftwareReviews is our single biggest lever.</b> We now ride along on 21 of the 59 AI answers that quote it. That one placement drove most of the 6-point lift.</div><div class="next">Next: chase the same buyer-guide spot on other DR75-plus review sites.</div></li>
       <li><div class="tkmain"><b>AI names us first for Culture Amp alternatives.</b> We open the answer, ahead of Lattice and Leapsome, and the cluster hit 64%.</div><div class="next">Next: build the same first-place play for Lattice and Leapsome alternatives.</div></li>
       <li><div class="tkmain"><b>We won our first YouTube citation.</b> Our survey-vendors short is now cited in AI answers, the one video slot we own.</div><div class="next">Next: film retention and alternatives videos, where we only ride along today.</div></li>
@@ -459,11 +478,11 @@
       <div class="blmh">Key pointers</div>
       <div class="blmsub">The five things that matter most in this tab.</div>
       <ul style="margin:6px 0 0;padding-left:20px;font-size:13px;line-height:1.5;column-count:2;column-gap:36px;">
-        <li style="margin-bottom:10px;break-inside:avoid;"><b>Authority is strong and growing (DR 73).</b> 30 quality inbound links won (up to DR 91), backed by Bing's crawl of 717 links to the homepage. This is the healthy engine.</li>
-        <li style="margin-bottom:10px;break-inside:avoid;"><b>Outbound is a healthy mix, not a leak.</b> Of 20 links given, 11 are live and roughly half are on-topic HR peer exchanges (FeedbackPulse, PeopleGoal, Matter, Confetti, Skimle).</li>
-        <li style="margin-bottom:10px;break-inside:avoid;"><b>The request pool looked worse than reality.</b> The #backlinks-qna requests skewed 95% off-topic, but the links that actually went live are far more relevant.</li>
-        <li style="margin-bottom:10px;break-inside:avoid;"><b>Clean up the off-topic minority.</b> A handful of live off-topic links (cloudtalk, aikido, v2cloud, mobile-text-alerts) add footprint risk with no SEO upside; switch them to nofollow or remove.</li>
-        <li style="break-inside:avoid;"><b>One guardrail keeps it clean.</b> Screen exchanges for topical relevance at approval, so the off-topic ones never go live while the on-topic wins continue.</li>
+        <li style="margin-bottom:10px;break-inside:avoid;"><b>Inbound authority is strong.</b> 30 links won (up to DR 91), and Bing sees 717 links to our homepage.</li>
+        <li style="margin-bottom:10px;break-inside:avoid;"><b>Outbound is not a leak.</b> Of 20 links given, 11 are live and about half are on-topic HR exchanges.</li>
+        <li style="margin-bottom:10px;break-inside:avoid;"><b>Links cluster on blogs, not money pages.</b> Bing shows the homepage and hubs pull most inbound links, while commercial pages stay thin; interlink to route authority there.</li>
+        <li style="margin-bottom:10px;break-inside:avoid;"><b>Clean up the off-topic few.</b> Cloudtalk, aikido, v2cloud and mobile-text-alerts add risk with no SEO upside; nofollow or remove them.</li>
+        <li style="break-inside:avoid;"><b>One guardrail fixes it.</b> Screen every exchange for topical relevance before it goes live.</li>
       </ul>
     </div>
 
@@ -471,17 +490,23 @@
     <div style="margin-top:28px;">
       <div class="blmod" id="bl-inbound" style="margin-bottom:22px;">
         <div class="blmh">Inbound backlinks &middot; full breakdown</div>
-          <div class="blsubhd" style="margin-top:2px;">Wins by Domain Rating <span class="blf">(18 listicle &amp; directory wins)</span></div>
-          <div style="margin:2px 0 8px;">
-            <div style="display:flex;align-items:center;gap:8px;padding:2px 0;font-size:12px;"><span style="flex:0 0 54px;color:var(--muted);">90-100</span><div style="flex:1;height:9px;background:var(--track);border-radius:4px;"><div style="height:9px;background:var(--green);width:20%;border-radius:4px;"></div></div><span style="flex:0 0 16px;text-align:right;font-weight:700;">1</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:2px 0;font-size:12px;"><span style="flex:0 0 54px;color:var(--muted);">80-89</span><div style="flex:1;height:9px;background:var(--track);border-radius:4px;"><div style="height:9px;background:var(--green);width:60%;border-radius:4px;"></div></div><span style="flex:0 0 16px;text-align:right;font-weight:700;">3</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:2px 0;font-size:12px;"><span style="flex:0 0 54px;color:var(--muted);">70-79</span><div style="flex:1;height:9px;background:var(--track);border-radius:4px;"><div style="height:9px;background:var(--green);width:100%;border-radius:4px;"></div></div><span style="flex:0 0 16px;text-align:right;font-weight:700;">5</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:2px 0;font-size:12px;"><span style="flex:0 0 54px;color:var(--muted);">60-69</span><div style="flex:1;height:9px;background:var(--track);border-radius:4px;"><div style="height:9px;background:var(--green);width:60%;border-radius:4px;"></div></div><span style="flex:0 0 16px;text-align:right;font-weight:700;">3</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:2px 0;font-size:12px;"><span style="flex:0 0 54px;color:var(--muted);">50-59</span><div style="flex:1;height:9px;background:var(--track);border-radius:4px;"><div style="height:9px;background:var(--green);width:20%;border-radius:4px;"></div></div><span style="flex:0 0 16px;text-align:right;font-weight:700;">1</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:2px 0;font-size:12px;"><span style="flex:0 0 54px;color:var(--muted);">40-49</span><div style="flex:1;height:9px;background:var(--track);border-radius:4px;"><div style="height:9px;background:var(--amber);width:20%;border-radius:4px;"></div></div><span style="flex:0 0 16px;text-align:right;font-weight:700;">1</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:2px 0;font-size:12px;"><span style="flex:0 0 54px;color:var(--muted);">30-39</span><div style="flex:1;height:9px;background:var(--track);border-radius:4px;"><div style="height:9px;background:var(--amber);width:20%;border-radius:4px;"></div></div><span style="flex:0 0 16px;text-align:right;font-weight:700;">1</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:2px 0;font-size:12px;"><span style="flex:0 0 54px;color:var(--muted);">20-29</span><div style="flex:1;height:9px;background:var(--track);border-radius:4px;"><div style="height:9px;background:var(--amber);width:20%;border-radius:4px;"></div></div><span style="flex:0 0 16px;text-align:right;font-weight:700;">1</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:2px 0;font-size:12px;"><span style="flex:0 0 54px;color:var(--muted);">10-19</span><div style="flex:1;height:9px;background:var(--track);border-radius:4px;"><div style="height:9px;background:var(--amber);width:40%;border-radius:4px;"></div></div><span style="flex:0 0 16px;text-align:right;font-weight:700;">2</span></div>
+          <div class="blsubhd" style="margin-top:2px;">Wins by Domain Rating <span class="blf">(18 wins &middot; hover a bar for the sites)</span></div>
+          <div class="blvchart">
+            <div class="blvyaxis"><span style="bottom:0;">0</span><span style="bottom:22px;">1</span><span style="bottom:44px;">2</span><span style="bottom:66px;">3</span><span style="bottom:88px;">4</span><span style="bottom:110px;">5</span></div>
+            <div class="blvmain">
+              <div class="blvplot">
+                <div class="blvbar amber"><span class="blvcount">2</span><div class="blvfill" style="height:44px;"><div class="blvtip"><b>DR 10-19 &middot; 2 sites</b><br>skimle 17 &middot; storeforce 10</div></div></div>
+                <div class="blvbar amber"><span class="blvcount">1</span><div class="blvfill" style="height:22px;"><div class="blvtip"><b>DR 20-29 &middot; 1 site</b><br>feedbackpulse 23</div></div></div>
+                <div class="blvbar amber"><span class="blvcount">1</span><div class="blvfill" style="height:22px;"><div class="blvtip"><b>DR 30-39 &middot; 1 site</b><br>heartcount 38</div></div></div>
+                <div class="blvbar amber"><span class="blvcount">1</span><div class="blvfill" style="height:22px;"><div class="blvtip"><b>DR 40-49 &middot; 1 site</b><br>pockethrms 47</div></div></div>
+                <div class="blvbar"><span class="blvcount">1</span><div class="blvfill" style="height:22px;"><div class="blvtip"><b>DR 50-59 &middot; 1 site</b><br>peoplegoal 54</div></div></div>
+                <div class="blvbar"><span class="blvcount">3</span><div class="blvfill" style="height:66px;"><div class="blvtip"><b>DR 60-69 &middot; 3 sites</b><br>withconfetti 69 &middot; engagedly 68 &middot; siit 65</div></div></div>
+                <div class="blvbar"><span class="blvcount">5</span><div class="blvfill" style="height:110px;"><div class="blvtip"><b>DR 70-79 &middot; 5 sites</b><br>aihr 79 &middot; selectsoftwarereviews 75 &middot; apploye 73 &middot; craft 72 &middot; featuredcustomers 71</div></div></div>
+                <div class="blvbar"><span class="blvcount">3</span><div class="blvfill" style="height:66px;"><div class="blvtip"><b>DR 80-89 &middot; 3 sites</b><br>featurebase 84 &middot; hibob 84 &middot; research.com 83</div></div></div>
+                <div class="blvbar"><span class="blvcount">1</span><div class="blvfill" style="height:22px;"><div class="blvtip"><b>DR 90-100 &middot; 1 site</b><br>jotform 91</div></div></div>
+              </div>
+              <div class="blvlabels"><span>10-19</span><span>20-29</span><span>30-39</span><span>40-49</span><span>50-59</span><span>60-69</span><span>70-79</span><span>80-89</span><span>90-100</span></div>
+            </div>
           </div>
           <div class="blsubhd">Listicle &amp; directory wins <span class="blf">(late May to Jul, median DR 70)</span></div>
           <div class="blrow"><span class="blnm">jotform.com <span class="bltag blon">forms / HR</span></span><span class="blval blg">DR 91</span></div>
@@ -513,8 +538,11 @@
         <div class="blmh">Outbound links &middot; full breakdown</div>
           <div class="blsubhd" style="margin-top:2px;">Relevance of live links <span class="blf">(on-topic vs off-topic)</span></div>
           <div style="margin:6px 0 10px;">
-            <div style="display:flex;align-items:center;gap:8px;padding:3px 0;font-size:12px;"><span style="flex:0 0 78px;color:var(--muted);">On-topic HR</span><div style="flex:1;height:9px;background:var(--track);border-radius:4px;"><div style="height:9px;background:var(--green);width:56%;border-radius:4px;"></div></div><span style="flex:0 0 30px;text-align:right;font-weight:700;">56%</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:3px 0;font-size:12px;"><span style="flex:0 0 78px;color:var(--muted);">Off-topic</span><div style="flex:1;height:9px;background:var(--track);border-radius:4px;"><div style="height:9px;background:var(--red);width:44%;border-radius:4px;"></div></div><span style="flex:0 0 30px;text-align:right;font-weight:700;">44%</span></div>
+            <div style="display:flex;height:18px;border-radius:5px;overflow:hidden;">
+              <div style="width:56%;background:var(--green);"></div>
+              <div style="width:44%;background:var(--red);"></div>
+            </div>
+            <div style="font-size:12px;margin-top:6px;line-height:1.5;"><b style="color:var(--green);">On-topic HR 56%</b> <span class="blf">(feedbackpulse, peoplegoal, matter, confetti, skimle)</span> &nbsp;&middot;&nbsp; <b style="color:var(--red);">Off-topic 44%</b> <span class="blf">(cloudtalk, aikido, v2cloud, mobile-text-alerts)</span></div>
           </div>
           <div class="blsubhd">Live, on-topic HR / EX exchanges <span class="blf">(peers &amp; reviewers, our link placed)</span></div>
           <div class="blrow"><span class="blnm">/lattice-alternatives/ &rarr; <b>feedbackpulse.com</b> <span class="bltag blon">survey software</span></span><span class="blval blg">LIVE</span></div>
