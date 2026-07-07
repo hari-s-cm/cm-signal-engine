@@ -223,6 +223,7 @@
   .blnumbody{border-top:1px solid var(--line);margin-top:12px;padding-top:8px;}
   .blsubhd{font-weight:700;font-size:13px;margin:14px 0 6px;color:var(--ink);}
   .blnumbody > .blsubhd:first-child{margin-top:2px;}
+  .bltop3{grid-template-columns:0.7fr 1fr 1fr;}
   @media(max-width:820px){.blhero{grid-template-columns:1fr;}.blgrid{grid-template-columns:1fr;}.bllname{flex-basis:150px;}}
 </style>
 </head>
@@ -419,8 +420,16 @@
     </div>
   </section>
   <section class="panel" data-p="backlink">
-    <div class="phead"><span class="gcar">&#9654;</span><div><div class="gt">4 &middot; Backlink health</div><div class="gs">Data window: exchange activity Apr to Jul 2026 &middot; listicle wins from late May &middot; Bing crawl live (site indexed since 2019). Click a number below to drill in.</div></div></div>
-    <div class="blgrid" style="align-items:stretch;">
+    <div class="phead"><span class="gcar">&#9654;</span><div><div class="gt">4 &middot; Backlink health</div><div class="gs">Inbound and outbound backlinks from the team's channels, Dhanya's exchange sheet, and Bing's crawler. Click a number to drill in.</div></div></div>
+    <div class="blgrid bltop3">
+      <div class="blmod">
+        <div class="blnumlabel">Data window</div>
+        <div style="margin-top:12px;font-size:13px;line-height:1.5;color:var(--muted);">
+          <div style="margin-bottom:11px;"><b style="color:var(--ink);">Exchanges</b><br>Apr to Jul 2026</div>
+          <div style="margin-bottom:11px;"><b style="color:var(--ink);">Listicle wins</b><br>from late May 2026</div>
+          <div><b style="color:var(--ink);">Bing crawl</b><br>live, indexed since 2019</div>
+        </div>
+      </div>
       <details class="blmod blnum">
         <summary>
           <div class="blnumlabel">Inbound backlinks won</div>
