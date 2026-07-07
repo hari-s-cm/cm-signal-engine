@@ -21,6 +21,7 @@
   .card .h{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;}
   .trend{font-size:12px;font-weight:600;padding:2px 9px;border-radius:20px;white-space:nowrap;}
   .trend.g{color:var(--green);background:#e7f3ec;}
+  .trend.a{color:var(--amber);background:#fdf0e3;}
   .card .big{font-size:22px;font-weight:600;margin:8px 0 4px;}
   .card .sub{font-size:13px;color:var(--muted);}
   .trendcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px 10px;margin-bottom:16px;}
@@ -151,13 +152,70 @@
   .panel .gbody .stack + .stack{margin-top:0;padding-top:14px;}
   .panel .gbody .stack.wide{column-span:all;-webkit-column-span:all;margin-bottom:18px;}
   @media(max-width:820px){.panel .gbody{column-count:1;} .pgrid{grid-template-columns:1fr;} .wrap{padding:18px 14px 40px;}}
+
+  /* ===== Backlink tab (lab, namespaced .bl*) ===== */
+  .blintro{font-size:13px;color:var(--muted);margin:2px 0 18px;max-width:900px;}
+  .blhero{display:grid;grid-template-columns:220px 1fr;gap:22px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:16px;align-items:center;}
+  .blscore{text-align:center;}
+  .blnum{font-size:52px;font-weight:700;line-height:1;color:var(--amber);}
+  .blden{font-size:15px;color:var(--faint);}
+  .bllbl{font-size:13px;font-weight:600;color:var(--amber);margin-top:4px;}
+  .blsubs{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;}
+  .blsub{background:var(--bg);border-radius:10px;padding:11px 13px;}
+  .blsub .bll{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;}
+  .blsub .blv{font-size:22px;font-weight:700;margin-top:3px;}
+  .blsub .bln{font-size:11px;color:var(--faint);margin-top:1px;}
+  .blbar{height:7px;background:var(--track);border-radius:4px;overflow:hidden;margin-top:7px;}
+  .blbar>div{height:7px;border-radius:4px;}
+  .blg{color:var(--green)}.blr{color:var(--red)}.bla{color:var(--amber)}.blb{color:#185fa5}.blmut{color:var(--muted)}.blf{color:var(--faint)}
+  .blbgG{background:var(--green)}.blbgR{background:var(--red)}.blbgA{background:var(--amber)}.blbgB{background:#185fa5}.blbgM{background:var(--faint)}
+  .blgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:16px;align-items:start;}
+  .blmod{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px 18px;margin-bottom:16px;}
+  .blmod.blwide{grid-column:1/-1;}
+  .blmh{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;margin-bottom:2px;}
+  .blmtag{font-size:11px;font-weight:700;padding:1px 8px;border-radius:20px;}
+  .blmtag.blalarm{color:#fff;background:var(--red);}
+  .blmtag.blok{color:#fff;background:var(--green);}
+  .blmsub{font-size:12px;color:var(--faint);margin-bottom:12px;}
+  .blbig{display:flex;gap:22px;flex-wrap:wrap;align-items:baseline;margin-bottom:12px;}
+  .blkpi{font-size:34px;font-weight:700;}
+  .blkt{font-size:12px;color:var(--muted);}
+  .blrow{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);font-size:13px;}
+  .blrow:last-child{border-bottom:none;}
+  .blnm{flex:1;}
+  .bltag{font-size:10px;font-weight:600;padding:1px 7px;border-radius:5px;margin-left:5px;}
+  .bltag.bloff{color:var(--red);background:#fbeaea;}.bltag.blon{color:var(--green);background:#e7f3ec;}
+  .bltag.blcomp{color:#fff;background:var(--red);}
+  .blval{font-weight:700;text-align:right;min-width:42px;}
+  .bllrow{display:flex;align-items:center;gap:10px;padding:5px 0;font-size:13px;}
+  .bllname{flex:0 0 260px;}
+  .bllbar2{flex:1;height:8px;background:var(--track);border-radius:4px;overflow:hidden;}
+  .bllbar2>div{height:8px;border-radius:4px;}
+  .bllval{flex:0 0 70px;text-align:right;font-weight:700;}
+  .blspark{display:flex;align-items:flex-end;gap:6px;height:56px;margin:6px 0 4px;}
+  .blbcol{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;}
+  .blbcol>div{width:100%;border-radius:3px 3px 0 0;}
+  .blsparklbl{font-size:10px;color:var(--faint);}
+  .blnote{font-size:12px;color:var(--faint);margin-top:8px;}
+  .blalarmbox{background:#fdeeee;border:1px solid #f3c0c0;border-radius:9px;padding:10px 13px;font-size:12px;color:var(--red);margin-top:10px;}
+  .blactbox{background:#eef4fb;border:1px solid #c5d8ef;border-radius:9px;padding:10px 13px;font-size:12px;color:#185fa5;margin-top:10px;}
+  .blokbox{background:#e7f3ec;border:1px solid #bfe3cd;border-radius:9px;padding:10px 13px;font-size:12px;color:#1a6b3c;margin-top:10px;}
+  .blstate{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 4px;}
+  .blpip{font-size:12px;padding:4px 11px;border-radius:20px;background:var(--bg);border:1px solid var(--line);}
+  .blfoot{font-size:12px;color:var(--faint);margin-top:6px;line-height:1.6;}
+  .bldot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;}
+  .bldet > summary{cursor:pointer;list-style:none;outline:none;}
+  .bldet > summary::-webkit-details-marker{display:none;}
+  .bldet > summary::before{content:"\25B8";color:var(--muted);font-size:18px;line-height:1;margin-right:9px;transition:transform .15s;}
+  .bldet[open] > summary::before{transform:rotate(90deg);}
+  @media(max-width:820px){.blhero{grid-template-columns:1fr;}.blgrid{grid-template-columns:1fr;}.bllname{flex-basis:150px;}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="top">
     <h1>Signal Engine: Brand and LLM visibility</h1>
-    <span class="pill">Week of Jun 22 to 26, 2026</span>
+    <span class="pill">Week of Jun 29 to Jul 3, 2026</span>
   </div>
 
   <div class="tabs">
@@ -165,18 +223,19 @@
     <span class="tab" data-t="crawl">AI crawl</span>
     <span class="tab" data-t="llm">LLM visibility</span>
     <span class="tab" data-t="brand">Brand impact</span>
+    <span class="tab" data-t="backlink">Backlinks</span>
   </div>
   <div class="panel pactive" data-p="summary">
   <div class="cards">
     <div class="card">
-      <div class="h"><span>Story A &middot; AI is working</span><span class="trend g">&#9650; 4.8 pts wk/wk</span></div>
-      <div class="big g">24.9% AI presence</div>
-      <div class="sub">Verified real (citation churn + control clusters). Strong: alternatives 51%, pulse 42%, eNPS 40%, engagement survey 26%, feedback 26%. Still absent: EX platforms 0%.</div>
+      <div class="h"><span>Story A &middot; AI is working</span><span class="trend g">&#9650; 6.0 pts wk/wk</span></div>
+      <div class="big g">30.9% AI presence</div>
+      <div class="sub">Biggest weekly jump yet, and verified real (new citations, flat control clusters). Strong: alternatives 64%, eNPS 40%, engagement survey 35%, retention 33%. Now surfacing: EX platforms 13%.</div>
     </div>
     <div class="card">
-      <div class="h"><span>Story B &middot; Brand is growing</span><span class="trend g">&#9650; 30% wk/wk</span></div>
-      <div class="big" style="color:var(--amber)">Interest rising</div>
-      <div class="sub">Branded clicks +30%, impressions +75% (more people searching us). Homepage sessions flat. But AI referral clicks fell from 29 to 16.</div>
+      <div class="h"><span>Story B &middot; Brand and pipeline</span><span class="trend a">&#9660; 35% branded, holiday</span></div>
+      <div class="big" style="color:var(--amber)">Holiday-week dip</div>
+      <div class="sub">Branded clicks 96 to 62 on the US July 4 week, but position improved 7.2 to 3.7. The real signal: the first AI-sourced lead in two weeks, a ChatGPT referral that converted.</div>
     </div>
   </div>
   <div class="trendcard">
@@ -187,108 +246,110 @@
   </div>
   <div class="pgrid">
   <div class="takeaways">
-    <div class="tkh">Key takeaways: week of Jun 22 to 26</div>
+    <div class="tkh">Key takeaways: week of Jun 29 to Jul 3</div>
     <ol class="tklist">
-      <li><div class="tkmain">Editing the exact pages AI cites is working. Competitor alternatives went from 31% to 51%, our biggest jump of the week.</div><div class="next">Next: do the same direct edits on the clusters where we are absent.</div></li>
-      <li><div class="tkmain">The 24.9% is real, not a fluke. 24% of citations were new this week and the gain sits only in the clusters we worked on.</div><div class="next">Next: keep running the weekly reality check before reporting any gain.</div></li>
-      <li><div class="tkmain">Two of last week's three calls came true. Retention and anonymous both started getting cited. EX platforms still has zero.</div><div class="next">Next: audit the EX platforms page to find why it is not being cited.</div></li>
-      <li><div class="tkmain">People search our brand more, but click us less from AI. Branded clicks up 30%, yet AI referral visits fell from 29 to 16.</div><div class="next">Next: add stronger calls to action on the pages AI cites.</div></li>
-      <li><div class="tkmain">AI bots are starting to read our product pages, not just our blog. Product-page crawls doubled to 9%.</div><div class="next">Next: aim new backlinks at the retention, EX, and anonymous pages.</div></li>
+      <li><div class="tkmain">The retention page win is proven. PR #430 rebuilt /solutions/employee-retention-software; it went from 1 to 4 citations and the cluster jumped from 5.6% to 33.3%, our biggest cluster move.</div><div class="next">Next: run the same Paper plus content rebuild on the retention-tools listicle.</div></li>
+      <li><div class="tkmain">SelectSoftwareReviews is our highest-leverage citation source. We ride along on 21 of the 59 answers that quote it, across engagement, alternatives and software. It is the single biggest driver of the +6 point lift.</div><div class="next">Next: chase the same buyer-guide placements on other DR75-plus review sites.</div></li>
+      <li><div class="tkmain">AI names us first in Culture Amp alternatives. We land in the opening line (position 0.02) ahead of Lattice and Leapsome; the cluster hit 64%, backed by the Research.com listicle.</div><div class="next">Next: build the same first-position play for Lattice and Leapsome alternatives.</div></li>
+      <li><div class="tkmain">Our first YouTube citation win. The CultureMonkey survey-vendors short is now cited in Perplexity's engagement-survey answers, the one video slot we own.</div><div class="next">Next: film retention and alternatives videos where we only ride along today.</div></li>
+      <li><div class="tkmain">A competitor owns our retention-tools slot. PR #448 added HeartCount to /employee-retention-tools, but bucketlistrewards.com is cited there and our page is not.</div><div class="next">Next: rework the listicle for citation, a comparison table plus eNPS and frontline attributes.</div></li>
     </ol>
   </div>
   <div class="attrcard">
     <div class="attrh">What moved and why</div>
-    <div class="attrsub">PRs matched to the page they edited. <b>Direct</b> = edited the cited page. <b>Indirect</b> = edited a related or linking page that likely helped. <b>Watch</b> = shipped but not surfacing. Trailing 2 weeks, lag vs the Jun 29 poll. Hypotheses, not proof.</div>
-    <div class="attrhd">Direct: a PR edited the cited page</div>
-    <div class="attrrow"><span class="attrm g">&#9650; Alternatives 31 to 51%</span><span class="attrc">Added a tool to officevibe-alternatives (cited, 11 to 15) and a schema fix surfaced glint-alternatives as a new citation (0 to 3); building on the earlier Culture Amp and Officevibe rewrites <span class="f">(#461, #465, plus #387/#389)</span></span><span class="attrt g">direct</span></div>
-    <div class="attrrow"><span class="attrm g">&#9650; Retention 0 to 5.6%</span><span class="attrc">Ported the solutions/employee-retention-software page to Paper, now earning its first citation (0 to 1) <span class="f">(#430)</span></span><span class="attrt g">direct</span></div>
+    <div class="attrsub">On-site PRs matched to the page they edited, off-site wins from #mktg-shipped. <b>Direct</b> = edited or won the cited page. <b>Indirect</b> = a related or linking page likely helped. <b>Watch</b> = shipped but not surfacing. Trailing 2 weeks, lag vs the Jul 6 poll. Hypotheses, not proof.</div>
+    <div class="attrhd">Direct: the cited page was edited or won</div>
+    <div class="attrrow"><span class="attrm g">&#9650; Retention 5.6 to 33.3%</span><span class="attrc">PR #430 rebuilt the solutions/employee-retention-software page; it is now cited 1 to 4. The Engagedly DR68 listicle also co-cites CM 8x in this cluster, so on-site and off-site both point the same way <span class="f">(#430, Slack)</span></span><span class="attrt g">direct</span></div>
+    <div class="attrrow"><span class="attrm g">&#9650; Overall +6.0 pts</span><span class="attrc">SelectSoftwareReviews buyer-guide went live Jun 29 (DR75); CM now rides along on 21 of 59 citations across engagement, alternatives and software. The single biggest lever behind the overall lift <span class="f">(Slack)</span></span><span class="attrt g">direct</span></div>
     <div class="attrhd">Indirect: a related page was touched, likely helped</div>
-    <div class="attrrow"><span class="attrm g">&#9650; Eng. survey 21 to 26%</span><span class="attrc">The cited survey-vendors guide jumped 9 to 17; interlinks added from top-cited blogs to commercial pages, plus a ghost-port that touched the cited survey-tools page <span class="f">(Slack, #472)</span></span><span class="attrt" style="color:var(--amber)">indirect</span></div>
-    <div class="attrrow"><span class="attrm g">&#9650; Anonymous 0 to 6.7%</span><span class="attrc">anonymous-feedback-remote-teams citation 1 to 3, plus a Featurebase DR84 do-follow listicle pushed CM to #4. The rebuilt pages are starting to surface <span class="f">(Slack, #417/#432/#440)</span></span><span class="attrt" style="color:var(--amber)">indirect</span></div>
-    <div class="attrrow"><span class="attrm g">&#9650; Off-site to alternatives</span><span class="attrc">Research.com culture-amp listicle DR83, FeedbackPulse reciprocal, and the Darcy EESV YouTube short (self-reported as citing CM for officevibe alternatives) reinforce the alternatives surge <span class="f">(Slack)</span></span><span class="attrt" style="color:var(--amber)">indirect</span></div>
+    <div class="attrrow"><span class="attrm g">&#9650; Alternatives 51 to 64%</span><span class="attrc">Research.com culture-amp listicle DR83 co-cited; officevibe-alternatives steady at 15 cites; CM now named first in Culture Amp alternatives answers <span class="f">(Slack, #461)</span></span><span class="attrt" style="color:var(--amber)">indirect</span></div>
+    <div class="attrrow"><span class="attrm g">&#9650; Anonymous 6.7 to 20%</span><span class="attrc">Featurebase DR84 listicle co-cites CM 9x; feedback-tools page 2 to 5; a new how-to-collect-anonymous-feedback guide surfaced as a fresh citation <span class="f">(Slack)</span></span><span class="attrt" style="color:var(--amber)">indirect</span></div>
+    <div class="attrrow"><span class="attrm g">&#9650; Eng. survey 26 to 35%</span><span class="attrc">The cited vendors guide 17 to 18; SSR buyer-guide and the SHRM directory feeding this cluster; interlinks from top-cited blogs still routing crawl to commercial pages <span class="f">(Slack)</span></span><span class="attrt" style="color:var(--amber)">indirect</span></div>
     <div class="attrhd">Shipped, not surfacing yet: watch / investigate</div>
-    <div class="attrrow"><span class="attrm" style="color:var(--amber)">&#9670; EX platforms 0%</span><span class="attrc">EX-platforms page live and internally linked since Jun 17, about 12 days, still zero citations. Escalate to a citation-eligibility audit (schema, listicle format) <span class="f">(#423)</span></span><span class="attrt" style="color:var(--amber)">investigate</span></div>
-    <div class="attrrow"><span class="attrm" style="color:var(--amber)">&#9670; Qualtrics + 15Five alts</span><span class="attrc">New Qualtrics-alternatives guide and 15Five rewrite shipped Jun 22 to 23, not cited yet, normal lag <span class="f">(#467, #451)</span></span><span class="attrt" style="color:#185fa5">watch</span></div>
-    <div class="attrrow"><span class="attrm m">&#9702; New LPs</span><span class="attrc">employee-engagement-survey LP (#473) and pulse LP live. Landing pages are not citation targets; watch whether interlinks route citations to the listicles <span class="f">(#473, Slack)</span></span><span class="attrt m">watch</span></div>
+    <div class="attrrow"><span class="attrm" style="color:var(--amber)">&#9670; Retention-tools listicle</span><span class="attrc">PR #448 added HeartCount to employee-retention-tools, but our page is not cited; bucketlistrewards.com owns that citation slot (3x). Rework for citation format <span class="f">(#448)</span></span><span class="attrt" style="color:var(--amber)">investigate</span></div>
+    <div class="attrrow"><span class="attrm" style="color:#185fa5">&#9670; 5 won listicles</span><span class="attrc">SIIT, Skimle, PocketHRMS, FeaturedCustomers and Craft.co listings won in the last two weeks, still 0 citations. Low DR or normal lag; watch whether they retrieve <span class="f">(Slack)</span></span><span class="attrt" style="color:#185fa5">watch</span></div>
+    <div class="attrrow"><span class="attrm r">&#9670; Third-party 20 to 0%</span><span class="attrc">Our third-party-survey-companies page is still cited 6x, but CM is no longer named in the answer text for this cluster. Investigate the framing drop <span class="f">(no PR)</span></span><span class="attrt" style="color:var(--amber)">investigate</span></div>
     <div class="attrhd">Scorecard: last run's predictions, graded</div>
-    <div class="attrrow"><span class="attrm g">&#10003; Retention</span><span class="attrc">Predicted to surface after the Jun 19 to 22 ports. It did, 0 to 5.6% with the page now cited</span><span class="attrt g">hit</span></div>
-    <div class="attrrow"><span class="attrm g">&#10003; Anonymous</span><span class="attrc">Predicted after the Jun 18 to 19 rebuilds. Surfaced 0 to 6.7%, page cited 1 to 3</span><span class="attrt g">hit</span></div>
-    <div class="attrrow"><span class="attrm r">&#10007; EX platforms</span><span class="attrc">Predicted to surface after #423. Still 0% two weeks on. Missed; now an investigate item</span><span class="attrt r">miss</span></div>
+    <div class="attrrow"><span class="attrm g">&#10003; EX platforms</span><span class="attrc">Last run's investigate item (0% for two weeks). Finally surfaced: 0 to 13.3%, with the homepage and EX page now cited</span><span class="attrt g">hit</span></div>
+    <div class="attrrow"><span class="attrm g">&#10003; Retention</span><span class="attrc">Predicted to compound after the Jun 22 port. It did, 5.6 to 33.3% with the page 1 to 4</span><span class="attrt g">hit</span></div>
+    <div class="attrrow"><span class="attrm g">&#10003; Anonymous</span><span class="attrc">Predicted to keep rising after the rebuilds. Continued 6.7 to 20%, feedback-tools page 2 to 5</span><span class="attrt g">hit</span></div>
   </div>
   </div>
   </div>
   <section class="panel" data-p="crawl" id="g1">
-    <div class="phead"><span class="gcar">&#9654;</span><div><div class="gt">1 &middot; AI crawl and ingestion</div><div class="gs">Are AI engines reading us? &middot; 31,681 bot visits &middot; 77% from untracked crawlers &middot; product-page reads doubled to 9%</div></div></div>
+    <div class="phead"><span class="gcar">&#9654;</span><div><div class="gt">1 &middot; AI crawl and ingestion</div><div class="gs">Are AI engines reading us? &middot; 27,339 bot visits &middot; 85% from untracked crawlers &middot; answer-engine reads down 52% on the US July 4 week</div></div></div>
     <div class="gbody">
       <div class="stack">
         <div class="lyr">AI bots reading our site (Mon to Fri, vs last week)</div>
-        <div class="row"><span class="dot bg-g"></span><span class="nm">Answer-engine visits <span class="chip">live AI search bots</span></span><span class="val">5,544</span><span class="delta g">&#9650; 20%</span></div>
-        <div class="row"><span class="dot bg-m"></span><span class="nm">Training-crawler visits <span class="chip">model training bots</span></span><span class="val">1,815</span><span class="delta m">&#9644; flat</span></div>
-        <div class="row"><span class="dot bg-g"></span><span class="nm">Unique pages crawled <span class="chip">logs</span></span><span class="val">1,130</span><span class="delta g">&#9650; vs 945</span></div>
-        <div class="row"><span class="dot bg-r"></span><span class="nm">Broken links bots hit (404s) <span class="chip">fixable</span></span><span class="val">557</span><span class="delta r">waste</span></div>
+        <div class="row"><span class="dot bg-r"></span><span class="nm">Answer-engine visits <span class="chip">live AI search bots</span></span><span class="val">2,680</span><span class="delta r">&#9660; 52% (holiday)</span></div>
+        <div class="row"><span class="dot bg-m"></span><span class="nm">Training-crawler visits <span class="chip">model training bots</span></span><span class="val">1,373</span><span class="delta m">&#9660; 24%</span></div>
+        <div class="row"><span class="dot bg-g"></span><span class="nm">Unique pages crawled <span class="chip">logs</span></span><span class="val">1,789</span><span class="delta g">&#9650; vs 1,130</span></div>
+        <div class="row"><span class="dot bg-r"></span><span class="nm">Broken links bots hit (404s) <span class="chip">fixable</span></span><span class="val">295</span><span class="delta r">waste</span></div>
       </div>
       <div class="stack">
         <div class="lyr">Who is crawling us <span class="chip">raw log</span></div>
-        <div class="seo">The metrics above track 6 named bots; the raw log shows the full AI crawl, and 77% of it comes from bots those metrics never count. 31,681 visits, Jun 22 to 26.</div>
-        <div class="src"><span class="sd"><strong>Answer engines</strong> <span class="f">(these cite you in live AI answers)</span></span><span class="sct" style="min-width:60px;font-weight:600;color:var(--green)">5,544</span></div>
-        <div class="acl" style="margin:0 0 6px;">OAI-SearchBot 4,000 (up from 2,580) &middot; PerplexityBot 1,379 &middot; Claude-User 165</div>
-        <div class="src"><span class="sd"><strong>Training crawlers</strong> <span class="f">(feed model training, not live answers)</span></span><span class="sct" style="min-width:60px;font-weight:600;color:var(--muted)">1,815</span></div>
-        <div class="acl" style="margin:0 0 6px;">ClaudeBot 1,347 &middot; GPTBot 468</div>
-        <div class="src"><span class="sd"><strong>Other AI crawlers</strong> <span class="f">(not tracked by the named-bot metrics)</span></span><span class="sct" style="min-width:60px;font-weight:600;color:var(--red)">24,322</span></div>
-        <div class="acl" style="margin:0 0 2px;">Bytespider (ByteDance) 18,242 &middot; Meta-ExternalAgent 2,597 &middot; PetalBot 1,727 &middot; Applebot 1,298</div>
-        <div class="gap">77% of all AI crawling is from bots the named-bot metrics never count. Bytespider alone is about 2.5x every tracked bot combined.</div>
+        <div class="seo">The metrics above track 6 named bots; the raw log shows the full AI crawl, and 85% of it comes from bots those metrics never count. 27,339 visits, Jun 29 to Jul 3.</div>
+        <div class="src"><span class="sd"><strong>Answer engines</strong> <span class="f">(these cite you in live AI answers)</span></span><span class="sct" style="min-width:60px;font-weight:600;color:var(--green)">2,680</span></div>
+        <div class="acl" style="margin:0 0 6px;">OAI-SearchBot 1,926 (down from 4,000) &middot; PerplexityBot 604 &middot; Claude-User 150</div>
+        <div class="src"><span class="sd"><strong>Training crawlers</strong> <span class="f">(feed model training, not live answers)</span></span><span class="sct" style="min-width:60px;font-weight:600;color:var(--muted)">1,373</span></div>
+        <div class="acl" style="margin:0 0 6px;">ClaudeBot 1,102 &middot; GPTBot 271</div>
+        <div class="src"><span class="sd"><strong>Other AI crawlers</strong> <span class="f">(not tracked by the named-bot metrics)</span></span><span class="sct" style="min-width:60px;font-weight:600;color:var(--red)">23,286</span></div>
+        <div class="acl" style="margin:0 0 2px;">Bytespider (ByteDance) 18,137 &middot; Meta-ExternalAgent 1,741 &middot; Applebot 1,499 &middot; PetalBot 1,376</div>
+        <div class="gap">85% of all AI crawling is from bots the named-bot metrics never count. Bytespider alone is about 4.5x every tracked bot combined, and it grew while the answer engines idled over the holiday.</div>
         </div>
 
       <div class="stack">
         <div class="lyr">What pages they read</div>
-        <div class="seo" style="margin:0 0 8px;">Most AI crawling lands on our blog, not the product and comparison pages that actually sell. Those selling pages got 9% of crawls this week, up from 4%.</div>
-        <div class="qframe"><div style="width:91%;background:var(--faint)"></div><div style="width:9%;background:var(--amber)"></div></div>
-        <div class="qleg"><span><span class="m">&#9679;</span> Blog and guides 91% (7,360)</span><span><span style="color:var(--amber)">&#9679;</span> Product and comparison pages 9% (699)</span></div>
-        <div class="src"><span class="sd">/employee-engagement-survey/ <span class="chip">product page, optimised</span></span><span class="sct">17&times;</span></div>
-        <div class="src"><span class="sd">/solutions/employee-retention-software/ <span class="chip">product page</span></span><span class="sct">14&times;</span></div>
-        <div class="src"><span class="sd">/anonymous-employee-feedback-tool/ <span class="chip">product page, optimised</span></span><span class="sct">13&times;</span></div>
+        <div class="seo" style="margin:0 0 8px;">Most AI crawling still lands on our blog, not the product and comparison pages that sell. Those selling pages held 8% of crawls this week.</div>
+        <div class="qframe"><div style="width:92%;background:var(--faint)"></div><div style="width:8%;background:var(--amber)"></div></div>
+        <div class="qleg"><span><span class="m">&#9679;</span> Blog and guides 92% (6,259)</span><span><span style="color:var(--amber)">&#9679;</span> Product and comparison pages 8% (538)</span></div>
+        <div class="src"><span class="sd">/solutions/manager-effectiveness/ <span class="chip">solutions page</span></span><span class="sct">18&times;</span></div>
+        <div class="src"><span class="sd">/employee-engagement/employee-engagement-survey-tools/ <span class="chip">comparison page</span></span><span class="sct">16&times;</span></div>
+        <div class="src"><span class="sd">/employee-engagement/pulse-survey-tools/ <span class="chip">comparison page</span></span><span class="sct">15&times;</span></div>
         <div class="morewrap" id="mp1" style="display:none">
-        <div class="src"><span class="sd">/employee-engagement/employee-engagement-survey-tools/ <span class="chip">comparison page</span></span><span class="sct">13&times;</span></div>
-        </div><span class="morep" data-t="mp1" data-n="1">See more (1)</span>
-        <div class="acl" style="margin-top:4px;">The interlinking work is landing: the optimised product pages (engagement-survey, retention, anonymous) are now the most-crawled selling pages, up from almost nothing.</div>
+        <div class="src"><span class="sd">/employee-engagement/officevibe-alternatives/ <span class="chip">comparison page</span></span><span class="sct">14&times;</span></div>
+        <div class="src"><span class="sd">/employee-feedback-software/ <span class="chip">product page</span></span><span class="sct">14&times;</span></div>
+        </div><span class="morep" data-t="mp1" data-n="2">See more (2)</span>
+        <div class="acl" style="margin-top:4px;">The retention page (#430) is now among the crawled selling pages, and officevibe-alternatives keeps drawing reads. Holiday week pulled the totals down, so read shares not absolutes.</div>
         </div>
 
       <div class="stack">
-        <div class="lyr">Wasted crawl: broken links <span class="chip">557 hits, 334 dead URLs</span></div>
-        <div class="src"><span class="sd">/articles/blog/</span><span class="sct">11&times;</span></div>
-        <div class="src"><span class="sd">/sitemap-index.xml</span><span class="sct">6&times;</span></div>
-        <div class="src"><span class="sd">/employee-engagement/content/images/2026/04/pulse-survey-tools-1.jpg</span><span class="sct">6&times;</span></div>
+        <div class="lyr">Wasted crawl: broken links <span class="chip">295 hits, 168 dead URLs</span></div>
+        <div class="src"><span class="sd">/articles/blog/</span><span class="sct">14&times;</span></div>
+        <div class="src"><span class="sd">/employee-engagement/content/images/2026/04/pulse-survey-tools-1.jpg</span><span class="sct">9&times;</span></div>
+        <div class="src"><span class="sd">/page-data/articles/blog/page-data.json</span><span class="sct">7&times;</span></div>
         <div class="morewrap" id="mp2" style="display:none">
-        <div class="src"><span class="sd">/page-data/articles/blog/page-data.json</span><span class="sct">6&times;</span></div>
-        <div class="src"><span class="sd">/hr-glossary/employee-engagement/</span><span class="sct">5&times;</span></div>
+        <div class="src"><span class="sd">/hr-glossary/blogs/hybrid-organization/</span><span class="sct">5&times;</span></div>
+        <div class="src"><span class="sd">/employee-engagement/hotel-employee-survey-questions/</span><span class="sct">4&times;</span></div>
         </div><span class="morep" data-t="mp2" data-n="2">See more (2)</span>
       </div>
     </div>
   </section>
   <section class="panel" data-p="llm" id="g2">
-    <div class="phead"><span class="gcar">&#9654;</span><div><div class="gt">2 &middot; LLM visibility and citations</div><div class="gs">Do we show up in AI answers? &middot; 24.9% presence, up 4.8 pts (verified real) &middot; alternatives 51% &middot; 62 mentions, on-message</div></div></div>
+    <div class="phead"><span class="gcar">&#9654;</span><div><div class="gt">2 &middot; LLM visibility and citations</div><div class="gs">Do we show up in AI answers? &middot; 30.9% presence, up 6.0 pts (verified real) &middot; alternatives 64% &middot; 77 mentions, on-message</div></div></div>
     <div class="gbody">
       <div class="stack wide">
-        <div class="lyr">Share of voice by cluster <span class="chip">Perplexity sonar, Jun 29</span></div>
-        <div class="ov">Overall 24.9% (62 of 249 answers), up from 20.1%, and verified real: 24% of citations were new this week (not a stale cache) and the gain sat in clusters we worked on while untouched clusters stayed flat. <strong>Click any cluster</strong> for who shows up instead and the pages feeding it. Small samples (3 runs), so trust direction over weeks.</div>
+        <div class="lyr">Share of voice by cluster <span class="chip">Perplexity sonar, Jul 6</span></div>
+        <div class="ov">Overall 30.9% (77 of 249 answers), up from 24.9%, and verified real: multiple new CM pages appeared as citations (retention 1 to 4, a new anonymous guide, the EX homepage), while do-nothing clusters (feedback, eNPS) stayed flat. <strong>Click any cluster</strong> for who shows up instead and the pages feeding it. Small samples (3 runs), so trust direction over weeks.</div>
         <div id="clusters"></div>
       </div>
       <div class="stack">
         <div class="lyr">How AI talks about us <span class="chip">quality of voice</span></div>
-        <div class="seo">Not just whether we are named, but how: where we land in the answer, the tone, and the strengths the model ties to us vs competitors.</div>
+        <div class="seo">Not just whether we are named, but how: where we land in the answer, the tone, and the strengths the model ties to us vs competitors. Note: in retention we are named but late and conditional (the frontline specialist), while in alternatives we lead.</div>
         <div class="qgrid">
-          <div class="qstat"><div class="l">Where we land in the answer</div><div class="v">~36% <span style="font-size:12px;color:var(--faint);font-weight:400;">in the top third</span></div></div>
-          <div class="qstat"><div class="l">Mentions this week</div><div class="v">62 <span style="font-size:12px;color:var(--green);font-weight:400;">up from 50</span></div></div>
+          <div class="qstat"><div class="l">Where we land in the answer</div><div class="v">~33% <span style="font-size:12px;color:var(--faint);font-weight:400;">in the top third</span></div></div>
+          <div class="qstat"><div class="l">Mentions this week</div><div class="v">77 <span style="font-size:12px;color:var(--green);font-weight:400;">up from 62</span></div></div>
         </div>
         <div class="qlbl">How we are framed</div>
-        <div class="qframe"><div style="width:46%;background:var(--green)"></div><div style="width:42%;background:var(--faint)"></div><div style="width:12%;background:var(--amber)"></div></div>
-        <div class="qleg"><span><span class="g">&#9679;</span> Positive 46%</span><span><span class="m">&#9679;</span> Neutral / just listed 42%</span><span><span style="color:var(--amber)">&#9679;</span> With a caveat 12%</span></div>
+        <div class="qframe"><div style="width:52%;background:var(--green)"></div><div style="width:36%;background:var(--faint)"></div><div style="width:12%;background:var(--amber)"></div></div>
+        <div class="qleg"><span><span class="g">&#9679;</span> Positive 52%</span><span><span class="m">&#9679;</span> Neutral / just listed 36%</span><span><span style="color:var(--amber)">&#9679;</span> With a caveat 12%</span></div>
         <div class="qlbl">Strengths AI ties to each vendor</div>
-        <div class="qrow"><span class="qn" style="font-weight:600;color:var(--green)">CultureMonkey</span><span class="chipg">frontline and multilingual</span><span class="chipg">enterprise lifecycle listening</span><span class="chipg">AI sentiment analysis</span><span class="chipg">manager dashboards</span><span class="chipg">17+ HRIS integrations</span><span class="chipg">affordable ($5/user)</span></div>
-        <div class="qrow"><span class="qn m">Culture Amp</span><span class="chipn">analytics depth</span><span class="chipn">benchmarking</span><span class="chipn">intuitive setup</span></div>
-        <div class="qrow"><span class="qn m">Qualtrics</span><span class="chipn">predictive analytics</span><span class="chipn">survey science</span></div>
+        <div class="qrow"><span class="qn" style="font-weight:600;color:var(--green)">CultureMonkey</span><span class="chipg">frontline and multilingual</span><span class="chipg">enterprise lifecycle listening</span><span class="chipg">anonymity architecture</span><span class="chipg">action loops</span><span class="chipg">100+ languages</span><span class="chipg">multi-channel (WhatsApp, Slack, SMS)</span></div>
+        <div class="qrow"><span class="qn m">Culture Amp</span><span class="chipn">analytics depth</span><span class="chipn">benchmarking</span></div>
         <div class="qrow"><span class="qn m">Lattice</span><span class="chipn">performance + OKRs</span></div>
-        <div class="quote">"CultureMonkey is best for enterprise listening at the frontline, especially with multi-channel delivery (WhatsApp, QR, kiosk), more focused on listening than full performance suites." <span style="font-style:normal;color:var(--faint);">representative framing, alternatives cluster</span></div>
+        <div class="qrow"><span class="qn m">Leapsome</span><span class="chipn">usability</span><span class="chipn">performance</span></div>
+        <div class="qrow"><span class="qn m">Qualtrics</span><span class="chipn">survey science</span><span class="chipn">predictive analytics</span></div>
+        <div class="quote">"The strongest Culture Amp alternatives for HR teams in 2026 are CultureMonkey (for enterprise and frontline-ready listening), Lattice (for performance and OKR alignment), Leapsome." <span style="font-style:normal;color:var(--faint);">representative framing, alternatives cluster. In retention the tone shifts to conditional: "for frontline-heavy organizations, a stronger fit than Lattice."</span></div>
       </div>
       <div class="stack">
         <div class="lyr">Off-page targets: third-party pages AI pulls from</div>
@@ -308,46 +369,170 @@
         <div class="lyr">YouTube as a citation source <span class="chip">youtube.com</span></div>
         <div class="seo">AI answers also pull YouTube videos as sources. This tracks one thing: does a video get cited, and is it ours? <span class="g">&#10003; we are cited</span> &middot; <span class="r">&#9670; gap</span> (a video is cited, none ours) &middot; <span style="color:var(--amber)">ride-along</span> (we are named in the answer but the video is not ours) &middot; <span class="m">white space</span> (no video cited yet). Click a cluster for the videos.</div>
         <div class="ytsum">
-          <div class="ytstat"><div class="l">Videos AI cited</div><div class="v">11 <span style="font-size:11px;color:var(--muted);font-weight:400;">in 5 clusters</span></div></div>
-          <div class="ytstat"><div class="l">Ours</div><div class="v g">1 <span style="font-size:11px;color:var(--faint);font-weight:400;">Darcy short</span></div></div>
+          <div class="ytstat"><div class="l">Videos AI cited</div><div class="v">9 <span style="font-size:11px;color:var(--muted);font-weight:400;">in 5 clusters</span></div></div>
+          <div class="ytstat"><div class="l">Ours</div><div class="v g">1 <span style="font-size:11px;color:var(--faint);font-weight:400;">vendors short</span></div></div>
           <div class="ytstat"><div class="l">Clusters with no video</div><div class="v" style="color:var(--amber)">5</div></div>
         </div>
         <div id="ytclusters"></div>
-        <div class="gap" style="background:#eef4fb;border-color:#c5d8ef;color:#1f4e79;margin-top:10px;">Competitors and tools own YouTube as a citation source: Jotform's feedback video is pulled across several queries, Teamflect owns engagement survey and software, ThriveSparrow owns the culture-amp-alternatives video. Our only cited video is the Darcy Officevibe short. Biggest openings: a CM video for <strong>Feedback</strong> and <strong>Engagement software</strong> (pure gaps) plus the 5 clusters with no video at all.</div>
+        <div class="gap" style="background:#eef4fb;border-color:#c5d8ef;color:#1f4e79;margin-top:10px;">Our first video citation win: the CultureMonkey survey-vendors short is now cited in the engagement-survey cluster. Elsewhere competitors and reviewers own the cited video and we only ride along in the text: ThriveSparrow and Workleap in alternatives, Jotform in feedback, SelectHub in software. Biggest openings: CM videos for <strong>Retention</strong> and <strong>Competitor alternatives</strong>, where our text voice is already strong, plus the 5 clusters with no video at all.</div>
       </div>
     </div>
   </section>
   <section class="panel" data-p="brand" id="g3">
-    <div class="phead"><span class="gcar">&#9654;</span><div><div class="gt">3 &middot; Brand and business impact</div><div class="gs">Is it translating? &middot; branded clicks +30% &middot; impressions +75% &middot; AI referral visits 16, down 45% &middot; inbound leads 9</div></div></div>
+    <div class="phead"><span class="gcar">&#9654;</span><div><div class="gt">3 &middot; Brand and business impact</div><div class="gs">Is it translating? &middot; branded clicks 62, down 35% (holiday) &middot; position 7.2 to 3.7 &middot; 10 inbound leads &middot; 1 AI-sourced</div></div></div>
     <div class="gbody">
       <div class="stack">
         <div class="lyr">Branded search demand (vs last week)</div>
-        <div class="row"><span class="dot bg-g"></span><span class="nm">Branded clicks <span class="chip">GSC</span></span><span class="val">96</span><span class="delta g">&#9650; 30%</span></div>
-        <div class="row"><span class="dot bg-g"></span><span class="nm">Branded impressions <span class="chip">GSC</span></span><span class="val">414</span><span class="delta g">&#9650; 75%</span></div>
-        <div class="row"><span class="dot bg-m"></span><span class="nm">Average position <span class="chip">GSC</span></span><span class="val">7.2</span><span class="delta m">down from 1.4, more brand terms now showing</span></div>
-        <div class="row"><span class="dot bg-m"></span><span class="nm">Homepage sessions <span class="chip">GA4</span></span><span class="val">467</span><span class="delta m">&#9644; flat</span></div>
-        <div class="row"><span class="dot bg-r"></span><span class="nm">Homepage engagement <span class="chip">GA4</span></span><span class="val">50.5%</span><span class="delta r">&#9660; 10.8 pts</span></div>
+        <div class="row"><span class="dot bg-a"></span><span class="nm">Branded clicks <span class="chip">GSC</span></span><span class="val">62</span><span class="delta" style="color:var(--amber)">&#9660; 35% (US July 4 week)</span></div>
+        <div class="row"><span class="dot bg-a"></span><span class="nm">Branded impressions <span class="chip">GSC</span></span><span class="val">230</span><span class="delta" style="color:var(--amber)">&#9660; 44%</span></div>
+        <div class="row"><span class="dot bg-g"></span><span class="nm">Average position <span class="chip">GSC</span></span><span class="val">3.7</span><span class="delta g">&#9650; up from 7.2</span></div>
+        <div class="row"><span class="dot bg-m"></span><span class="nm">Homepage sessions <span class="chip">GA4</span></span><span class="val">474</span><span class="delta m">&#9644; flat (+1.5%)</span></div>
+        <div class="row"><span class="dot bg-g"></span><span class="nm">Homepage engagement <span class="chip">GA4</span></span><span class="val">53.2%</span><span class="delta g">&#9650; 2.7 pts</span></div>
       </div>
       <div class="stack">
         <div class="lyr">Traffic from AI tools (vs last week)</div>
-        <div class="row"><span class="dot bg-r"></span><span class="nm">AI referral visits <span class="chip">GA4</span></span><span class="val">16</span><span class="delta r">&#9660; 45%</span></div>
-        <div class="acl" style="margin-top:2px;">Presence is up but AI clicks are down. ChatGPT 26 to 14, Copilot 2 to 0. This is the gap to close.</div>
+        <div class="row"><span class="dot bg-m"></span><span class="nm">AI referral visits <span class="chip">GA4</span></span><span class="val">14</span><span class="delta m">&#9660; 12.5%</span></div>
+        <div class="acl" style="margin-top:2px;">ChatGPT 9, Perplexity 3, Gemini 1, ChatGPT organic 1. Presence is up while AI clicks hold flat at low volume; this is still the gap to close.</div>
       </div>
       <div class="stack">
         <div class="lyr">Leads (HubSpot, inbound only)</div>
-        <div class="row"><span class="dot bg-m"></span><span class="nm">Inbound leads <span class="chip">HubSpot</span></span><span class="val">9</span><span class="delta m">organic 6 &middot; paid 2 &middot; direct 1</span></div>
-        <div class="row"><span class="dot bg-r"></span><span class="nm">AI-sourced leads <span class="chip">HubSpot</span></span><span class="val">0</span><span class="delta r">down from 1</span></div>
+        <div class="row"><span class="dot bg-g"></span><span class="nm">Inbound leads <span class="chip">HubSpot</span></span><span class="val">10</span><span class="delta g">&#9650; from 9 &middot; organic 6 &middot; paid 3 &middot; AI 1</span></div>
+        <div class="row"><span class="dot bg-g"></span><span class="nm">AI-sourced leads <span class="chip">HubSpot</span></span><span class="val">1</span><span class="delta g">&#9650; up from 0</span></div>
         <div class="row"><span class="dot bg-m"></span><span class="nm f">Self-reported via AI <span class="chip">HubSpot</span></span><span class="val f">0</span><span class="delta f">low volume</span></div>
-        <div class="acl" style="margin-top:2px;">Counts inbound only, excluding internal/gmail and the roughly 99 sales-prospecting contacts that are not marketing leads. Prior weeks counted some of those, so do not read 9 as a drop.</div>
+        <div class="acl" style="margin-top:2px;">The AI-sourced lead is a ChatGPT referral from gerab.com (UAE), matching the UAE ChatGPT session in GA4. Counts inbound only, excluding internal, gmail and the sales-prospecting contacts that are not marketing leads.</div>
       </div>
     </div>
   </section>
-  <div class="note">Week of Jun 22 to 26, 2026, poll ran Jun 29. Crawl numbers are Mon to Fri (last week's Monday was missing from the log, so the percentage uses matched weekdays). Share of voice is web-grounded (Perplexity sonar), 83 queries across 10 clusters; the lift cleared the reality check (citation churn, control clusters, noise floor). Full crawl picture from the raw AI-bot log. Competitors tracked: Culture Amp, Lattice, Officevibe, 15Five, Qualtrics, Glint, Leapsome, Vantage Circle. HubSpot leads are inbound only, excluding gmail, culturemonkey, effy and sales prospecting.</div>
+  <section class="panel" data-p="backlink">
+    <div class="phead"><span class="gcar">&#9654;</span><div><div class="gt">4 &middot; Backlink health</div><div class="gs">Are we winning links and leaking equity? &middot; DR 73 &middot; 22 requests since April &middot; ~18 approved &amp; live (5 sheet-verified) &middot; 95% off-topic</div></div></div>
+    <div class="blhero">
+      <div class="blscore">
+        <div><span class="blnum">60</span></div>
+        <div class="bllbl">FAIR &middot; strong inbound, dragged by outbound</div>
+      </div>
+      <div class="blsubs">
+        <div class="blsub"><div class="bll">Inbound quality</div><div class="blv blg">78</div><div class="bln">won links DR 47 to 84, on-topic</div><div class="blbar"><div class="blbgG" style="width:78%"></div></div></div>
+        <div class="blsub"><div class="bll">Authority (DR)</div><div class="blv blg">73</div><div class="bln">Ahrefs, stable</div><div class="blbar"><div class="blbgG" style="width:73%"></div></div></div>
+        <div class="blsub"><div class="bll">Outbound hygiene</div><div class="blv blr">12</div><div class="bln">only 5% on-topic</div><div class="blbar"><div class="blbgR" style="width:12%"></div></div></div>
+        <div class="blsub"><div class="bll">Toxic load</div><div class="blv bla">watch</div><div class="bln">disavow active <span class="blf">(to wire)</span></div><div class="blbar"><div class="blbgA" style="width:80%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="blmod blwide">
+      <div class="blmh">Outbound leak <span class="blmtag blalarm">ALARM</span></div>
+      <div class="blmsub">The reciprocal link exchanges in #backlinks-qna. Every exchange inserts a dofollow link from a CM blog page to a partner. The risk is not lost DR, it is a reciprocity plus off-topic footprint (a link-scheme signal) and topical dilution of our best content.</div>
+      <div class="blbig" style="align-items:flex-start;">
+        <div><div class="blkpi blr">95.5%</div><div class="blkt">of outbound is off-topic<br>(21 of 22 requests)</div></div>
+        <div><div class="blkpi">22</div><div class="blkt">exchange requests<br>since April (17 domains)</div></div>
+        <div><div class="blkpi bla">~18</div><div class="blkt">approved &amp; live<br>(5 sheet-verified)</div></div>
+        <div style="flex:1;min-width:300px;">
+          <div style="font-size:11px;color:var(--faint);font-weight:600;margin:0 0 1px;">Outbound velocity by month (current-team requests, falling)</div>
+          <svg viewBox="0 0 900 104" role="img" aria-label="Outbound exchange requests by month: April 11, May 0, June 11" style="width:100%;height:auto;display:block;">
+            <line x1="60" y1="74" x2="840" y2="74" stroke="var(--line)"></line>
+            <polyline points="110,30 450,74 790,30" fill="none" stroke="var(--amber)" stroke-width="2"></polyline>
+            <circle cx="110" cy="30" r="5" fill="var(--amber)"></circle>
+            <circle cx="450" cy="74" r="5" fill="var(--amber)"></circle>
+            <circle cx="790" cy="30" r="5" fill="var(--amber)"></circle>
+            <text x="110" y="22" text-anchor="middle" font-size="16" font-weight="700" fill="var(--ink)">11</text>
+            <text x="450" y="66" text-anchor="middle" font-size="16" font-weight="700" fill="var(--ink)">0</text>
+            <text x="790" y="22" text-anchor="middle" font-size="16" font-weight="700" fill="var(--ink)">11</text>
+            <text x="110" y="96" text-anchor="middle" font-size="15" fill="var(--faint)">Apr</text>
+            <text x="450" y="96" text-anchor="middle" font-size="15" fill="var(--faint)">May</text>
+            <text x="790" y="96" text-anchor="middle" font-size="15" fill="var(--faint)">Jun</text>
+          </svg>
+        </div>
+      </div>
+      <div class="blactbox" style="background:#f7f3ec;border-color:#e6dcc5;color:#7a5a1e;">
+        <b>Approved = live, correlated with the sheet.</b> Counting current-team requests only, we treat an approved "doable" as live: <b>~18 of 22 approved</b>. Dhanya's exchange sheet is a partial detail layer on top ("these are the ones"), and it <b>independently verifies 5 outbound links live on-page</b> (cloudtalk, aikido, v2cloud + 2 our-side). So ~18 approved/live overall, of which 5 are sheet-verified. The individual live links (with anchors) are inventoried below.
+      </div>
+      <div class="blgrid" style="margin-top:6px;">
+        <div>
+          <div style="font-weight:700;font-size:13px;margin:6px 0;">Worst donor pages (outbound links requested, mostly off-topic)</div>
+          <div class="bllrow"><span class="bllname">/employee-advocacy/</span><div class="bllbar2"><div class="blbgR" style="width:100%"></div></div><span class="bllval blr">3</span></div>
+          <div class="bllrow"><span class="bllname">/remote-work-tools/</span><div class="bllbar2"><div class="blbgR" style="width:100%"></div></div><span class="bllval blr">3</span></div>
+          <div class="bllrow"><span class="bllname">/development-areas-for-managers/</span><div class="bllbar2"><div class="blbgR" style="width:100%"></div></div><span class="bllval blr">3</span></div>
+          <div class="bllrow"><span class="bllname">/secure-text-messaging-for-anonymous-feedback/</span><div class="bllbar2"><div class="blbgR" style="width:100%"></div></div><span class="bllval blr">3</span></div>
+          <div class="bllrow"><span class="bllname">/hr-analytics/</span><div class="bllbar2"><div class="blbgR" style="width:66%"></div></div><span class="bllval blr">2</span></div>
+          <div class="blnote">Current-team requests only. The leak is thinly spread: a cluster of pages at 2 to 3 outbound requests each, no single mega-donor.</div>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:13px;margin:6px 0;">Where the links go (top off-topic targets)</div>
+          <div class="blrow"><span class="blnm">withallo.com <span class="bltag bloff">cold calling</span></span><span class="blval blr">3&times;</span></div>
+          <div class="blrow"><span class="blnm">vistasocial.com <span class="bltag bloff">social media</span></span><span class="blval blr">2&times;</span></div>
+          <div class="blrow"><span class="blnm">stackby.com <span class="bltag bloff">no-code db</span></span><span class="blval blr">2&times;</span></div>
+          <div class="blrow"><span class="blnm">niftypm.com <span class="bltag bloff">project mgmt</span></span><span class="blval blr">2&times;</span></div>
+          <div class="blrow"><span class="blnm">garnerhealth.com <span class="bltag bloff">healthcare</span></span><span class="blval blr">1&times;</span></div>
+          <div class="blalarmbox">Almost everything current-team requested is off-topic (95%). <b>withallo.com</b> (cold calling) is linked from 3 different CM pages, and <b>niftypm.com</b> from 2. No competitor links in this set.</div>
+        </div>
+      </div>
+      <div class="blactbox">Recommended actions, in priority order: 1) switch the off-topic exchanges (95% of the set) to <b>nofollow/sponsored</b> or remove, starting with <b>withallo.com</b> and <b>niftypm.com</b>; 2) <b>add a topical-relevance gate at approval</b> so off-topic "doable" requests get declined; 3) cap outbound dofollows per page; 4) route freed equity to commercial pages via internal links.</div>
+    </div>
+
+    <div class="blgrid">
+    <details class="blmod bldet">
+      <summary class="blmh">Outbound links: individual placements <span class="blmtag" style="background:var(--faint);color:#fff">team sheet</span></summary>
+      <div class="blmsub">Live outbound exchange links only (sheet-verified): our page, the anchor on our page, and where it points. In-flight and pending are hidden.</div>
+      <div class="blrow" style="font-size:11px;color:var(--faint);font-weight:600;"><span class="blnm">Our page &rarr; target (anchor on our page)</span><span class="blval">status</span></div>
+      <div class="blrow"><span class="blnm">/management-communication/ &rarr; <b>cloudtalk.io</b> <span class="bltag bloff">communication effectiveness</span></span><span class="blval blg">LIVE</span></div>
+      <div class="blrow"><span class="blnm">/employee-survey-portal/ &rarr; <b>aikido.dev</b> <span class="bltag bloff">enterprise security software</span></span><span class="blval blg">LIVE</span></div>
+      <div class="blrow"><span class="blnm">/how-to-build-and-sustain-a-strong-hybrid-culture/ &rarr; <b>v2cloud.com</b> <span class="bltag bloff">bandwidth</span></span><span class="blval blg">LIVE</span></div>
+      <div class="blrow"><span class="blnm">/leadership-motivation/ &rarr; <b class="blf">target not stated</b></span><span class="blval blg">live (our side)</span></div>
+      <div class="blrow"><span class="blnm">/cost-of-employee-turnover/ &rarr; <b class="blf">target not stated</b></span><span class="blval blg">live (our side)</span></div>
+      <div class="blnote">Live outbound only (sheet-verified). All 3 with a recorded target point to off-topic sites. In-flight and pending exchanges are hidden.</div>
+    </details>
+
+    <details class="blmod bldet">
+      <summary class="blmh">Inbound links: individual placements <span class="blmtag blok">exchange partners</span></summary>
+      <div class="blmsub">Live inbound exchange links only (their page linking to us), with the anchor on their page. In-flight and pending are hidden. Separate from the listicle wins below.</div>
+      <div class="blrow" style="font-size:11px;color:var(--faint);font-weight:600;"><span class="blnm">Their page linking to us (anchor on their page)</span><span class="blval">status</span></div>
+      <div class="blrow"><span class="blnm"><b>deescalation-training.com</b> <span class="bltag" style="background:var(--chip);color:var(--muted)">no anchor recorded</span></span><span class="blval blg">LIVE</span></div>
+      <div class="blrow"><span class="blnm"><b>v2cloud.com</b>/blog/remote-it-support <span class="bltag blon">empowering your employees</span></span><span class="blval blg">LIVE</span></div>
+      <div class="blrow"><span class="blnm"><b>frejun.com</b>/top-11-voip-phones <span class="bltag" style="background:var(--chip);color:var(--muted)">no anchor recorded</span></span><span class="blval blg">LIVE</span></div>
+      <div class="blrow"><span class="blnm"><b>ecommercefastlane.com</b>/top-solutions <span class="bltag blon">CM listicle inclusion</span></span><span class="blval blg">LIVE</span></div>
+      <div class="blrow"><span class="blnm"><b>lyzr.ai</b> <span class="bltag" style="background:var(--chip);color:var(--muted)">URL not stated</span></span><span class="blval blg">live (per partner)</span></div>
+      <div class="blnote">~5 inbound exchange links live; the anchors partners give us are on-topic ("empowering your employees", "employee engagement"). Separate from the 15 listicle/directory wins below.</div>
+    </details>
+    </div>
+
+    <div class="blgrid">
+      <div class="blmod">
+        <div class="blmh">Inbound wins <span class="blmtag blok">HEALTHY</span></div>
+        <div class="blmsub">Listicle and directory links won, from #mktg-shipped and #mktg-team. Window is late May to July: that is when the outreach engine ramped up, so there is little before it (the April to mid-May exchange wins live on Dhanya's sheet instead).</div>
+        <div class="blbig"><div><div class="blkpi blg">18</div><div class="blkt">referring domains won<br>(late May to July)</div></div><div><div class="blkpi">DR 70</div><div class="blkt">median DR of wins</div></div></div>
+        <div class="blrow"><span class="blnm">jotform.com <span class="bltag blon">forms / HR</span></span><span class="blval blg">DR 91</span></div>
+        <div class="blrow"><span class="blnm">featurebase.app / hibob.com <span class="bltag blon">HR</span></span><span class="blval blg">DR 84</span></div>
+        <div class="blrow"><span class="blnm">research.com <span class="bltag blon">software reviews</span></span><span class="blval blg">DR 83</span></div>
+        <div class="blrow"><span class="blnm">aihr.com <span class="bltag blon">HR training</span></span><span class="blval blg">DR 79</span></div>
+        <div class="blrow"><span class="blnm">selectsoftwarereviews.com / apploye.com <span class="bltag blon">reviews / HR</span></span><span class="blval blg">DR 75/73</span></div>
+        <div class="blrow"><span class="blnm">+ craft 72, featuredcustomers 71, confetti 69, engagedly 68, siit 65, peoplegoal 54, pockethrms 47, heartcount 38, feedbackpulse 23, skimle 17, storeforce 10</span><span class="blval blmut">11 more</span></div>
+        <div class="blokbox">Inbound is the strong side: 18 on-topic editorial and listicle placements on DR 10 to 91 review sites (Jotform, Hibob, AIHR among them), plus a live outreach pipeline (POCs, FeedbackPulse and HiBob collabs). This is why DR holds at 73 despite the outbound mess.</div>
+      </div>
+      <div class="blmod">
+        <div class="blmh">Key pointers</div>
+        <div class="blmsub">The five things that matter most in this tab.</div>
+        <ul style="margin:6px 0 0;padding-left:20px;font-size:13px;line-height:1.5;">
+          <li style="margin-bottom:9px;"><b>Authority is strong and holding (DR 73).</b> 18 quality inbound links won (up to DR 91) keep authority growing; the risk sits entirely on the outbound side.</li>
+          <li style="margin-bottom:9px;"><b>Live outbound exposure is small.</b> Only about 5 off-topic reciprocal links are actually live today, so this is a pattern to correct, not a fire to fight.</li>
+          <li style="margin-bottom:9px;"><b>Off-topic exchanges are a downside-only bet.</b> Linking our best content to unrelated sites risks a Google link-scheme signal and dilutes our topical authority, with little SEO upside.</li>
+          <li style="margin-bottom:9px;"><b>The behaviour is already self-correcting.</b> Outbound exchange volume has fallen sharply since spring (11 in April to a pause in May).</li>
+          <li><b>One guardrail closes the risk.</b> Require topical relevance before approving any link exchange, at no cost to the strong inbound engine.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="blfoot">
+      <b>Scores (the health score and the four sub-scores) are out of 100.</b><br>
+      <b>How this is measured.</b> Backlink Health = 40% inbound quality + 25% authority trend + 25% outbound hygiene + 10% toxic load. Link quality per link = 35% relevance + 30% authority + 20% placement/dofollow + 15% anchor health.<br>
+      <b>Data sources.</b> <span class="bldot blbgG"></span>Live: Dhanya's exchange-tracking sheet (individual live links, March to now), #backlinks-qna request pipeline (22 requests since April, deduped, current-team only), #mktg-shipped and #mktg-team listicle wins, Ahrefs free DR. &nbsp; <span class="bldot blbgA"></span>To wire: #offpage-engine monthly sheet (Drive re-auth needed; also only covers April), Ahrefs weekly CSV export (inbound DR + lost links, API tier here is gated), GA4 referral (which links drive traffic), GSC URL Inspection + Bing link counts (need account setup).<br>
+      <b>Honest caveats.</b> The 22 are logged <b>requests</b> from the current team; a former member's requests (about two-thirds of the raw volume) are excluded. We treat the ~18 approved ("doable") as live (channel assumption). Dhanya's sheet is correlated on top and independently verifies ~5 outbound links live on-page (with anchors); it is partial, so live spans a hard-verified floor of 5 to the ~18 approved-assumed. Outbound relevance is a domain-level keyword classifier (directional; the off-topic examples are unambiguous). Dofollow status assumed by exchange convention, pending a rendered crawl. <b>Data window is April to June 2026</b> (pre-April exchanges excluded).
+    </div>
+  </section>
+  <div class="note">Week of Jun 29 to Jul 3, 2026, poll ran Jul 6. Crawl numbers are Mon to Fri; the raw AI-bot log carried a stray Saturday (Jul 4) that was excluded for the matched window, so L1 is directional on the holiday week. Share of voice is web-grounded (Perplexity sonar), 83 queries across 10 clusters; the lift cleared the reality check (new citations, control clusters flat, cleared the noise floor). Competitors tracked: Culture Amp, Lattice, Officevibe, 15Five, Qualtrics, Glint, Leapsome, Vantage Circle. HubSpot leads are inbound only, excluding gmail, culturemonkey, effy and sales prospecting.</div>
 </div>
 <script>
-const DATA = {"overall": 24.9, "mentions": 62, "clusters": [{"name": "Engagement survey tools / software / vendors", "s": "Engagement survey", "cm": 26.4, "comp": [["Qualtrics", 90.3], ["Culture Amp", 80.6], ["Lattice", 75.0], ["Leapsome", 41.7], ["Officevibe", 40.3], ["Glint", 31.9], ["15Five", 12.5], ["Vantage Circle", 5.6]], "srcUrls": [["bestcompaniesgroup.com/blog/5-best-employee-engagement-survey-providers", 58], ["vendordirectory.shrm.org/category/employee-engagement/employee-engagement-surveys", 56], ["selectsoftwarereviews.com/buyer-guide/best-employee-engagement-software", 34], ["formgrid.com/blog/employee-engagement-survey-tools", 28], ["cultureamp.com/platform/engage", 27]], "ourUrls": [["culturemonkey.io/employee-engagement/employee-engagement-survey-tools", 22], ["culturemonkey.io/guides/employee-engagement-survey-questions/employee-engagement-survey-vendors/top-employee-engagement-survey-vendors-to-choose-from", 17], ["reddit.com/r/culturemonkey/comments/1txc230/top_5_employee_engagement_survey_vendors_built", 2]]}, {"name": "Employee engagement software (general)", "s": "Engagement software", "cm": 0.0, "comp": [["Lattice", 71.4], ["Officevibe", 47.6], ["Culture Amp", 33.3], ["15Five", 33.3], ["Qualtrics", 33.3], ["Vantage Circle", 23.8], ["Glint", 19.0], ["Leapsome", 4.8]], "srcUrls": [["selectsoftwarereviews.com/buyer-guide/best-employee-engagement-software", 18], ["achievers.com/blog/employee-engagement-software-platforms", 10], ["reddit.com/r/internalcomms/comments/1qsi0fy/best_employee_engagement_tools", 9], ["peoplemanagingpeople.com/tools/best-employee-engagement-software", 8], ["vendordirectory.shrm.org/category/employee-engagement/employee-engagement-surveys", 8]], "ourUrls": [["culturemonkey.io/employee-engagement/employee-engagement-survey-vendors-pricing", 3], ["culturemonkey.io/employee-engagement/pulse-survey-tools", 3], ["culturemonkey.io/employee-engagement/employee-engagement-survey-vendor-rfp-template", 2]]}, {"name": "Employee feedback tools / software", "s": "Feedback", "cm": 25.9, "comp": [["Culture Amp", 92.6], ["Officevibe", 85.2], ["Qualtrics", 85.2], ["Lattice", 81.5], ["15Five", 77.8], ["Leapsome", 48.1], ["Glint", 25.9], ["Vantage Circle", 22.2]], "srcUrls": [["peoplemanagingpeople.com/tools/best-employee-feedback-software", 26], ["featurebase.app/blog/employee-feedback-tools", 20], ["reddit.com/r/humanresources/comments/id83vd/what_employee_feedback_tools_are_you_using", 20], ["smartsurvey.com/blog/employee-feedback-tools", 18], ["eletive.com/blog/employee-feedback-software", 16]], "ourUrls": [["culturemonkey.io/employee-engagement/employee-engagement-survey-tools", 3], ["culturemonkey.io/employee-engagement/employee-feedback-tools", 1]]}, {"name": "Anonymous feedback", "s": "Anonymous", "cm": 6.7, "comp": [["Culture Amp", 60.0], ["Officevibe", 60.0], ["Lattice", 46.7], ["15Five", 40.0], ["Leapsome", 20.0], ["Qualtrics", 0.0], ["Glint", 0.0], ["Vantage Circle", 0.0]], "srcUrls": [["surveymonkey.com/learn/employee-feedback/anonymous-employee-surveys", 15], ["proprofssurvey.com/blog/best-anonymous-feedback-tools", 14], ["employmenthero.com/uk/blog/anonymous-employee-feedback", 11], ["sparkbay.com/en/anonymous-employee-feedback-tool", 9], ["questworks.io/blog/best-anonymous-employee-feedback-tools.html", 7]], "ourUrls": [["culturemonkey.io/employee-engagement/anonymous-feedback-remote-teams", 3], ["culturemonkey.io/employee-engagement/employee-feedback-tools", 1]]}, {"name": "Pulse surveys", "s": "Pulse", "cm": 41.7, "comp": [["Qualtrics", 83.3], ["Lattice", 75.0], ["15Five", 66.7], ["Officevibe", 50.0], ["Glint", 50.0], ["Culture Amp", 41.7], ["Leapsome", 25.0], ["Vantage Circle", 0.0]], "srcUrls": [["contactmonkey.com/blog/pulse-survey-tool", 11], ["quantumworkplace.com/product/engagement/pulse-survey-software", 9], ["peoplemanagingpeople.com/tools/best-employee-survey-tools", 8], ["engagesoft.me/blog/best-employee-pulse-survey-software", 7], ["vendordirectory.shrm.org/category/employee-engagement/employee-engagement-surveys", 6]], "ourUrls": [["culturemonkey.io/employee-engagement/pulse-survey-tools", 7]]}, {"name": "Employee experience platforms", "s": "EX platforms", "cm": 0.0, "comp": [["Culture Amp", 93.3], ["Lattice", 80.0], ["Qualtrics", 73.3], ["Leapsome", 73.3], ["Officevibe", 33.3], ["Glint", 33.3], ["Vantage Circle", 13.3], ["15Five", 6.7]], "srcUrls": [["reddit.com/r/IOPsychology/comments/1egyncv/which_employee_experience_platform_would_you", 13], ["happeo.com/blog/employee-experience-platforms", 12], ["peoplemanagingpeople.com/tools/best-employee-experience-tools", 11], ["mentorcliq.com/insights/employee-experience-platforms", 11], ["medallia.com/blog/best-employee-experience-platforms", 11]], "ourUrls": []}, {"name": "Employee retention software", "s": "Retention", "cm": 5.6, "comp": [["Lattice", 66.7], ["15Five", 61.1], ["Leapsome", 61.1], ["Culture Amp", 50.0], ["Qualtrics", 22.2], ["Glint", 16.7], ["Officevibe", 11.1], ["Vantage Circle", 0.0]], "srcUrls": [["leapsome.com/comparisons/employee-retention-software", 15], ["reclaim.ai/blog/employee-retention-software", 15], ["betterworks.com/magazine/best-employee-retention-software", 13], ["imocha.io/blog/employee-retention-software", 12], ["engagedly.com/blog/best-employee-retention-softwares", 12]], "ourUrls": [["culturemonkey.io/solutions/employee-retention-software", 1]]}, {"name": "eNPS software", "s": "eNPS", "cm": 40.0, "comp": [["Qualtrics", 80.0], ["Lattice", 46.7], ["Culture Amp", 40.0], ["Officevibe", 40.0], ["15Five", 40.0], ["Leapsome", 33.3], ["Glint", 0.0], ["Vantage Circle", 0.0]], "srcUrls": [["smartsurvey.com/enps-software", 12], ["delighted.com/enps", 11], ["surveymonkey.com/learn/employee-feedback/employee-nps-benchmarks", 8], ["zoho.com/people/employee-engagement-software.html", 8], ["questionpro.com/blog/enps-software", 7]], "ourUrls": [["culturemonkey.io/enps-survey-software", 7]]}, {"name": "Third-party survey companies", "s": "Third-party", "cm": 20.0, "comp": [["Qualtrics", 60.0], ["Culture Amp", 53.3], ["Lattice", 40.0], ["Leapsome", 26.7], ["15Five", 20.0], ["Vantage Circle", 20.0], ["Officevibe", 0.0], ["Glint", 0.0]], "srcUrls": [["rippling.com/blog/employee-engagement-survey-providers", 14], ["driveresearch.com/market-research-company-blog/using-a-third-party-for-employee-surveys", 12], ["vendordirectory.shrm.org/category/employee-engagement/employee-engagement-surveys", 12], ["quantumworkplace.com/top-employee-engagement-survey-vendors", 7], ["resources.wellcertified.com/articles/why-should-i-use-a-third-party-survey-provider-for-my-well-project", 6]], "ourUrls": [["culturemonkey.io/employee-engagement/third-party-survey-companies", 6]]}, {"name": "Competitor alternatives", "s": "Competitor alternatives", "cm": 51.3, "comp": [["Culture Amp", 92.3], ["Lattice", 79.5], ["Officevibe", 76.9], ["15Five", 74.4], ["Leapsome", 66.7], ["Qualtrics", 28.2], ["Glint", 23.1], ["Vantage Circle", 2.6]], "srcUrls": [["leapsome.com/competitor-new/officevibe", 15], ["reddit.com/r/Entrepreneur/comments/1mo7j0o/trying_to_evaluate_performance_tools_like_lattice", 13], ["pando.com/blog-post/culture-amp-alternatives", 13], ["taito.ai/blog/cultureamp-competitors-and-alternatives", 12], ["qualee.com/what-is-the-best-officevibe-alternative", 12]], "ourUrls": [["culturemonkey.io/employee-engagement/officevibe-alternatives", 15], ["culturemonkey.io/employee-engagement/culture-amp-alternatives", 13], ["culturemonkey.io/employee-engagement/employee-engagement-survey-tools", 3], ["culturemonkey.io/employee-engagement/glint-alternatives", 3]]}], "secA": [{"d": "reddit.com", "n": 171, "rate": 30, "flag": "working", "urls": ["https://www.reddit.com/r/AcademicPsychology/comments/11ss012/qualtrics_alternatives/", "https://www.reddit.com/r/AskAcademia/comments/yiejyl/im_looking_for_an_anonymous_feedback_tool_anyone/"]}, {"d": "peoplemanagingpeople.com", "n": 106, "rate": 31, "flag": "working", "urls": ["https://peoplemanagingpeople.com/tools/best-ai-employee-feedback-software/", "https://peoplemanagingpeople.com/tools/best-anonymous-employee-feedback-tool/"]}, {"d": "vendordirectory.shrm.org", "n": 85, "rate": 40, "flag": "working", "urls": ["https://vendordirectory.shrm.org/category/employee-engagement/employee-engagement-surveys"]}, {"d": "quantumworkplace.com", "n": 69, "rate": 42, "flag": "working", "urls": ["https://www.quantumworkplace.com/future-of-work/employee-engagement-survey-vendors", "https://www.quantumworkplace.com/future-of-work/what-is-employee-engagement-software"]}, {"d": "eletive.com", "n": 66, "rate": 34, "flag": "working", "urls": ["https://eletive.com/blog/best-employee-engagement-tools/", "https://eletive.com/blog/cultureamp-alternatives/"]}, {"d": "bestcompaniesgroup.com", "n": 64, "rate": 36, "flag": "working", "urls": ["https://bestcompaniesgroup.com", "https://bestcompaniesgroup.com/blog/5-best-employee-engagement-survey-providers/"]}, {"d": "rippling.com", "n": 57, "rate": 38, "flag": "working", "urls": ["https://www.rippling.com/blog/employee-engagement-survey-providers", "https://www.rippling.com/products/hr/surveys"]}, {"d": "selectsoftwarereviews.com", "n": 55, "rate": 16, "flag": "watch", "urls": ["https://www.selectsoftwarereviews.com/buyer-guide/best-employee-engagement-software"]}, {"d": "achievers.com", "n": 49, "rate": 26, "flag": "working", "urls": ["https://www.achievers.com/blog/employee-engagement-software-platforms/", "https://www.achievers.com/blog/employee-experience-platform/"]}, {"d": "gallup.com", "n": 48, "rate": 29, "flag": "working", "urls": ["https://www.gallup.com/access/239201/employee-surveys.aspx", "https://www.gallup.com/access/709166/gallup-access-culture-amp.aspx"]}, {"d": "formgrid.com", "n": 44, "rate": 32, "flag": "working", "urls": ["https://www.formgrid.com/blog/employee-engagement-survey-tools"]}, {"d": "surveymonkey.com", "n": 37, "rate": 29, "flag": "working", "urls": ["https://www.surveymonkey.com/learn/employee-feedback/anonymous-employee-surveys/", "https://www.surveymonkey.com/learn/employee-feedback/employee-nps-benchmarks/"]}], "secB": [{"u": "culturemonkey.io/employee-engagement/employee-engagement-survey-tools/", "n": 28, "delta": 0, "cl": ["Competitor alternatives", "Engagement survey", "Feedback"]}, {"u": "culturemonkey.io/guides/employee-engagement-survey-questions/employee-engagement-survey-vendors/top-employee-engagement-survey-vendors-to-choose-from/", "n": 17, "delta": 89, "cl": ["Engagement survey"]}, {"u": "culturemonkey.io/employee-engagement/officevibe-alternatives/", "n": 15, "delta": 36, "cl": ["Competitor alternatives"]}, {"u": "culturemonkey.io/employee-engagement/culture-amp-alternatives/", "n": 13, "delta": 8, "cl": ["Competitor alternatives"]}, {"u": "culturemonkey.io/employee-engagement/pulse-survey-tools/", "n": 10, "delta": -17, "cl": ["Engagement software", "Pulse"]}, {"u": "culturemonkey.io/enps-survey-software/", "n": 7, "delta": 0, "cl": ["eNPS"]}, {"u": "culturemonkey.io/employee-engagement/third-party-survey-companies/", "n": 6, "delta": -25, "cl": ["Third-party"]}, {"u": "culturemonkey.io/employee-engagement/employee-engagement-survey-vendors-pricing/", "n": 3, "delta": 0, "cl": ["Engagement software"]}, {"u": "culturemonkey.io/employee-engagement/anonymous-feedback-remote-teams/", "n": 3, "delta": 200, "cl": ["Anonymous"]}, {"u": "culturemonkey.io/employee-engagement/glint-alternatives/", "n": 3, "delta": null, "cl": ["Competitor alternatives"]}, {"u": "culturemonkey.io/employee-engagement/employee-engagement-survey-vendor-rfp-template/", "n": 2, "delta": 0, "cl": ["Engagement software"]}, {"u": "culturemonkey.io/employee-engagement/employee-feedback-tools/", "n": 2, "delta": -33, "cl": ["Anonymous", "Feedback"]}, {"u": "culturemonkey.io/solutions/employee-retention-software/", "n": 1, "delta": null, "cl": ["Retention"]}]};
-const YT = [{"cl": "Engagement survey tools / software / vendors", "s": "Engagement survey", "n": 1, "ours": 0, "tag": "gap", "vids": [{"id": "sIih5f0K8sw", "ch": "Teamflect", "title": "Best Engagement Survey Software 2026 [Ranked]", "owner": "competitor", "cites": 3, "q": "top employee engagement survey software 2026", "cm": 0}]}, {"cl": "Employee engagement software (general)", "s": "Engagement software", "n": 3, "ours": 0, "tag": "gap", "vids": [{"id": "fzYBCSeURyw", "ch": "PeopleGoal", "title": "What Is Employee Engagement Software & How It Works", "owner": "competitor", "cites": 3, "q": "best employee engagement software", "cm": 0}, {"id": "Cypb3Olvfmk", "ch": "SelectHub", "title": "Best Employee Engagement Software 2026", "owner": "thirdparty", "cites": 3, "q": "top employee engagement software for enterprise", "cm": 0}, {"id": "mjBMv7Ne96Y", "ch": "Teamflect", "title": "5 Best Employee Engagement Software for 2026", "owner": "competitor", "cites": 3, "q": "employee engagement software comparison", "cm": 0}]}, {"cl": "Employee feedback tools / software", "s": "Feedback", "n": 2, "ours": 0, "tag": "gap", "vids": [{"id": "o0CNcKYyAWM", "ch": "Jotform", "title": "10 Must-Have Tools for Employee Feedback (2026)", "owner": "competitor", "cites": 3, "q": "employee feedback tools comparison", "cm": 0}, {"id": "bpCjOzcknlQ", "ch": "Softr", "title": "Collect & Organise Employee Feedback with Softr", "owner": "thirdparty", "cites": 1, "q": "best employee feedback tools", "cm": 0}]}, {"cl": "Anonymous feedback", "s": "Anonymous", "n": 0, "ours": 0, "tag": "whitespace", "vids": []}, {"cl": "Pulse surveys", "s": "Pulse", "n": 1, "ours": 0, "tag": "ridealong", "vids": [{"id": "4ItYF7kMcq4", "ch": "Chris' IT Leadership Lab", "title": "Best Pulse Survey Tool: Tutorial & Reply Rate", "owner": "thirdparty", "cites": 3, "q": "best pulse survey tools", "cm": 1}]}, {"cl": "Employee experience platforms", "s": "EX platforms", "n": 0, "ours": 0, "tag": "whitespace", "vids": []}, {"cl": "Employee retention software", "s": "Retention", "n": 0, "ours": 0, "tag": "whitespace", "vids": []}, {"cl": "eNPS software", "s": "eNPS", "n": 0, "ours": 0, "tag": "whitespace", "vids": []}, {"cl": "Third-party survey companies", "s": "Third-party", "n": 0, "ours": 0, "tag": "whitespace", "vids": []}, {"cl": "Competitor alternatives", "s": "Competitor alternatives", "n": 4, "ours": 1, "tag": "own", "vids": [{"id": "J65GSSKGSHE", "ch": "ThriveSparrow", "title": "Top 5 Culture Amp Alternatives", "owner": "competitor", "cites": 2, "q": "culture amp alternatives for hr teams", "cm": 2}, {"id": "gRDUwtJD89Q", "ch": "CultureMonkey", "title": "7 Best Employee Engagement Survey Vendors 2026 (Short)", "owner": "ours", "cites": 2, "q": "officevibe alternatives for hr teams", "cm": 2}, {"id": "brlVkJ5Zpho", "ch": "TechnologyAdvice", "title": "OfficeVibe Software Review", "owner": "thirdparty", "cites": 2, "q": "officevibe vs other engagement tools", "cm": 2}, {"id": "bDBsw3FzEr4", "ch": "Workleap (Officevibe)", "title": "The Science behind Workleap Officevibe", "owner": "competitor", "cites": 1, "q": "officevibe vs other engagement tools", "cm": 1}]}];
-const TREND = [{"wk":"Jun 5","pres":null,"clicks":38},{"wk":"Jun 12","pres":16.1,"clicks":56},{"wk":"Jun 19","pres":20.1,"clicks":74},{"wk":"Jun 26","pres":24.9,"clicks":96}];
+const DATA = {"overall": 30.9, "mentions": 77, "clusters": [{"name": "Engagement survey tools / software / vendors", "s": "Engagement survey", "cm": 34.7, "comp": [["Culture Amp", 86.1], ["Lattice", 81.9], ["Qualtrics", 81.9], ["Leapsome", 54.2], ["Officevibe", 50.0], ["Glint", 48.6], ["15Five", 31.9], ["Vantage Circle", 6.9]], "srcUrls": [["vendordirectory.shrm.org/category/employee-engagement/employee-engagement-surveys", 62], ["bestcompaniesgroup.com/blog/5-best-employee-engagement-survey-providers", 54], ["selectsoftwarereviews.com/buyer-guide/best-employee-engagement-software", 39], ["formgrid.com/blog/employee-engagement-survey-tools", 37], ["reddit.com/r/IOPsychology/comments/1egyncv/which_employee_experience_platform_would_you", 31]], "ourUrls": [["culturemonkey.io/employee-engagement/employee-engagement-survey-tools", 22], ["culturemonkey.io/guides/employee-engagement-survey-questions/employee-engagement-survey-vendors/top-employee-engagement-survey-vendors-to-choose-from", 18], ["culturemonkey.io/enps-survey-software", 1]]}, {"name": "Employee engagement software (general)", "s": "Engagement software", "cm": 9.5, "comp": [["Qualtrics", 52.4], ["Culture Amp", 47.6], ["Lattice", 42.9], ["Officevibe", 38.1], ["15Five", 38.1], ["Glint", 28.6], ["Leapsome", 28.6], ["Vantage Circle", 14.3]], "srcUrls": [["selectsoftwarereviews.com/buyer-guide/best-employee-engagement-software", 17], ["peoplegoal.com/blog/employee-engagement-software", 13], ["achievers.com/blog/employee-engagement-software-platforms", 11], ["vendordirectory.shrm.org/category/employee-engagement/employee-engagement-surveys", 10], ["reddit.com/r/internalcomms/comments/1qsi0fy/best_employee_engagement_tools", 7]], "ourUrls": [["culturemonkey.io/employee-engagement/pulse-survey-tools", 3], ["culturemonkey.io/employee-engagement/employee-engagement-survey-tools", 2], ["culturemonkey.io/employee-engagement/employee-engagement-survey-vendor-rfp-template", 1]]}, {"name": "Employee feedback tools / software", "s": "Feedback", "cm": 25.9, "comp": [["Lattice", 96.3], ["Qualtrics", 92.6], ["Culture Amp", 85.2], ["Officevibe", 66.7], ["Leapsome", 55.6], ["15Five", 51.9], ["Glint", 25.9], ["Vantage Circle", 14.8]], "srcUrls": [["eletive.com/blog/employee-feedback-software", 22], ["peoplemanagingpeople.com/tools/best-employee-feedback-software", 22], ["reddit.com/r/humanresources/comments/id83vd/what_employee_feedback_tools_are_you_using", 21], ["featurebase.app/blog/employee-feedback-tools", 21], ["leapsome.com/comparisons/employee-feedback-tools", 14]], "ourUrls": [["culturemonkey.io/employee-engagement/employee-feedback-tools", 3], ["culturemonkey.io/employee-engagement/employee-engagement-survey-tools", 2]]}, {"name": "Anonymous feedback", "s": "Anonymous", "cm": 20.0, "comp": [["Culture Amp", 53.3], ["Lattice", 53.3], ["Officevibe", 46.7], ["15Five", 40.0], ["Leapsome", 6.7], ["Qualtrics", 0.0], ["Glint", 0.0], ["Vantage Circle", 0.0]], "srcUrls": [["proprofssurvey.com/blog/best-anonymous-feedback-tools", 15], ["surveymonkey.com/learn/employee-feedback/anonymous-employee-surveys", 14], ["suggestionox.com/anonymous-suggestion-box-software", 13], ["sparkbay.com/en/anonymous-employee-feedback-tool", 10], ["incognea.to/anonymous-employee-feedback", 9]], "ourUrls": [["culturemonkey.io/employee-engagement/anonymous-feedback-remote-teams", 3], ["culturemonkey.io/employee-engagement/employee-feedback-tools", 2], ["culturemonkey.io/guides/anonymous-employee-feedback/how-to-collect-anonymous-feedback/how-to-collect-anonymous-feedback-online", 2]]}, {"name": "Pulse surveys", "s": "Pulse", "cm": 8.3, "comp": [["Culture Amp", 75.0], ["Lattice", 75.0], ["Qualtrics", 75.0], ["Officevibe", 50.0], ["Glint", 50.0], ["15Five", 33.3], ["Leapsome", 25.0], ["Vantage Circle", 0.0]], "srcUrls": [["contactmonkey.com/blog/pulse-survey-tool", 12], ["peoplemanagingpeople.com/tools/best-employee-survey-tools", 9], ["quantumworkplace.com/product/engagement/pulse-survey-software", 9], ["engagesoft.me/blog/best-employee-pulse-survey-software", 7], ["lattice.com/platform/engagement/pulse-surveys", 7]], "ourUrls": [["culturemonkey.io/employee-engagement/pulse-survey-tools", 7]]}, {"name": "Employee experience platforms", "s": "EX platforms", "cm": 13.3, "comp": [["Culture Amp", 93.3], ["Lattice", 80.0], ["Leapsome", 80.0], ["Qualtrics", 66.7], ["Officevibe", 46.7], ["Glint", 46.7], ["Vantage Circle", 26.7], ["15Five", 20.0]], "srcUrls": [["reddit.com/r/IOPsychology/comments/1egyncv/which_employee_experience_platform_would_you", 15], ["peoplemanagingpeople.com/tools/best-employee-experience-tools", 13], ["mentorcliq.com/insights/employee-experience-platforms", 12], ["happeo.com/blog/employee-experience-platforms", 11], ["zendesk.com/internal-help-desk/employee-experience-software", 9]], "ourUrls": [["culturemonkey.io", 2], ["culturemonkey.io/employee-experience-platform", 1]]}, {"name": "Employee retention software", "s": "Retention", "cm": 33.3, "comp": [["Culture Amp", 66.7], ["Lattice", 61.1], ["Leapsome", 61.1], ["15Five", 50.0], ["Qualtrics", 22.2], ["Glint", 16.7], ["Officevibe", 5.6], ["Vantage Circle", 0.0]], "srcUrls": [["achievers.com/blog/employee-retention-software", 15], ["leapsome.com/comparisons/employee-retention-software", 15], ["reclaim.ai/blog/employee-retention-software", 15], ["imocha.io/blog/employee-retention-software", 13], ["betterworks.com/magazine/best-employee-retention-software", 12]], "ourUrls": [["culturemonkey.io/solutions/employee-retention-software", 4]]}, {"name": "eNPS software", "s": "eNPS", "cm": 40.0, "comp": [["Lattice", 73.3], ["15Five", 60.0], ["Leapsome", 53.3], ["Qualtrics", 40.0], ["Officevibe", 33.3], ["Culture Amp", 26.7], ["Glint", 0.0], ["Vantage Circle", 0.0]], "srcUrls": [["delighted.com/enps", 12], ["surveymonkey.com/learn/employee-feedback/employee-nps-benchmarks", 11], ["smartsurvey.com/enps-software", 11], ["peoplelytics.co/enps", 6], ["quantumworkplace.com/top-employee-engagement-survey-vendors", 6]], "ourUrls": [["culturemonkey.io/enps-survey-software", 7]]}, {"name": "Third-party survey companies", "s": "Third-party", "cm": 0.0, "comp": [["Qualtrics", 66.7], ["Culture Amp", 40.0], ["Lattice", 40.0], ["Leapsome", 26.7], ["Glint", 20.0], ["15Five", 13.3], ["Vantage Circle", 6.7], ["Officevibe", 0.0]], "srcUrls": [["driveresearch.com/market-research-company-blog/using-a-third-party-for-employee-surveys", 12], ["vendordirectory.shrm.org/category/employee-engagement/employee-engagement-surveys", 12], ["quantumworkplace.com/top-employee-engagement-survey-vendors", 9], ["resources.wellcertified.com/articles/why-should-i-use-a-third-party-survey-provider-for-my-well-project", 6], ["peoplemanagingpeople.com/tools/best-employee-survey-tools", 5]], "ourUrls": [["culturemonkey.io/employee-engagement/third-party-survey-companies", 6], ["culturemonkey.io/employee-engagement/employee-engagement-survey-tools", 1]]}, {"name": "Competitor alternatives", "s": "Competitor alternatives", "cm": 64.1, "comp": [["Culture Amp", 100.0], ["Officevibe", 89.7], ["15Five", 76.9], ["Lattice", 69.2], ["Leapsome", 69.2], ["Qualtrics", 30.8], ["Glint", 28.2], ["Vantage Circle", 0.0]], "srcUrls": [["leapsome.com/competitor-new/officevibe", 15], ["wrenly.ai/blog/culture-amp-alternatives", 12], ["reddit.com/r/Entrepreneur/comments/1mo7j0o/trying_to_evaluate_performance_tools_like_lattice", 12], ["small-improvements.com/blog/8-best-culture-amp-alternatives", 12], ["mint66.com/officevibe-alternatives", 12]], "ourUrls": [["culturemonkey.io/employee-engagement/officevibe-alternatives", 15], ["culturemonkey.io/employee-engagement/culture-amp-alternatives", 12], ["culturemonkey.io/employee-engagement/employee-engagement-survey-tools", 3], ["culturemonkey.io/employee-engagement/glint-alternatives", 3]]}], "secA": [{"d": "reddit.com", "n": 178, "rate": 41, "flag": "working", "urls": ["https://www.reddit.com/r/internalcomms/comments/1qsi0fy/best_employee_engagement_tools/", "https://www.reddit.com/r/IOPsychology/comments/1egyncv/which_employee_experience_platform_would_you/"]}, {"d": "peoplemanagingpeople.com", "n": 100, "rate": 24, "flag": "working", "urls": ["https://peoplemanagingpeople.com/tools/best-employee-survey-tools/", "https://peoplemanagingpeople.com/tools/best-employee-engagement-software/"]}, {"d": "vendordirectory.shrm.org", "n": 96, "rate": 33, "flag": "working", "urls": ["https://vendordirectory.shrm.org/category/employee-engagement/employee-engagement-surveys", "https://vendordirectory.shrm.org/category/employee-engagement/employee-engagement-software"]}, {"d": "quantumworkplace.com", "n": 78, "rate": 41, "flag": "working", "urls": ["https://www.quantumworkplace.com/top-employee-engagement-survey-vendors", "https://www.quantumworkplace.com/future-of-work/what-is-employee-engagement-software"]}, {"d": "eletive.com", "n": 73, "rate": 36, "flag": "working", "urls": ["https://eletive.com/blog/best-employee-engagement-tools/", "https://eletive.com/blog/employee-survey-tools/"]}, {"d": "bestcompaniesgroup.com", "n": 62, "rate": 44, "flag": "working", "urls": ["https://bestcompaniesgroup.com/blog/5-best-employee-engagement-survey-providers/"]}, {"d": "selectsoftwarereviews.com", "n": 59, "rate": 36, "flag": "working", "urls": ["https://www.selectsoftwarereviews.com/buyer-guide/best-employee-engagement-software", "https://www.selectsoftwarereviews.com/reviews/culturemonkey"]}, {"d": "achievers.com", "n": 53, "rate": 32, "flag": "working", "urls": ["https://www.achievers.com/blog/employee-survey-tools/", "https://www.achievers.com/blog/employee-engagement-software-platforms/"]}, {"d": "formgrid.com", "n": 50, "rate": 28, "flag": "working", "urls": ["https://www.formgrid.com/blog/employee-engagement-survey-tools"]}, {"d": "surveymonkey.com", "n": 48, "rate": 29, "flag": "working", "urls": ["https://www.surveymonkey.com/learn/employee-feedback/employee-surveys/", "https://www.surveymonkey.com/learn/employee-feedback/employee-nps-benchmarks/"]}, {"d": "gallup.com", "n": 46, "rate": 39, "flag": "working", "urls": ["https://www.gallup.com/access/239201/employee-surveys.aspx", "https://www.gallup.com/workplace/692474/workplace-employee-surveys.aspx"]}, {"d": "youtube.com", "n": 37, "rate": 62, "flag": "working", "urls": ["https://www.youtube.com/shorts/gRDUwtJD89Q", "https://www.youtube.com/watch?v=sIih5f0K8sw"]}], "secB": [{"u": "culturemonkey.io/employee-engagement/employee-engagement-survey-tools/", "n": 30, "delta": 7, "cl": ["Competitor alternatives", "Engagement software", "Engagement survey", "Feedback", "Third-party"]}, {"u": "culturemonkey.io/guides/employee-engagement-survey-questions/employee-engagement-survey-vendors/top-employee-engagement-survey-vendors-to-choose-from/", "n": 18, "delta": 6, "cl": ["Engagement survey"]}, {"u": "culturemonkey.io/employee-engagement/officevibe-alternatives/", "n": 15, "delta": 0, "cl": ["Competitor alternatives"]}, {"u": "culturemonkey.io/employee-engagement/culture-amp-alternatives/", "n": 12, "delta": -8, "cl": ["Competitor alternatives"]}, {"u": "culturemonkey.io/employee-engagement/pulse-survey-tools/", "n": 10, "delta": 0, "cl": ["Engagement software", "Pulse"]}, {"u": "culturemonkey.io/enps-survey-software/", "n": 8, "delta": 14, "cl": ["Engagement survey", "eNPS"]}, {"u": "culturemonkey.io/employee-engagement/third-party-survey-companies/", "n": 6, "delta": 0, "cl": ["Third-party"]}, {"u": "culturemonkey.io/employee-engagement/employee-feedback-tools/", "n": 5, "delta": 150, "cl": ["Anonymous", "Feedback"]}, {"u": "culturemonkey.io/solutions/employee-retention-software/", "n": 4, "delta": 300, "cl": ["Retention"]}, {"u": "culturemonkey.io/employee-engagement/anonymous-feedback-remote-teams/", "n": 3, "delta": 0, "cl": ["Anonymous"]}, {"u": "culturemonkey.io/employee-engagement/glint-alternatives/", "n": 3, "delta": 0, "cl": ["Competitor alternatives"]}, {"u": "culturemonkey.io/guides/anonymous-employee-feedback/how-to-collect-anonymous-feedback/how-to-collect-anonymous-feedback-online/", "n": 2, "delta": null, "cl": ["Anonymous"]}, {"u": "culturemonkey.io/", "n": 2, "delta": null, "cl": ["EX platforms"]}, {"u": "culturemonkey.io/employee-engagement/employee-engagement-survey-vendor-rfp-template/", "n": 1, "delta": -50, "cl": ["Engagement software"]}, {"u": "culturemonkey.io/employee-experience-platform/", "n": 1, "delta": null, "cl": ["EX platforms"]}]};
+const YT = [{"cl": "Engagement survey tools / software / vendors", "s": "Engagement survey", "n": 2, "ours": 1, "tag": "own", "vids": [{"id": "gRDUwtJD89Q", "ch": "CultureMonkey", "title": "7 Best Employee Engagement Survey Vendors in 2026 (Short)", "owner": "ours", "cites": 2, "q": "top employee engagement survey vendors US", "cm": 2}, {"id": "sIih5f0K8sw", "ch": "Teamflect", "title": "Best Engagement Survey Software for 2026 [Ranked & Compared]", "owner": "competitor", "cites": 3, "q": "top employee engagement survey software 2026", "cm": 0}]}, {"cl": "Employee engagement software (general)", "s": "Engagement software", "n": 2, "ours": 0, "tag": "ridealong", "vids": [{"id": "Cypb3Olvfmk", "ch": "SelectHub", "title": "Best Employee Engagement Software 2026", "owner": "thirdparty", "cites": 5, "q": "top employee engagement software for enterprise", "cm": 0}, {"id": "fzYBCSeURyw", "ch": "PeopleGoal", "title": "What Is Employee Engagement Software & How It Works", "owner": "competitor", "cites": 3, "q": "best employee engagement software", "cm": 2}]}, {"cl": "Employee feedback tools / software", "s": "Feedback", "n": 2, "ours": 0, "tag": "ridealong", "vids": [{"id": "o0CNcKYyAWM", "ch": "Jotform", "title": "10 Must-Have Tools for Employee Feedback (2026)", "owner": "thirdparty", "cites": 11, "q": "employee feedback tools comparison", "cm": 1}, {"id": "29AQyDl7Ymo", "ch": "James Ellis", "title": "How to Turn Employee Feedback Into Strategic Gold (with AI!)", "owner": "thirdparty", "cites": 1, "q": "best employee feedback tools", "cm": 0}]}, {"cl": "Anonymous feedback", "s": "Anonymous", "n": 0, "ours": 0, "tag": "whitespace", "vids": []}, {"cl": "Pulse surveys", "s": "Pulse", "n": 1, "ours": 0, "tag": "ridealong", "vids": [{"id": "4ItYF7kMcq4", "ch": "Chris' IT Leadership Lab", "title": "Best Pulse Survey Tool: Tutorial & Top Reply Rate Explained", "owner": "thirdparty", "cites": 3, "q": "best pulse survey tools", "cm": 1}]}, {"cl": "Employee experience platforms", "s": "EX platforms", "n": 0, "ours": 0, "tag": "whitespace", "vids": []}, {"cl": "Employee retention software", "s": "Retention", "n": 0, "ours": 0, "tag": "whitespace", "vids": []}, {"cl": "eNPS software", "s": "eNPS", "n": 0, "ours": 0, "tag": "whitespace", "vids": []}, {"cl": "Third-party survey companies", "s": "Third-party", "n": 0, "ours": 0, "tag": "whitespace", "vids": []}, {"cl": "Competitor alternatives", "s": "Competitor alternatives", "n": 3, "ours": 0, "tag": "ridealong", "vids": [{"id": "J65GSSKGSHE", "ch": "ThriveSparrow", "title": "Top 5 Culture Amp Alternatives for Employee Engagement", "owner": "competitor", "cites": 5, "q": "culture amp alternatives for hr teams", "cm": 3}, {"id": "bDBsw3FzEr4", "ch": "Workleap (Officevibe)", "title": "The Science behind Workleap Officevibe", "owner": "competitor", "cites": 3, "q": "officevibe vs other engagement tools", "cm": 3}, {"id": "Cypb3Olvfmk", "ch": "SelectHub", "title": "Best Employee Engagement Software 2026", "owner": "thirdparty", "cites": 1, "q": "culture amp alternatives comparison", "cm": 1}]}];
+const TREND = [{"wk":"Jun 5","pres":null,"clicks":38},{"wk":"Jun 12","pres":16.1,"clicks":56},{"wk":"Jun 19","pres":20.1,"clicks":74},{"wk":"Jun 26","pres":24.9,"clicks":96},{"wk":"Jul 3","pres":30.9,"clicks":62}];
 let _cid=0;
 function listWithMore(rows,n=3){
   if(rows.length<=n) return rows.join("");
@@ -363,7 +548,7 @@ document.addEventListener("click",e=>{
 });
 function renderTrend(){
   const d=TREND.slice(-10); const L=46,R=652,T=20,B=160;
-  const pMax=25, cMax=Math.max(100,...d.map(x=>x.clicks));
+  const pMax=35, cMax=Math.max(100,...d.map(x=>x.clicks));
   const xs=i=> d.length<2?L:L+(R-L)*i/(d.length-1);
   const yP=v=> B-(v/pMax)*(B-T); const yC=v=> B-(v/cMax)*(B-T);
   let s="";
@@ -383,7 +568,7 @@ function renderTrend(){
   d.forEach((x,i)=>{ if(x.pres!=null) s+=`<circle cx="${xs(i)}" cy="${yP(x.pres)}" r="10" fill="transparent" style="cursor:pointer"><title>${x.wk}: ${x.pres}% AI presence</title></circle><circle cx="${xs(i)}" cy="${yP(x.pres)}" r="3.5" fill="var(--green)" pointer-events="none"/>`; });
   document.getElementById("trendchart").innerHTML=s;
   const wks=d.filter(x=>x.pres!=null), last=d[d.length-1];
-  document.getElementById("trendcap").textContent=`Both lines climbing. AI presence ${wks[0].pres}% to ${last.pres}%, branded clicks ${d[0].clicks} to ${last.clicks}. Shows up to the last 10 weeks.`;
+  document.getElementById("trendcap").textContent=`AI presence keeps climbing, ${wks[0].pres}% to ${last.pres}%. Branded clicks ${d[0].clicks} to ${last.clicks}, dipping on the US July 4 holiday week. Shows up to the last 10 weeks.`;
 }
 const barFill = p => p>=20 ? "var(--green)" : (p>0 ? "var(--amber)" : "var(--red)");
 const cpClass = p => p>=20 ? "g" : (p>0 ? "a" : "r");
@@ -442,7 +627,7 @@ function renderSectionB(){
   };
   document.getElementById("secB-search").addEventListener("input", e=>draw(e.target.value));
   draw("");
-  document.getElementById("secB-foot").innerHTML='<div class="gap"><strong>Progress.</strong> Retention just earned its first citation (0 to 1) and Anonymous moved 1 to 3 after the rebuilds. Still nothing cited for <strong>Employee experience platforms</strong> (0 citations, about 12 days live, investigate).</div>';
+  document.getElementById("secB-foot").innerHTML='<div class="gap" style="background:#e7f3ec;border-color:#bfe3cd;color:#1a6b3c;"><strong>Progress.</strong> Retention leapt 1 to 4 citations after the #430 rebuild and feedback-tools 2 to 5. The EX homepage and a new anonymous guide both appear as fresh citations. Watch: <strong>employee-retention-tools</strong> is still uncited, bucketlistrewards.com owns that slot.</div>';
 }
 function renderYT(){
   const TAG={own:["&#10003; we are cited","g"],gap:["&#9670; gap","r"],ridealong:["ride-along","a"],whitespace:["white space","f"]};
