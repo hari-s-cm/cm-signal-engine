@@ -210,6 +210,8 @@
   .bldet[open] > summary::before{transform:rotate(90deg);}
   .blmore > summary{cursor:pointer;list-style:none;font-size:12px;font-weight:600;color:var(--ink);background:var(--chip);display:inline-block;padding:3px 12px;border-radius:20px;margin:8px 0 2px;}
   .blmore > summary::-webkit-details-marker{display:none;}
+  .blmore > summary::after{content:"Show all 18 wins";}
+  .blmore[open] > summary::after{content:"Collapse";}
   .blmore[open] > summary{margin-bottom:10px;}
   @media(max-width:820px){.blhero{grid-template-columns:1fr;}.blgrid{grid-template-columns:1fr;}.bllname{flex-basis:150px;}}
 </style>
@@ -421,7 +423,7 @@
       </div>
     </div>
 
-    <div class="blgrid">
+    <div class="blgrid" style="align-items:stretch;">
       <div class="blmod">
         <div class="blmh">Inbound wins <span class="blmtag blok">HEALTHY</span></div>
         <div class="blmsub">Listicle and directory links won, from #mktg-shipped and #mktg-team. Window is late May to July: that is when the outreach engine ramped up, so there is little before it (the April to mid-May exchange wins live on Dhanya's sheet instead).</div>
@@ -431,7 +433,7 @@
         <div class="blrow"><span class="blnm">research.com <span class="bltag blon">software reviews</span></span><span class="blval blg">DR 83</span></div>
         <div class="blrow"><span class="blnm">aihr.com <span class="bltag blon">HR training</span></span><span class="blval blg">DR 79</span></div>
         <details class="blmore">
-          <summary>Show all 18 wins</summary>
+          <summary></summary>
           <div class="blrow"><span class="blnm">selectsoftwarereviews.com / apploye.com <span class="bltag blon">reviews / HR</span></span><span class="blval blg">DR 75/73</span></div>
           <div class="blrow"><span class="blnm">+ craft 72, featuredcustomers 71, confetti 69, engagedly 68, siit 65, peoplegoal 54, pockethrms 47, heartcount 38, feedbackpulse 23, skimle 17, storeforce 10</span><span class="blval blmut">11 more</span></div>
           <div class="blokbox">Inbound is the strong side: 18 on-topic editorial and listicle placements on DR 10 to 91 review sites (Jotform, Hibob, AIHR among them), plus a live outreach pipeline (POCs, FeedbackPulse and HiBob collabs). This is why DR holds at 73 despite the outbound mess.</div>
